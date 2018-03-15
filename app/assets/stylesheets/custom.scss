@@ -1,4 +1,10 @@
- card-content {
-        color: red;
-        text-align: center;
+ .card-content {
+	color: red;
+	text-align: center;
  }
+
+ .position-card {
+	 position: absolute;
+	 left: 50%;
+	 top: 50%;
+}
