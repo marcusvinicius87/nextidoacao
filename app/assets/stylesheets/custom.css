@@ -1,3 +1,16 @@
-.card-welcome{
-    padding-top: 15%;
+
+body{
+    background-image: url("background.jpg");
+}
+
+.card .card-title {
+    font-size: 40px;
+    
+}
+.fontes{
+    font-size: 20px;
+}
+
+.baixo{
+    padding-top:15%;
 }
