@@ -2,9 +2,9 @@
 <html>
   <head>
     <title>Nextidoacao</title>
-    <link href="https://meyerweb.com/eric/tools/css/reset/reset.css" rel="stylesheet"
+    <link href="https://meyerweb.com/eric/tools/css/reset/reset.css" rel="stylesheet">
     <%= csrf_meta_tags %>
-    <%=favicon_link_tag 'favicon.png'=%>
+    <%=favicon_link_tag 'favicon.png'%>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
      <%= stylesheet_link_tag 'custom' %>
@@ -16,6 +16,41 @@
         <%= link_to('Logout', destroy_usuario_nexti_session_path, method: :delete) %>
     <% end %>
     
+    <main>
+
     <%= yield %>
+    </main>
+  <footer class="page-footer  ">
+          <div class="container">
+            <div class="row">
+              <div class="col l4 s12">
+                <h5 class="white-text">NExTI</h5>
+                <p class="grey-text text-lighten-4">Mais um sistema feito pelo Núcleo de extensão em tecnologia da informação da Faculdade Paraíso</p>
+              </div>
+              <div class="col l3 offset-l1 s12">
+                <h5 class="white-text">Links úteis</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Faculdade Paraíso</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">NExTI</a></li>
+                </ul>
+              </div>
+              <div class="col l3">
+                <h5 class="white-text">Contatos </h5>
+                <ul>
+                <li ><p class="grey-text text-lighten-4"><i class="material-icons">call</i> (88) 352123299</p></li>
+                <li><p class="grey-text text-lighten-4"><i class="material-icons">email</i>nexti@fapce.edu.br</p></li>
+                <li><p class="grey-text text-lighten-4"><i class="material-icons">location_on</i>R. da Conceição, 1180 - Centro, Juazeiro do Norte - CE, 63010-222, Brasil</p></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2017 - Todos os direitos reservados
+            
+            </div>
+          </div>
+        </footer>
   </body>
+    
 </html>

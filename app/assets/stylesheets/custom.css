@@ -1,4 +1,12 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
 
+  main {
+    flex: 1 0 auto;
+  }
 
 
 .card .card-title {
@@ -10,12 +18,13 @@
 }
 
 .baixo{
-    padding-top:5%;
+    
     padding-bottom: 5%;
     margin-top:5%;
     border-color: black;
     border-style: groove;
     border-width: thin;
+    
 }
 
  body {
