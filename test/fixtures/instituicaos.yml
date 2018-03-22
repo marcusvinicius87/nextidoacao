@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome_instituicao: MyString
+  nome_relatorio_instituicao: MyString
+  codigo_instituicao: MyString
+  codigo_produto: MyString
+  logo: MyString
+  cnpj: MyString
+
+two:
+  nome_instituicao: MyString
+  nome_relatorio_instituicao: MyString
+  codigo_instituicao: MyString
+  codigo_produto: MyString
+  logo: MyString
+  cnpj: MyString

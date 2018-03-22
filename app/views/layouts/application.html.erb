@@ -15,6 +15,7 @@
     <% if usuario_nexti_signed_in? %>
         <%= link_to('Logout', destroy_usuario_nexti_session_path, method: :delete) %>
     <% end %>
+    
     <%= yield %>
   </body>
 </html>
