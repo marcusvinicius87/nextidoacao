@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180322184124) do
+ActiveRecord::Schema.define(version: 20180322185023) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "enderecos", force: :cascade do |t|
+    t.string "logradouro"
+    t.string "tipo_logradouro"
+    t.string "numero"
+    t.string "bairro"
+    t.string "cidade"
+    t.string "estado"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "instituicaos", force: :cascade do |t|
     t.string "nome_instituicao"
@@ -22,6 +33,14 @@ ActiveRecord::Schema.define(version: 20180322184124) do
     t.string "codigo_produto"
     t.string "logo"
     t.string "cnpj"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "telefones", force: :cascade do |t|
+    t.integer "codigo_area"
+    t.string "numero"
+    t.string "tipo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
