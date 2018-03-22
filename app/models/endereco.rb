@@ -1,0 +1,2 @@
+class Endereco < ApplicationRecord
+end
