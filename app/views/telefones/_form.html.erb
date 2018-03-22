@@ -1,0 +1,32 @@
+<%= form_with(model: telefone, local: true) do |form| %>
+  <% if telefone.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(telefone.errors.count, "error") %> prohibited this telefone from being saved:</h2>
+
+      <ul>
+      <% telefone.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :codigo_area %>
+    <%= form.number_field :codigo_area, id: :telefone_codigo_area %>
+  </div>
+
+  <div class="field">
+    <%= form.label :numero %>
+    <%= form.text_field :numero, id: :telefone_numero %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tipo %>
+    <%= form.text_field :tipo, id: :telefone_tipo %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
