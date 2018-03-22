@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180322185023) do
+ActiveRecord::Schema.define(version: 20180322191425) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 20180322185023) do
     t.string "estado"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "instituicao_id"
+    t.index ["instituicao_id"], name: "index_enderecos_on_instituicao_id"
   end
 
   create_table "instituicaos", force: :cascade do |t|
@@ -43,6 +45,8 @@ ActiveRecord::Schema.define(version: 20180322185023) do
     t.string "tipo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "instituicao_id"
+    t.index ["instituicao_id"], name: "index_telefones_on_instituicao_id"
   end
 
   create_table "usuario_nextis", force: :cascade do |t|
@@ -63,4 +67,6 @@ ActiveRecord::Schema.define(version: 20180322185023) do
     t.index ["reset_password_token"], name: "index_usuario_nextis_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "enderecos", "instituicaos"
+  add_foreign_key "telefones", "instituicaos"
 end
