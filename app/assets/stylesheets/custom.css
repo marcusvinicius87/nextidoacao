@@ -1,7 +1,5 @@
 
-body{
-    background-image: url("background.jpg");
-}
+
 
 .card .card-title {
     font-size: 40px;
@@ -13,4 +11,9 @@ body{
 
 .baixo{
     padding-top:5%;
+    padding-bottom: 5%;
+    margin-top:5%;
+    border-color: black;
+    border-style: groove;
+    border-width: thin;
 }
