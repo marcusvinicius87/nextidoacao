@@ -1,0 +1,15 @@
+<div class="nested-fields">
+	<div class="field">
+		<%= f.label :numero, "Numero" %>
+		<%= f.text_field :numero %>		
+	</div>
+	
+	<div class="field">
+		<%= f.label :codigo_area, "DDD" %>
+		<%= f.number_field :codigo_area %>
+	</div>
+	
+	<%= link_to_remove_association "remover telefone", f, class: 'btn btn-primary'%>
+
+	<br> <br>
+</div>

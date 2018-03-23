@@ -3,6 +3,7 @@
 //= require jquery_ujs
 
 // Sempre inclua
+//= require cocoon
 //= require turbolinks
 //= require materialize-sprockets
 //= require_tree .

@@ -15,6 +15,9 @@ class InstituicaosController < ApplicationController
   # GET /instituicaos/new
   def new
     @instituicao = Instituicao.new
+    # COMENTÁRIO: O build inicializa a página com 1 nested já renderizado
+    @telefone = @instituicao.telefones.build
+    @endereco = @instituicao.enderecos.build
   end
 
   # GET /instituicaos/1/edit
@@ -24,6 +27,7 @@ class InstituicaosController < ApplicationController
   # POST /instituicaos
   # POST /instituicaos.json
   def create
+
     @instituicao = Instituicao.new(instituicao_params)
 
     respond_to do |format|
@@ -69,6 +73,8 @@ class InstituicaosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def instituicao_params
-      params.require(:instituicao).permit(:nome_instituicao, :nome_relatorio_instituicao, :codigo_instituicao, :codigo_produto, :logo, :cnpj)
+      params.require(:instituicao).permit(:nome_instituicao, :nome_relatorio_instituicao, 
+          :codigo_instituicao, :codigo_produto, :logo, :cnpj, telefones_attributes: [:id, :numero, :codigo_area, :tipo],
+          enderecos_attributes: [:logradouro, :tipo_logradouro, :numero, :bairro, :cidade, :estado])
     end
 end
