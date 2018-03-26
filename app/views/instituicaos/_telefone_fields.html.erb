@@ -1,7 +1,12 @@
+<%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.min.js' %>
+<script type="text/javascript" charset="utf-8"> 
+    $('.telefone_mask').mask('(99) 9999-9999');
+</script>
+
 <div class="nested-fields">
 	<div class="field">
 		<%= f.label :numero, "Numero" %>
-		<%= f.text_field :numero %>		
+		<%= f.text_field :numero, class: "telefone_mask" %>		
 	</div>
 	
 	<div class="field">
@@ -10,6 +15,6 @@
 	</div>
 	
 	<%= link_to_remove_association "remover telefone", f, class: 'btn btn-primary'%>
-
-	<br> <br>
+	<br> 
+	<br>
 </div>
