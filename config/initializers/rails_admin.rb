@@ -4,8 +4,8 @@ RailsAdmin.config do |config|
 
   ## == Devise ==
   config.authenticate_with do
-     warden.authenticate! scope: :usuario_nexti
-  end
+   warden.authenticate! scope: :usuario_nexti
+ end
   # config.current_user_method(:current_user)
 
   ## == Cancan ==
@@ -23,6 +23,22 @@ RailsAdmin.config do |config|
   ## To disable Gravatar integration in Navigation Bar set to false
   # config.show_gravatar = true
 
+  config.model 'Instituicao' do
+    label "Instituição" 
+    label_plural "Instituições"
+  end
+
+  config.model 'Instituicao' do
+    list do
+      field :nome_instituicao
+      field :nome_relatorio_instituicao
+      field :codigo_instituicao
+      field :cnpj
+      field :codigo_produto
+    end
+  end
+
+  config.excluded_models = ["Telefone", "Endereco", "UsuarioNexti"]
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory
