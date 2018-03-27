@@ -60,3 +60,7 @@ gem 'devise'
 gem 'pg', '~> 0.18'
 
 gem "cocoon"
+
+gem 'remotipart', github: 'mshibuya/remotipart'
+gem 'rails_admin', github: 'sferik/rails_admin'
+gem 'rails_admin_material_theme', '~> 0.2.0'
