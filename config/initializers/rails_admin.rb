@@ -38,6 +38,7 @@ RailsAdmin.config do |config|
     end
   end
 
+  config.main_app_name = ["Nexti Doação", "Administração Usuário Nexti"]
   config.excluded_models = ["Telefone", "Endereco", "UsuarioNexti"]
   config.actions do
     dashboard                     # mandatory
