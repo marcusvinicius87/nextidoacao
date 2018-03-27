@@ -22,6 +22,15 @@ GIT
       remotipart (~> 1.3)
       sass-rails (>= 4.0, < 6)
 
+GIT
+  remote: https://github.com/svenfuchs/rails-i18n.git
+  revision: 282a16c63b7e1db44e3bd25e20ad0629edd6f565
+  branch: master
+  specs:
+    rails-i18n (5.1.1)
+      i18n (>= 0.7, < 2)
+      railties (>= 5.0, < 6)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -261,6 +270,7 @@ DEPENDENCIES
   pg (~> 0.18)
   puma (~> 3.7)
   rails (~> 5.1.4)
+  rails-i18n!
   rails_admin!
   rails_admin_material_theme (~> 0.2.0)
   remotipart!
