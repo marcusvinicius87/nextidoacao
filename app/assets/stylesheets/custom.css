@@ -1,4 +1,5 @@
 body {
+    background-image: url(background.jpg) !important;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -114,7 +115,7 @@ body {
 }
 
 .raiz {
-    background-image: url(https://inglescriativo.com.br/wp-content/uploads/2015/07/fundo-verde-claro-1920x1200.jpg) !important;
+ 
     background-position: center !important;
     background-size: cover !important;
     display: -moz-box !important;
@@ -125,7 +126,7 @@ body {
     flex-direction: column !important;
     justify-content: center !important;
     text-align: center !important;
-    height: auto !important;
+    height: 500px !important;
     -webkit-flex-direction: column !important;
     -ms-flex-direction: column !important;
     -webkit-justify-content: center !important;
