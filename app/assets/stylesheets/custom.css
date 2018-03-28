@@ -158,3 +158,14 @@ body {
     color: #FFFFFF !important;
     margin-bottom: 0px !important;
 }
+.quadro{
+ padding: 10px;
+ padding-left: 20px;
+ padding-right: 20px;
+ color: #FFFFFF;       
+}
+.label{
+    color: #FFFFFF !important;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 25px;
+}

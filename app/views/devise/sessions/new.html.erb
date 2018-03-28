@@ -1,26 +1,50 @@
-<h2>Log in</h2>
+<div class="row">
+  <div class="col l8  s12 m10 push-l2 push-m1 ">
+    <div class="container azul quadro fontes">
+      <h2 class="center">Entrar</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="field">
+          <%= f.label 'Login', class:'label' %>
+            <br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder:"Login" %>
+        </div>
+
+        <div class="field">
+          <%= f.label 'Senha',class:'label' %>
+            <br />
+            <%= f.password_field :password, autocomplete: "off",placeholder:'senha' %>
+        </div>
+
+        <% if devise_mapping.rememberable? -%>
+          <div class="field ">
+            <%= f.check_box :remember_me,type:'checkbox',class:'filled-in',id:'teste' %>
+              <%= f.label 'Lembrar de mim',class:'label',for:'remember_me',for:'teste' %>
+          </div>
+          <% end -%>
+<br>
+            <div class="actions">
+              <%= f.submit "Entrar",class:'btn right' %>
+            </div>
+            <% end %>
+              <br>
+               <div class="input-field">
+    <select onchange="location = this.value">
+      <option value="" disabled selected>Outras</option>
+      <option value="/usuario_nextis/sign_up">Cadastrar</option>
+      <option value="/usuario_nextis/password/new"> esqueci minha senha</option>
+    </select>
+    
   </div>
+              
+              
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    </div>  
   </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
+<script>
+ $(document).ready(function() {
+    $('select').material_select();
+  });
+       
+</script>
