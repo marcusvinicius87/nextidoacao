@@ -1,0 +1,35 @@
+<div class="nested-fields">
+  <div class="field">
+    <%= f.label :logradouro %>
+    <%= f.text_field :logradouro, id: :endereco_logradouro %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tipo_logradouro %>
+    <%= f.text_field :tipo_logradouro, id: :endereco_tipo_logradouro %>
+  </div>
+
+  <div class="field">
+    <%= f.label :numero %>
+    <%= f.text_field :numero, id: :endereco_numero %>
+  </div>
+
+  <div class="field">
+    <%= f.label :bairro %>
+    <%= f.text_field :bairro, id: :endereco_bairro %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cidade %>
+    <%= f.text_field :cidade, id: :endereco_cidade %>
+  </div>
+
+  <div class="field">
+    <%= f.label :estado %>
+    <%= f.text_field :estado, id: :endereco_estado %>
+  </div>
+
+  <%= link_to_remove_association "Remove Endereco", f, class: 'btn btn-primary' %>
+
+  <br> <br>
+</div>

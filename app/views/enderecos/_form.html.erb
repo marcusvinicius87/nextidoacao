@@ -1,0 +1,47 @@
+<%= form_with(model: endereco, local: true) do |form| %>
+  <% if endereco.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(endereco.errors.count, "error") %> prohibited this endereco from being saved:</h2>
+
+      <ul>
+      <% endereco.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :logradouro %>
+    <%= form.text_field :logradouro, id: :endereco_logradouro %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tipo_logradouro %>
+    <%= form.text_field :tipo_logradouro, id: :endereco_tipo_logradouro %>
+  </div>
+
+  <div class="field">
+    <%= form.label :numero %>
+    <%= form.text_field :numero, id: :endereco_numero %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bairro %>
+    <%= form.text_field :bairro, id: :endereco_bairro %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cidade %>
+    <%= form.text_field :cidade, id: :endereco_cidade %>
+  </div>
+
+  <div class="field">
+    <%= form.label :estado %>
+    <%= form.text_field :estado, id: :endereco_estado %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

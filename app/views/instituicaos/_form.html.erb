@@ -1,0 +1,76 @@
+<%= form_with(model: instituicao, local: true) do |form| %>
+<% if instituicao.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(instituicao.errors.count, "error") %> prohibited this instituicao from being saved:</h2>
+
+  <ul>
+    <% instituicao.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="field">
+  <%= form.label :nome_instituicao %>
+  <%= form.text_field :nome_instituicao, id: :instituicao_nome_instituicao %>
+</div>
+
+<div class="field">
+  <%= form.label :nome_relatorio_instituicao %>
+  <%= form.text_field :nome_relatorio_instituicao, id: :instituicao_nome_relatorio_instituicao %>
+</div>
+
+<div class="field">
+  <%= form.label :codigo_instituicao %>
+  <%= form.text_field :codigo_instituicao, id: :instituicao_codigo_instituicao %>
+</div>
+
+<div class="field">
+  <%= form.label :codigo_produto %>
+  <%= form.text_field :codigo_produto, id: :instituicao_codigo_produto %>
+</div>
+
+<div class="field">
+  <%= form.label :logo %>
+  <%= form.text_field :logo, id: :instituicao_logo %>
+</div>
+
+<div class="field">
+  <%= form.label :cnpj %>
+  <%= form.text_field :cnpj, id: :instituicao_cnpj %>
+</div>
+
+<h2> Telefone </h2>
+
+<%= form.fields_for :telefones do |telefone| %>
+    <%= render 'telefone_fields', f: telefone %>
+<% end %>
+<div class="links">
+      <!-- COMENTÁRIO: O link_to_add_association é um helper provido pela gem -->
+      <%= link_to_add_association 'Adicionar Telefone', form, :telefones, class: 'btn btn-primary' %>
+      <br><br>
+
+</div>
+
+<h2> Endereço </h2>
+
+<%= form.fields_for :enderecos do |endereco| %>
+    <%= render 'endereco_fields', f: endereco %>
+<% end %>
+
+
+
+<div class="links">
+      <!-- COMENTÁRIO: O link_to_add_association é um helper provido pela gem -->
+      <%= link_to_add_association 'Adicionar Endereço', form, :enderecos, class: 'btn btn-primary' %>
+      <br><br>
+      
+</div>
+
+
+<div class="actions">
+  <%= form.submit %>
+</div>
+
+<% end %>

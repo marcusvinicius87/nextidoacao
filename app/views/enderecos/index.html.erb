@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Enderecos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Logradouro</th>
+      <th>Tipo logradouro</th>
+      <th>Numero</th>
+      <th>Bairro</th>
+      <th>Cidade</th>
+      <th>Estado</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @enderecos.each do |endereco| %>
+      <tr>
+        <td><%= endereco.logradouro %></td>
+        <td><%= endereco.tipo_logradouro %></td>
+        <td><%= endereco.numero %></td>
+        <td><%= endereco.bairro %></td>
+        <td><%= endereco.cidade %></td>
+        <td><%= endereco.estado %></td>
+        <td><%= link_to 'Show', endereco %></td>
+        <td><%= link_to 'Edit', edit_endereco_path(endereco) %></td>
+        <td><%= link_to 'Destroy', endereco, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Endereco', new_endereco_path %>
