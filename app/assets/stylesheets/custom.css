@@ -4,11 +4,11 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-  }
+}
 
-  main {
+main {
     flex: 1 0 auto;
-  }
+}
 
 
 .card .card-title {
@@ -33,10 +33,14 @@ body {
 
 }
 
+.entrar{
+    font-size: 15px;
+}
+
 .baixo-senha{
 
-    padding-bottom: 10%;
-    margin-top:7%;
+    padding-bottom: 9%;
+    margin-top:6%;
     border-color: transparent;
     border-style: groove;
     border-width: thin;
@@ -52,17 +56,17 @@ body {
     vertical-align: middle
 }
 
- body {
-     display: flex;
-     min-height: 100vh;
-     flex-direction: column;
- }
+body {
+   display: flex;
+   min-height: 100vh;
+   flex-direction: column;
+}
 
- main {
-     flex: 1 0 auto;
- }
+main {
+   flex: 1 0 auto;
+}
 
- .verde1{
+.verde1{
     background-color: #473198 !important;
     opacity: 0.9;
 }
@@ -130,7 +134,7 @@ body {
 }
 
 .raiz {
- 
+
     background-position: center !important;
     background-size: cover !important;
     display: -moz-box !important;
@@ -172,14 +176,28 @@ body {
     color: #FFFFFF !important;
     margin-bottom: 0px !important;
 }
+
 .quadro{
- padding: 10px;
- padding-left: 20px;
- padding-right: 20px;
- color: #FFFFFF;       
+   padding: 10px;
+   padding-left: 20px;
+   padding-right: 20px;
+   color: #FFFFFF;       
 }
+
+
+.quadro-cadastro{
+    padding: 30px;
+   padding-top: 2px;    
+   padding-left: 20px;
+   padding-right: 20px;
+   color: #FFFFFF;   
+
+}
+
+
 .label{
     color: #FFFFFF !important;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 25px;
 }
+
