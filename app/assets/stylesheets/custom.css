@@ -19,10 +19,24 @@ body {
     font-size: 20px;
 }
 
+.fontes2{
+    font-size: 10px;
+}
+
 .baixo{
 
     padding-bottom: 4%;
     margin-top:2%;
+    border-color: transparent;
+    border-style: groove;
+    border-width: thin;
+
+}
+
+.baixo-senha{
+
+    padding-bottom: 10%;
+    margin-top:7%;
     border-color: transparent;
     border-style: groove;
     border-width: thin;

@@ -1,19 +1,19 @@
 <div class="row">
   <div class="col l8  s12 m10 push-l2 push-m1 ">
     <div class="container azul quadro fontes">
-      <h2 class="center">Entrar</h2>
+      <h3 class="center">Entrar</h3>
 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="field">
           <%= f.label 'Login', class:'label' %>
             <br />
-            <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder:"Login" %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder:"E-mail" %>
         </div>
 
         <div class="field">
           <%= f.label 'Senha',class:'label' %>
             <br />
-            <%= f.password_field :password, autocomplete: "off",placeholder:'senha' %>
+            <%= f.password_field :password, autocomplete: "off",placeholder:'Senha' %>
         </div>
 
         <% if devise_mapping.rememberable? -%>
@@ -24,7 +24,7 @@
           <% end -%>
 <br>
             <div class="actions">
-              <%= f.submit "Entrar",class:'btn right' %>
+              <%= f.submit "Entrar",class:'btn right green lighten-2 white-text' %>
             </div>
             <% end %>
               <br>
@@ -32,7 +32,7 @@
     <select onchange="location = this.value">
       <option value="" disabled selected>Outras</option>
       <option value="/usuario_nextis/sign_up">Cadastrar</option>
-      <option value="/usuario_nextis/password/new"> esqueci minha senha</option>
+      <option value="/usuario_nextis/password/new"> Esqueci minha senha</option>
     </select>
     
   </div>

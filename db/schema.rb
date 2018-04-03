@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20180322191425) do
     t.string "nome_instituicao"
     t.string "nome_relatorio_instituicao"
     t.string "codigo_instituicao"
-    t.string "codigo_produto", default: 1, null: false
+    t.string "codigo_produto"
     t.string "logo"
     t.string "cnpj"
     t.datetime "created_at", null: false
