@@ -1,43 +1,61 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="row">
+  <div class="col l6  s12 m10 push-l3 push-m1 baixo">
+    <div class="container azul quadro-editar-cadastro fontes">
+      <!--  <h2>Edit <%= resource_name.to_s.humanize %></h2> -->
+      <div> <h3 class= "center esquerda"><a class="btn-floating left green lighten-2" href="/">
+        <i class="material-icons">arrow_back</i></a>Editar usuário NexTI</h3>
+      </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
+      <div class= "center">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= devise_error_messages! %>
+      </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <div class="field">
+        <%= f.label "E-mail", class: 'label' %>
+        <br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "E-mail"%>
+      </div>
+
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div> Esperando confirmação para o E-mail: <%= resource.unconfirmed_email %></div>
+      <% end %>
+
+      <div class="field">
+        <%= f.label "Senha", class: 'label' %> <i>(Deixe o campo em branco se não quiser mudá-la)</i><br />
+        <%= f.password_field :password, autocomplete: "off", placeholder: "Senha" %>
+        <% if @minimum_password_length %>
+        <br />
+        <em class= "center"> Mínimo de <%= @minimum_password_length %> caracteres</em>
+        <% end %>
+      </div>
+
+      <div class="field">
+        <%= f.label 'Confirmar nova senha', class: 'label' %>
+        <br />
+        <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Digite a nova senha novamente" %>
+      </div>
+
+      <div class="field">
+        <%= f.label "Senha atual", class: 'label' %> <i>(Precisamos da sua senha atual para confirmar as mudanças)</i><br />
+        <%= f.password_field :current_password, autocomplete: "off", placeholder: "Senha atual" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Atualizar", class:' btn right green lighten-2 white-text' %>
+      </div>
+      <% end %>
+    </div>
   </div>
+</div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
+<div class="row">
+  <div class="col l6  s12 m10 push-l3 push-m1">
+    <div class="container azul quadro-editar-cadastro fontes">
+      <h3 class= "center">Cancelar minha conta</h3>
+      <p> Está insatisfeito? <%= button_to "Cancele sua conta", registration_path(resource_name), data: { confirm: "Tem certeza de que deseja fazer isso?" },class: 'btn right green lighten-2', method: :delete %> </p>
+    </div>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+<!-- <%= link_to "Back",class: :back %> =-->
