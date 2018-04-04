@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   match 'welcome' => 'welcome#index', via: [:get]
   
   root "welcome#index"
-
+  
 end
