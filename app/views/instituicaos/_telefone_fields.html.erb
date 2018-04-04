@@ -5,16 +5,17 @@
 
 <div class="nested-fields">
 	<div class="field">
-		<%= f.label :numero, "Numero" %>
+		<label class="label"> Telefone</label>
 		<%= f.text_field :numero, class: "telefone_mask" %>		
 	</div>
 	
 	<div class="field">
-		<%= f.label :codigo_area, "DDD" %>
+		<%= f.label :codigo_area, "DDD",class:"label" %>
 		<%= f.number_field :codigo_area %>
 	</div>
 	
 	<%= link_to_remove_association "remover telefone", f, class: 'btn btn-primary'%>
-	<br> 
+	
+	<br>
 	<br>
 </div>

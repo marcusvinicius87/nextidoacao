@@ -1,35 +1,35 @@
 <div class="nested-fields">
   <div class="field">
-    <%= f.label :logradouro %>
-    <%= f.text_field :logradouro, id: :endereco_logradouro %>
+    <label class="label">Logradouro:</label>
+    <%= f.text_field :logradouro, id: :endereco_logradouro,class:'label' %>
   </div>
 
   <div class="field">
-    <%= f.label :tipo_logradouro %>
-    <%= f.text_field :tipo_logradouro, id: :endereco_tipo_logradouro %>
+    <%= f.label 'Tipo Logradouro',class:'label' %>
+    <%= f.text_field :tipo_logradouro, id: :endereco_tipo_logradouro,class:'label' %>
   </div>
 
   <div class="field">
-    <%= f.label :numero %>
-    <%= f.text_field :numero, id: :endereco_numero %>
+    <%= f.label :Número,class:'label' %>
+    <%= f.text_field :numero, id: :endereco_numero,class:'label' %>
   </div>
 
   <div class="field">
-    <%= f.label :bairro %>
-    <%= f.text_field :bairro, id: :endereco_bairro %>
+    <%= f.label :Bairro,class:'label' %>
+    <%= f.text_field :bairro, id: :endereco_bairro,class:'label' %>
   </div>
 
   <div class="field">
-    <%= f.label :cidade %>
-    <%= f.text_field :cidade, id: :endereco_cidade %>
+    <%= f.label :Cidade,class:'label' %>
+    <%= f.text_field :cidade, id: :endereco_cidade,class:'label' %>
   </div>
 
   <div class="field">
-    <%= f.label :estado %>
-    <%= f.text_field :estado, id: :endereco_estado %>
+    <%= f.label :Estado,class:'label' %>
+    <%= f.text_field :estado, id: :endereco_estado,class:'label' %>
   </div>
 
-  <%= link_to_remove_association "Remove Endereco", f, class: 'btn btn-primary' %>
+  <%= link_to_remove_association "Remover Endereço", f, class: 'btn btn-primary' %>
 
   <br> <br>
 </div>

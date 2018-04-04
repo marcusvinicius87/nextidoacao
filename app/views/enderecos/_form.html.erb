@@ -1,3 +1,8 @@
+
+<div class="container azul quadro-cadastro">
+<a class="btn-floating green lighten-2" href="/enderecos"><i class="material-icons">arrow_back</i></a>
+<h1> <p class="flow-text center">Cadastro de endereço   <i class=" material-icons ">add_location</i>
+  </p></h1>
 <%= form_with(model: endereco, local: true) do |form| %>
   <% if endereco.errors.any? %>
     <div id="error_explanation">
@@ -12,36 +17,37 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :logradouro %>
-    <%= form.text_field :logradouro, id: :endereco_logradouro %>
+    <label class="label"> Logradouro :</label>
+    <%= form.text_field :logradouro, id: :endereco_logradouro,class:"validate white-text" %>
   </div>
 
   <div class="field">
-    <%= form.label :tipo_logradouro %>
-    <%= form.text_field :tipo_logradouro, id: :endereco_tipo_logradouro %>
+    <label class="label"> Tipo logradouro:</label>
+    <%= form.text_field :tipo_logradouro, id: :endereco_tipo_logradouro,class:"validate white-text" %>
   </div>
 
   <div class="field">
-    <%= form.label :numero %>
-    <%= form.text_field :numero, id: :endereco_numero %>
+    <label class="label"> Número:</label>
+    <%= form.text_field :numero, id: :endereco_numero,class:"validate white-text" %>
   </div>
 
   <div class="field">
-    <%= form.label :bairro %>
-    <%= form.text_field :bairro, id: :endereco_bairro %>
+    <label class="label"> Bairro:</label>
+    <%= form.text_field :bairro, id: :endereco_bairro,class:"validate white-text" %>
   </div>
 
   <div class="field">
-    <%= form.label :cidade %>
-    <%= form.text_field :cidade, id: :endereco_cidade %>
+    <label class="label"> Cidade:</label>
+    <%= form.text_field :cidade, id: :endereco_cidade,class:"validate white-text" %>
   </div>
 
   <div class="field">
-    <%= form.label :estado %>
-    <%= form.text_field :estado, id: :endereco_estado %>
+    <label class="label"> Estado:</label>
+    <%= form.text_field :estado, id: :endereco_estado,class:"validate white-text" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class:"btn green lighten-2 " %>
   </div>
 <% end %>
+</div>
