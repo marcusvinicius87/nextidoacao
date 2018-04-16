@@ -26,17 +26,14 @@
       <% end -%>
       <br>
       <div class="actions">
-        <%= f.submit "Entrar",class:'btn right green lighten-2 white-text' %>
+        <%= f.submit "Entrar",class:'btn green lighten-2 white-text' %>
+      </div>
+      <div>
+      <a class="black-text " href="/usuario_nextis/sign_up/#">Quero me cadastrar</a>
+      <a class="black-text right" href="/usuario_nextis/password/new">Esqueci minha senha</a>
       </div>
       <% end %>
-      <br>
-      <div class="input-field">
-        <select onchange="location = this.value">
-          <option value="" disabled selected>Escolha outra opção</option>
-          <option value="/usuario_nextis/sign_up">Cadastrar</option>
-          <option value="/usuario_nextis/password/new"> Esqueci minha senha</option>
-        </select>
-      </div>
+      
     </div>  
   </div>
 </div>
