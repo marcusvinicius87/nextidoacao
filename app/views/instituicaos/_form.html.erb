@@ -64,13 +64,9 @@
 
     <%= form.fields_for :telefones do |telefone| %>
       <%= render 'telefone_fields', f: telefone %>
-        <% end %>
+    <% end %>
           <div class="links">
-
             <%= link_to_add_association 'Adicionar Telefone', form, :telefones,  class: 'btn btn-primary green light-2' %>
-
-
-
           </div>
 
 
