@@ -1,9 +1,12 @@
 body {
     background-image: url(background.jpg) !important;
+    font-family: 'Comfortaa-Bold' !important;
     background-repeat: no-repeat;
     display: flex;
     min-height: 100vh;
-    flex-direction: column;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
 }
 
 main {
@@ -18,8 +21,7 @@ main {
     font-size: 40px;
 
 }
-.fontes{
-    font-size: 20px;
+font-size: 20px;
 }
 
 .fontes2{
@@ -60,13 +62,13 @@ main {
 }
 
 body {
-   display: flex;
-   min-height: 100vh;
-   flex-direction: column;
+ display: flex;
+ min-height: 100vh;
+ flex-direction: column;
 }
 
 main {
-   flex: 1 0 auto;
+ flex: 1 0 auto;
 }
 
 .verde1{
@@ -181,27 +183,27 @@ main {
 }
 
 .quadro{
-   padding: 10px;
-   padding-left: 20px;
-   padding-right: 20px;
-   color: #FFFFFF;       
+ padding: 10px;
+ padding-left: 20px;
+ padding-right: 20px;
+ color: #FFFFFF;       
 }
 
 .quadro-cadastro{
     padding: 30px;
-   padding-top: 2px;    
-   padding-left: 20px;
-   padding-right: 20px;
-   color: #FFFFFF;   
+    padding-top: 2px;    
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #FFFFFF;   
 
 }
 
 .quadro-editar-cadastro{
     padding: 48px;
-   padding-top: 2px;    
-   padding-left: 20px;
-   padding-right: 20px;
-   color: #FFFFFF;   
+    padding-top: 2px;    
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #FFFFFF;   
 }
 
 
@@ -211,6 +213,13 @@ main {
     font-size: 25px;
 }
 
-.botao-baixo{
-    margin-top:13%;
+.modal {
+  max-height: 90%;
+}
+
+.modal-form-row {
+  margin-bottom: 0px;
+}
+
+#texto1{
 }
