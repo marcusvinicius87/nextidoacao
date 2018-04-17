@@ -1,7 +1,7 @@
 body {
     background-image: url(background.jpg) !important;
-    font-family: 'Comfortaa-Bold' !important;
     background-repeat: no-repeat;
+    font-family: 'Comfortaa Bold';
     display: flex;
     min-height: 100vh;
     background-attachment: fixed;
