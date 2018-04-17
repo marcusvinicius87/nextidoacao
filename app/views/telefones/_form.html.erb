@@ -1,3 +1,4 @@
+
 <%= form_with(model: telefone, local: true) do |form| %>
   <% if telefone.errors.any? %>
     <div id="error_explanation">
@@ -11,22 +12,25 @@
     </div>
   <% end %>
 
+  
   <div class="field">
-    <%= form.label :codigo_area %>
+    <%= form.label :Codigo_da_Area,class:"white-text flow-text" %>
     <%= form.number_field :codigo_area, id: :telefone_codigo_area %>
   </div>
 
   <div class="field">
-    <%= form.label :numero %>
+    <%= form.label :Número,class:"white-text flow-text" %>
     <%= form.text_field :numero, id: :telefone_numero %>
   </div>
 
   <div class="field">
-    <%= form.label :tipo %>
+    <%= form.label :Tipo,class:"white-text flow-text" %>
     <%= form.text_field :tipo, id: :telefone_tipo %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Criar',class:'btn green light-2'%>
+  </div>
   </div>
 <% end %>
+<section>
