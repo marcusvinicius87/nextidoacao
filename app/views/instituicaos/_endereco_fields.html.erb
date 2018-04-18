@@ -1,37 +1,42 @@
 <section class="section">
-<div class="nested-fields">
-  <div class="field">
-    <label class="white-text flow-text">Logradouro:</label>
-    <%= f.text_field :logradouro, id: :endereco_logradouro,class:'label' %>
+  <div class="nested-fields">
+    <h1>
+      <p class="flow-text center"> Endereço
+        <i class=" material-icons ">add_location</i>
+      </p>
+    </h1>
+    <div class="field">
+      <label class="white-text flow-text">Logradouro:</label>
+      <%= f.text_field :logradouro, id: :endereco_logradouro,class:'label' %>
+    </div>
+
+    <div class="field">
+      <%= f.label 'Tipo Logradouro',class: 'white-text flow-text' %>
+      <%= f.text_field :tipo_logradouro, id: :endereco_tipo_logradouro,class: 'label' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :Número, class: 'white-text flow-text' %>
+      <%= f.text_field :numero, id: :endereco_numero, class: 'label' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :Bairro,class:'white-text flow-text' %>
+      <%= f.text_field :bairro, id: :endereco_bairro, class: 'label' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :Cidade,class:'white-text flow-text' %>
+      <%= f.text_field :cidade, id: :endereco_cidade, class: 'label' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :Estado,class:'white-text flow-text' %>
+      <%= f.text_field :estado, id: :endereco_estado, class: 'label' %>
+    </div>
+
+    <%= link_to_remove_association "Remover Endereço", f, class: 'btn btn-primary green light-2' %>
+    
+    <br> <br>
   </div>
-
-  <div class="field">
-    <%= f.label 'Tipo Logradouro',class:'white-text flow-text' %>
-    <%= f.text_field :tipo_logradouro, id: :endereco_tipo_logradouro,class:'label' %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Número,class:'white-text flow-text' %>
-    <%= f.text_field :numero, id: :endereco_numero,class:'label' %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Bairro,class:'white-text flow-text' %>
-    <%= f.text_field :bairro, id: :endereco_bairro,class:'label' %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Cidade,class:'white-text flow-text' %>
-    <%= f.text_field :cidade, id: :endereco_cidade,class:'label' %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Estado,class:'white-text flow-text' %>
-    <%= f.text_field :estado, id: :endereco_estado,class:'label' %>
-  </div>
-
-  <%= link_to_remove_association "Remover Endereço", f, class: 'btn btn-primary green light-2' %>
-
-  <br> <br>
-</div>
 </section>

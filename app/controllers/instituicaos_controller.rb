@@ -16,8 +16,6 @@ class InstituicaosController < ApplicationController
   def new
     @instituicao = Instituicao.new
     # COMENTÁRIO: O build inicializa a página com 1 nested já renderizado
-    @telefone = @instituicao.telefones.build
-    @endereco = @instituicao.enderecos.build
   end
 
   # GET /instituicaos/1/edit

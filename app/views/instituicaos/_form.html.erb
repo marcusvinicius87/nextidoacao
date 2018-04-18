@@ -2,9 +2,6 @@
 <section class="section">
   <div class="container azul quadro-cadastro">
 
-    <a class="btn-floating green lighten-2" href="/instituicaos">
-      <i class="material-icons">arrow_back</i>
-    </a>
     <h1>
       <p class="flow-text center">Cadastro de instituição
         <i class=" material-icons ">favorite</i>
@@ -57,48 +54,38 @@
           <label class="white-text flow-text"> Cnpj:</label>
           <%= form.text_field :cnpj, id: :instituicao_cnpj,class:"validate white-text" %>
         </div>
-        <h1>
-          <p class="flow-text center"> Telefone
-            <i class=" material-icons ">local_phone</i>
-          </p>
-        </h1>
-
 
         <%= form.fields_for :telefones do |telefone| %>
-        <%= render 'telefone_fields', f: telefone %>
+          <%= render 'telefone_fields', f: telefone %>
         <% end %>
 
         <div class="links">
           <%= link_to_add_association 'Adicionar Telefone', form, :telefones,  class: 'btn btn-primary green light-2' %>
         </div>
+        
 
-
-        <h1>
-          <p class="flow-text center"> Endereço
-            <i class=" material-icons ">add_location</i>
-          </p>
-        </h1>
-
+        <br>
 
         <%= form.fields_for :enderecos do |endereco| %>
-        <%= render 'endereco_fields', f: endereco %>
+          <%= render 'endereco_fields', f: endereco %>
         <% end %>
 
         <div class="links">
-
           <%= link_to_add_association 'Adicionar Endereço', form, :enderecos, class: 'btn btn-primary green light-2' %>
         </div>
-
-        <div class="actions">
-          <%= form.submit 'Enviar',class:'btn green light-2' %>
-        </div>
+      
+      <br>          
         
-
-        <% end %>
+      <div class="actions">
+        <%= form.submit 'Enviar',class:'btn green light-2' %>
       </div>
+
+
+      <% end %>
     </div>
-    
+  </div>
 
 
 
-  </section> 
+
+</section> 
