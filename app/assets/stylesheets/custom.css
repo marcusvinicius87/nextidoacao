@@ -200,6 +200,8 @@ main {
 
 }
 
+
+
 .quadro-editar-cadastro{
     padding: 48px;
     padding-top: 2px;    
@@ -212,8 +214,8 @@ main {
 
 .label{
     color: #FFFFFF !important;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 25px;
+    font-family: 'Comfortaa Bold' sans-serif;
+    font-size: 17.5px;
 }
 
 .modal {
@@ -226,3 +228,4 @@ main {
 
 #texto1{
 }
+

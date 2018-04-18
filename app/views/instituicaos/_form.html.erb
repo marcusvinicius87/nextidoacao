@@ -24,39 +24,55 @@
         </ul>
       </div>
       <% end %>
-      <div class="container">
-        <div class="field">
-          <label class="white-text flow-text"> Nome da Instituição:</label>
-          <%= form.text_field :nome_instituicao, id: :instituicao_nome_instituicao,class:"validate white-text" %>
+
+
+      <div class= "container">
+        <div class= "row">
+        <div class= "col s6">
+          <div class= "field">
+            <label class=" label white-text flow-text"> Nome da Instituição:</label>
+            <%= form.text_field :nome_instituicao, id: :instituicao_nome_instituicao,class: "validate white-text" %>
+          </div>
         </div>
 
-        <div class="field">
-          <label class="white-text flow-text"> Nome do relatório da instituição:</label>
-          <%= form.text_field :nome_relatorio_instituicao, id: :instituicao_nome_relatorio_instituicao,class:"validate white-text" %>
+        <div class= "col s6">
+          <div class="field">
+            <label class="label white-text flow-text"> Nome do relatório da instituição:</label>
+            <%= form.text_field :nome_relatorio_instituicao, id: :instituicao_nome_relatorio_instituicao,class: "validate white-text" %>
+          </div>
         </div>
 
-        <div class="field">
-          <label class="white-text flow-text"> Código da instituição:</label>
-          <%= form.text_field :codigo_instituicao, id: :instituicao_codigo_instituicao,class:"validate white-text" %>
+        <div class= "col s6">
+          <div class="field">
+            <label class="label white-text flow-text"> Código da instituição:</label>
+            <%= form.text_field :codigo_instituicao, id: :instituicao_codigo_instituicao,class: "validate white-text" %>
+          </div>
         </div>
 
-        <div class="field">
-          <label class="white-text flow-text"> Código do produto:</label>
-          <%= form.text_field :codigo_produto, id: :instituicao_codigo_produto,class:"validate white-text" %>
+        <div class= "col s6">
+          <div class="field">
+            <label class="label white-text flow-text"> Código do produto:</label>
+            <%= form.text_field :codigo_produto, id: :instituicao_codigo_produto,class: "validate white-text" %>
+          </div>
         </div>
 
-        <div class="field">
-          <label class="white-text flow-text"> Logo:</label>
-          <%= form.text_field :logo, id: :instituicao_logo,class:"validate white-text" %>
+        <div class= "col s6">
+          <div class="field">
+            <label class="label white-text flow-text"> Logo:</label>
+            <%= form.text_field :logo, id: :instituicao_logo,class: "validate white-text" %>
+          </div>
         </div>
 
-        <div class="field">
-          <label class="white-text flow-text"> Cnpj:</label>
-          <%= form.text_field :cnpj, id: :instituicao_cnpj,class:"validate white-text" %>
+        <div class= "col s6">
+          <div class="field">
+            <label class="label white-text flow-text"> Cnpj:</label>
+            <%= form.text_field :cnpj, id: :instituicao_cnpj,class: "validate white-text" %>
+          </div>
         </div>
 
+      </div>
         <%= form.fields_for :telefones do |telefone| %>
-          <%= render 'telefone_fields', f: telefone %>
+        <%= render 'telefone_fields', f: telefone %>
         <% end %>
 
         <div class="links">
@@ -67,25 +83,25 @@
         <br>
 
         <%= form.fields_for :enderecos do |endereco| %>
-          <%= render 'endereco_fields', f: endereco %>
+        <%= render 'endereco_fields', f: endereco %>
         <% end %>
 
         <div class="links">
           <%= link_to_add_association 'Adicionar Endereço', form, :enderecos, class: 'btn btn-primary green light-2' %>
         </div>
-      
-      <br>          
+
+        <br>          
         
-      <div class="actions">
-        <%= form.submit 'Enviar',class:'btn green light-2' %>
+        <div class="actions">
+          <%= form.submit 'Enviar',class:'btn green light-2' %>
+        </div>
+
+
+        <% end %>
       </div>
-
-
-      <% end %>
     </div>
-  </div>
 
 
 
 
-</section> 
+  </section> 

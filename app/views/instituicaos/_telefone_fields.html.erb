@@ -4,7 +4,7 @@
 </script>
 
 
-<section class="container">
+<section>
 	<div class="nested-fields">
 		<h1>
 			<p class="flow-text center"> Telefone
@@ -12,14 +12,22 @@
 			</p>
 		</h1>
 
-		<div class="field">
-			<%= f.label :numero, "Numero", class: "label" %>
-			<%= f.text_field :numero, class: "telefone_mask" %>		
-		</div>
-		
-		<div class="field">
-			<%= f.label :codigo_area, "DDD", class: "label" %>
-			<%= f.number_field :codigo_area %>
+		<div class="container">
+			<div class= "row label">
+				<div class= "col s6">
+					<div class="field">
+						<%= f.label :numero, "Numero", class: "label" %>
+						<%= f.text_field :numero, class: "telefone_mask" %>		
+					</div>
+				</div>
+
+				<div class= "col s6">
+					<div class="field">
+						<%= f.label :codigo_area, "DDD", class: "label" %>
+						<%= f.number_field :codigo_area %>
+					</div>
+				</div>
+			</div>
 		</div>
 
 		
