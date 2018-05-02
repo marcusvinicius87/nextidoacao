@@ -1,10 +1,4 @@
-<%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.min.js' %>
-<script type="text/javascript" charset="utf-8"> 
-	$('.telefone_mask').mask('(99) 9999-9999');
-</script>
-
-
-<section>
+<section class= "asd">
 	<div class="nested-fields">
 		<h1>
 			<p class="flow-text center"> Telefone
@@ -30,9 +24,9 @@
 			</div>
 		</div>
 
-		
-		
+		<button class='btn right btn-primary green light-2' onclick="asd()" type=button> Salvar Telefone</button>
 		<%= link_to_remove_association "Remover Telefone", f, class: 'btn btn-primary green light-2' %>
-		<br> <br>
+		
 	</div>
+	<br> <br>
 </section>

@@ -4,7 +4,7 @@
 
     <h1>
       <p class="flow-text center">Cadastro de instituição
-        <i class=" material-icons ">favorite</i>
+        <i class=" material-icons ">location_city</i>
       </p>
     </h1>
 
@@ -72,14 +72,15 @@
 
       </div>
         <%= form.fields_for :telefones do |telefone| %>
-        <%= render 'telefone_fields', f: telefone %>
         <% end %>
 
         <div class="links">
-          <%= link_to_add_association 'Adicionar Telefone', form, :telefones,  class: 'btn btn-primary green light-2' %>
+          <%= link_to_add_association 'Adicionar Telefone', form, :telefones,  class: 'btn btn-primary green lighten-2' %>
         </div>
         
 
+        <br>
+        <br>
         <br>
 
         <%= form.fields_for :enderecos do |endereco| %>
@@ -87,13 +88,13 @@
         <% end %>
 
         <div class="links">
-          <%= link_to_add_association 'Adicionar Endereço', form, :enderecos, class: 'btn btn-primary green light-2' %>
+          <%= link_to_add_association 'Adicionar Endereço', form, :enderecos, class: 'btn btn-primary green lighten-2' %>
         </div>
 
         <br>          
         
         <div class="actions">
-          <%= form.submit 'Enviar',class:'btn green light-2' %>
+          <%= form.submit 'Enviar',class:'btn green lighten-2' %>
         </div>
 
 
