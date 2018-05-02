@@ -25,11 +25,10 @@ class InstituicaosController < ApplicationController
   # POST /instituicaos
   # POST /instituicaos.json
   def create
-
     @instituicao = Instituicao.new(instituicao_params)
-
     respond_to do |format|
       if @instituicao.save
+        UserMailer.welcome_email(@instituicao).deliver_later
         format.html { redirect_to @instituicao, notice: 'Instituicao was successfully created.' }
         format.json { render :show, status: :created, location: @instituicao }
       else
@@ -72,7 +71,7 @@ class InstituicaosController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def instituicao_params
       params.require(:instituicao).permit(:nome_instituicao, :nome_relatorio_instituicao, 
-          :codigo_instituicao, :codigo_produto, :logo, :cnpj, telefones_attributes: [:id, :numero, :codigo_area, :tipo],
+          :codigo_instituicao, :codigo_produto, :logo, :cnpj, :email, telefones_attributes: [:id, :numero, :codigo_area, :tipo],
           enderecos_attributes: [:logradouro, :tipo_logradouro, :numero, :bairro, :cidade, :estado])
     end
 end

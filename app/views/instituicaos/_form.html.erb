@@ -70,6 +70,12 @@
           </div>
         </div>
 
+        <div class= "col s6">
+          <div class="field">
+            <label class="label white-text flow-text"> E-mail:</label>
+            <%= form.text_field :email, id: :email,class: "validate white-text" %>
+          </div>
+        </div>
       </div>
         <%= form.fields_for :telefones do |telefone| %>
         <%= render 'telefone_fields', f: telefone %>
