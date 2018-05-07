@@ -7,7 +7,7 @@
       <br>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
-        <%= f.label 'Login', class:'label' %>
+        <%= f.label 'Login', class: 'label' %>
         <br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder:"E-mail" %>
       </div>
@@ -26,13 +26,10 @@
       <% end -%>
       <br>
       <div class="actions">
-        <%= f.submit "Entrar",class:'btn green right lighten-2 white-text' %>
+        <%= f.submit "Entrar",class:'btn green lighten-2 white-text' %>
       </div>
       <div>
-      <br>
-      <br>
-      <br>
-      <a class="black-text left " href="/usuario_nextis/sign_up/#">Quero me cadastrar</a>
+      <a class="black-text " href="/usuario_nextis/sign_up/#">Quero me cadastrar</a>
       <a class="black-text right" href="/usuario_nextis/password/new">Esqueci minha senha</a>
       </div>
       <% end %>

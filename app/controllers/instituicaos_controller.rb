@@ -18,7 +18,6 @@ class InstituicaosController < ApplicationController
     # COMENTÁRIO: O build inicializa a página com 1 nested já renderizado
   end
 
-
   # GET /instituicaos/1/edit
   def edit
   end
@@ -51,6 +50,10 @@ class InstituicaosController < ApplicationController
         format.json { render json: @instituicao.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def find_token_instituicao
+    @instituicao = Instituicao.find_by token: params[:token]
   end
 
   # DELETE /instituicaos/1
