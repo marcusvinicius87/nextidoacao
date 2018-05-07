@@ -1,4 +1,3 @@
-
 <section class="section">
   <div class="container azul quadro-cadastro">
 
@@ -70,14 +69,11 @@
           </div>
         </div>
 
-        <div class= "col s6">
-          <div class="field">
-            <label class="label white-text flow-text"> E-mail:</label>
-            <%= form.text_field :email, id: :email,class: "validate white-text" %>
-          </div>
-        </div>
+
+
       </div>
         <%= form.fields_for :telefones do |telefone| %>
+          <%= render 'telefone_fields', f: telefone %>
         <% end %>
 
         <div class="links">
@@ -90,7 +86,7 @@
         <br>
 
         <%= form.fields_for :enderecos do |endereco| %>
-        <%= render 'endereco_fields', f: endereco %>
+          <%= render 'endereco_fields', f: endereco %>
         <% end %>
 
         <div class="links">
@@ -102,8 +98,7 @@
         <div class="actions">
           <%= form.submit 'Enviar',class:'btn green lighten-2' %>
         </div>
-
-
+        
         <% end %>
       </div>
     </div>
