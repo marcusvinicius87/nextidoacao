@@ -5,7 +5,7 @@ body {
     display: flex;
     min-height: 100vh;
     background-attachment: fixed;
-    background-position: center;
+    background-positfion: center;
     background-size: cover;
 }
 
@@ -62,13 +62,13 @@ font-size: 20px;
 }
 
 body {
- display: flex;
- min-height: 100vh;
- flex-direction: column;
+   display: flex;
+   min-height: 100vh;
+   flex-direction: column;
 }
 
 main {
- flex: 1 0 auto;
+   flex: 1 0 auto;
 }
 
 .verde1{
@@ -183,11 +183,11 @@ main {
 }
 
 .quadro{
- padding: 10px;
- padding-left: 20px;
- padding-right: 20px;
- color: #FFFFFF;      
- border-radius: 17px; 
+   padding: 10px;
+   padding-left: 20px;
+   padding-right: 20px;
+   color: #FFFFFF;      
+   border-radius: 17px; 
 }
 
 .quadro-cadastro{
@@ -226,6 +226,10 @@ main {
   margin-bottom: 0px;
 }
 
+.baixo-botao {
+    padding-bottom: 4%;
+    margin-top:11%;
+}
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: #778899;
     opacity: 1; /* Firefox */
