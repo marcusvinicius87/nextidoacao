@@ -46,6 +46,9 @@ pt-BR:
       signed_in: "Logado com sucesso."
       signed_out: "Saiu com sucesso."
       already_signed_out: "Saiu com sucesso."
+      user:
+        ativo: "Logado com Sucesso."
+        not_ativo: "Sua conta ainda não foi aprovada por um administrador."
     unlocks:
       send_instructions: "Você receberá um email com instruções para desbloquear sua conta em alguns minutos."
       send_paranoid_instructions: "Se sua conta existir, você receberá um email com instruções para desbloqueá-la em alguns minutos."

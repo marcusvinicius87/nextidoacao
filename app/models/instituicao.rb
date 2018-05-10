@@ -1,5 +1,7 @@
 class Instituicao < ApplicationRecord
-	
+
+	before_create :add_token
+
 	has_many :telefones, :dependent => :destroy
 	has_many :enderecos, :dependent => :destroy
 	has_many :users
@@ -10,19 +12,20 @@ class Instituicao < ApplicationRecord
 	validates_presence_of :nome_instituicao, :nome_relatorio_instituicao, :codigo_instituicao
 	validates_length_of :nome_relatorio_instituicao, :maximum => 20, :minimum => 20
 
-	before_create :add_token
-
 	def self.find_token_instituicao(token)
-    	return Instituicao.find_by token: token
+    	if (Instituicao.find_by token: token) != nil
+    		return true
+    	end
+
+    	return false
   	end
 	
 	private
+
 	def add_token
 		begin
 		  self.token = SecureRandom.hex[0,10].upcase
 		end while self.class.exists?(token: token)
-	end
-
-	 
+	end 
 
 end
