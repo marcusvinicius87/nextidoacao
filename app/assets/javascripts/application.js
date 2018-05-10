@@ -37,7 +37,6 @@ function asd3(cont) {
 
 	telefonesEscondidos[cont].style = ""  
     telefones[cont].style.visibility = "hidden";
-    //telefones[cont].style.display = "none";
 }
 
 

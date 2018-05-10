@@ -1,6 +1,6 @@
 class InstituicaosController < ApplicationController
   before_action :set_instituicao, only: [:show, :edit, :update, :destroy]
-
+  helper_method :incrementar
   # GET /instituicaos
   # GET /instituicaos.json
   def index
@@ -19,6 +19,9 @@ class InstituicaosController < ApplicationController
     # COMENTÁRIO: O build inicializa a página com 1 nested já renderizado
   end
 
+  def incrementar
+    @cont += 1
+  end
   # GET /instituicaos/1/edit
   def edit
   end
@@ -53,10 +56,6 @@ class InstituicaosController < ApplicationController
     end
   end
 
-  def find_token_instituicao
-    @instituicao = Instituicao.find_by token: params[:token]
-  end
-
   # DELETE /instituicaos/1
   # DELETE /instituicaos/1.json
   def destroy
@@ -76,7 +75,7 @@ class InstituicaosController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def instituicao_params
       params.require(:instituicao).permit(:nome_instituicao, :nome_relatorio_instituicao, 
-          :codigo_instituicao, :codigo_produto, :logo, :cnpj, :email, telefones_attributes: [:id, :numero, :codigo_area, :tipo],
-          enderecos_attributes: [:logradouro, :tipo_logradouro, :numero, :bairro, :cidade, :estado])
+        :codigo_instituicao, :codigo_produto, :logo, :cnpj, :email, telefones_attributes: [:id, :numero, :codigo_area, :tipo],
+        enderecos_attributes: [:logradouro, :tipo_logradouro, :numero, :bairro, :cidade, :estado])
     end
-end
+  end
