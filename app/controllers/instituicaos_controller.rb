@@ -14,13 +14,9 @@ class InstituicaosController < ApplicationController
 
   # GET /instituicaos/new
   def new
-    @cont = 0
     @instituicao = Instituicao.new
+    puts(@cont)
     # COMENTÁRIO: O build inicializa a página com 1 nested já renderizado
-  end
-
-  def incrementar
-    @cont += 1
   end
   # GET /instituicaos/1/edit
   def edit
