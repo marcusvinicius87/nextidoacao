@@ -10,9 +10,9 @@
         <%= link_to '<button class="button1" style="color: rgb(0, 41, 74); border-color: rgb(255, 255, 255); background-color: rgb(255, 255, 255); min-width: 368px; box-shadow: transparent 0px 0px 4px 4px;"><div class="inner_ed2ug6">Quero me Cadastrar</div></button>'.html_safe, new_instituicao_path %>
 
         <div class="whiteButtonContainer ">
-            <button class="button1" style="color: rgb(0, 41, 74); border-color: rgb(255, 255, 255); background-color: rgb(255, 255, 255); min-width: 368px; box-shadow: transparent 0px 0px 4px 4px;">
-                <div class="inner_ed2ug6">Já possuo cadastro</div>
-            </button>
+            
+        <%= link_to '<button class="button1" style="color: rgb(0, 41, 74); border-color: rgb(255, 255, 255); background-color: rgb(255, 255, 255); min-width: 368px; box-shadow: transparent 0px 0px 4px 4px;"><div class="inner_ed2ug6">Já possuo Cadastro</div></button>'.html_safe, new_user_session_path %>
+
         </div>
     </div>
     <div class="hide-on-large-only ">
@@ -23,15 +23,15 @@
             <li>
                 <a href="#">
                     <i class="material-icons">person</i>Quero me cadastrar</a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="material-icons">person_outline</i>Já possuo um cadastro</a>
-            </li>
-        </ul>
-    </div>
-</header>
-<script>
-    $(".button-collapse").sideNav();
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="material-icons">person_outline</i>Já possuo um cadastro</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <script>
+            $(".button-collapse").sideNav();
 
-</script>
+        </script>
