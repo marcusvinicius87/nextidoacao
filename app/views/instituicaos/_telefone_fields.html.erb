@@ -1,3 +1,4 @@
+
 <section class= "asd">
 	<div class="nested-fields">
 		<h1>
@@ -24,17 +25,30 @@
 			</div>
 		</div>
 
-		<button class='btn right btn-primary green lighten-2 ' onclick="asd()"  @InstituicaosController.increment(@cont = incrementar) type=button> Salvar Telefone </button>
+		<button class='btn right btn-primary green lighten-2 ' onclick="asd()" type=button> Salvar Telefone </button>
 		<%= link_to_remove_association "Remover Telefone", f, class: 'btn btn-primary green lighten-2' %>
 	</div>
 	<br> <br>
 </section>
 
+<script type="text/javascript">
+	var num = -1;
+	function incrementa(n){
+		n = n + 1;
+		num = n;
+		return num;
+	}
+
+}
+</script>
+
+
 <section class="idtelef" style= "display: none;">
 	<div class="container">
 		<div class= "row label">
 			<i class="material-icons">local_phone</i>
-			<button class='btn right btn-primary green lighten-2' onclick="asd3(<%= @cont %>)" type=button> Editar </button>
+
+			<button class='btn right btn-primary green lighten-2' onclick="asd3(num)" type=button> Editar </button>
 		</p>
 	</div>
 </div>

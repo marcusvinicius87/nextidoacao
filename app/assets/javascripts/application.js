@@ -14,9 +14,9 @@ function asd() {
      var divsToShow = document.getElementsByClassName("idtelef");
 
      for(var i = 0; i < divsToHide.length; i++){
-        divsToHide[i].style.visibility = "hidden"; 
-        divsToHide[i].style.display = "none";  
-        divsToShow[i].style = "";
+        divsToHide[i].style.visibility = "hidden"
+        divsToHide[i].style.display = "none"  
+        divsToShow[i].style = " "
     }
 
   	count ++;
@@ -32,11 +32,14 @@ function asd2() {
 }
 
 function asd3(cont) {
+
 	var telefones = document.getElementsByClassName("idtelef");
 	var telefonesEscondidos = document.getElementsByClassName("asd");
 
-	telefonesEscondidos[cont].style = ""  
+	telefonesEscondidos[cont].style = " "  ;
     telefones[cont].style.visibility = "hidden";
+
 }
+var array = (num) => array.push(num)
 
 

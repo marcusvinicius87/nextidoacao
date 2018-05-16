@@ -14,15 +14,10 @@ class InstituicaosController < ApplicationController
 
   # GET /instituicaos/new
   def new
-    @cont = 0
     @instituicao = Instituicao.new
     # COMENTÁRIO: O build inicializa a página com 1 nested já renderizado
   end
 
-  def incrementar
-    @cont += 1
-  end
-  # G ET /instituicaos/1/edit
   def edit
   end
 
