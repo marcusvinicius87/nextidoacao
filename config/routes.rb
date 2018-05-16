@@ -18,9 +18,10 @@ Rails.application.routes.draw do
 
   devise_for :usuario_nextis
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  match 'welcome' => 'welcome#index', via: [:get]
-  match 'not_actived' => 'user_not_active#index', via: [:get], :as => :user_not_actived
+  match 'not-actived' => 'pages#show', via: [:get], :as => :user_not_actived, page: "not-actived"
 
-  root "welcome#index"
-  
+  get "/:page" => "pages#show"
+
+  root "pages#show", page: "welcome"
+
 end
