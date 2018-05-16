@@ -27,7 +27,7 @@ class InstituicaosController < ApplicationController
     @instituicao = Instituicao.new(instituicao_params)
     respond_to do |format|
       if @instituicao.save
-        format.html { redirect_to root_path, notice: 'Instituicao was successfully created.' }
+        format.html { redirect_to email_validation_path, notice: 'Instituicao was successfully created.' }
         format.json { render :show, status: :created, location: @instituicao }
         UserMailer.welcome_email(@instituicao).deliver_later
       else
