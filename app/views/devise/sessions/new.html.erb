@@ -32,8 +32,14 @@
       <br>
       <br>
       <div>
-        <a class="black-text " href="/usuario_nextis/sign_up/#">Quero me cadastrar</a>
-        <a class="black-text right" href="/usuario_nextis/password/new">Esqueci minha senha</a>
+        <% if current_page?('/login') %>
+          <%= link_to "Quero me cadastrar", new_instituicao_path, class: "black-text" %> 
+          <%= link_to "Esqueci minha senha", new_user_password_path, class: "black-text right" %>
+        <% end %>  
+        <% if current_page?('/usuario_nextis/sign_in') %>
+          <%= link_to "Quero me cadastrar", new_usuario_nexti_registration_path, class: "black-text" %> 
+          <%= link_to "Esqueci minha senha", new_usuario_nexti_password_path, class: "black-text right" %>
+        <% end %>
       </div>
       <% end %>
       
