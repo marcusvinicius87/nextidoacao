@@ -6,6 +6,7 @@ class FabricaUser
 
 		user.ativo = false
 		user.instituicao_id = @instituicao.id
+		user.email = @instituicao.email
 
 		if user.save!
 			@instituicao.token = ""

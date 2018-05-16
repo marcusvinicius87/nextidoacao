@@ -13,11 +13,8 @@ Rails.application.routes.draw do
     sessions: 'sessions',
     registrations: 'registrations'
   }, skip: [:sessions]
-
-
-  resources :enderecos
-  resources :telefones
-  resources :instituicaos
+  
+  resources :instituicaos, only: [:new, :create]
 
   devise_for :usuario_nextis
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

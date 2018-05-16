@@ -14,11 +14,14 @@
         <%= f.text_field :login, autofocus: true, autocomplete: "Login", placeholder: "Login" %>
       </div>
 
-      <div class="field">
-        <%= f.label 'E-mail', class: 'label' %><br />
-        <%= f.email_field :email, autocomplete: "email",  placeholder: "E-mail" %>
-      </div>
+      <% if current_page?('/usuario_nextis/sign_up/') %>
+          <div class="field">
+            <%= f.label 'E-mail', class: 'label' %><br />
+            <%= f.email_field :email, autocomplete: "email",  placeholder: "E-mail" %>
+        </div>
 
+      <% end %>
+      
       <div class="field">
         <%= f.label 'Senha', class: 'label' %>
         <% if @minimum_password_length %>
