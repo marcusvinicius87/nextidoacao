@@ -38,6 +38,16 @@ RailsAdmin.config do |config|
     end
   end
 
+  config.model 'User' do
+    list do
+      field :email
+      field :login
+      field :ativo
+      field  :instituicao
+      field :sign_in_count
+    end
+  end
+
   config.main_app_name = ["Nexti Doação", "Administração Usuário Nexti"]
   config.excluded_models = ["Telefone", "Endereco", "UsuarioNexti"]
   config.actions do

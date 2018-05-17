@@ -33,7 +33,7 @@
       <br>
       <div>
         <% if current_page?('/login') %>
-          <%= link_to "Quero me cadastrar", new_instituicao_path, class: "black-text" %> 
+          <%= link_to "Quero me cadastrar", cadastrar_instituicao_path, class: "black-text" %> 
           <%= link_to "Esqueci minha senha", new_user_password_path, class: "black-text right" %>
         <% end %>  
         <% if current_page?('/usuario_nextis/sign_in') %>
