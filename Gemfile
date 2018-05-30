@@ -61,9 +61,7 @@ gem 'pg', '~> 0.18'
 
 gem "cocoon"
 
-group :production do
-  ruby '2.3.7'
-end
+# ruby '2.3.7'
 
 gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', github: 'sferik/rails_admin'
