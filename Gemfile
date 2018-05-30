@@ -63,7 +63,6 @@ gem "cocoon"
 
 group :production do
   ruby '2.3.7'
-  gem 'rails_12factor'
 end
 
 gem 'remotipart', github: 'mshibuya/remotipart'
