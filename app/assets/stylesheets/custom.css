@@ -87,7 +87,7 @@ main {
     background-color: #004e64 !important;
 }
 
-@media screen and (max-width: 1023px).root_llqpzj {
+@media screen and (max-width: 1023px) {
     height: 350px !important;
     padding-top: 62px !important;
 }
@@ -158,7 +158,7 @@ main {
     -webkit-box-pack: center !important;
 }
 
-@media screen and (max-width: 1023px).callout_f95k2b {
+@media screen and (max-width: 1023px) {
     font-size: 24px !important;
 }
 
@@ -169,7 +169,7 @@ main {
     margin-bottom: 0px !important;
 }
 
-@media screen and (max-width: 1023px).callout_f95k2b-o_O-subcallout_1agnvhs {
+@media screen and (max-width: 1023px) {
     font-size: 16px !important;
 }
 
