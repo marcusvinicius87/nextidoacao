@@ -61,8 +61,6 @@ gem 'pg', '~> 0.18'
 
 gem "cocoon"
 
-ruby '2.3.7'
-
 gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', github: 'sferik/rails_admin'
 gem 'rails_admin_rollincode', '~> 1.0'
