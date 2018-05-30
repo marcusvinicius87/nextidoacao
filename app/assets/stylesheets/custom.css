@@ -1,11 +1,11 @@
 body {
-    background-image: url(background.jpg) !important;
+    background-image: url("background.jpg") !important;
     background-repeat: no-repeat;
     font-family: 'Comfortaa Bold';
     display: flex;
     min-height: 100vh;
     background-attachment: fixed;
-    background-positfion: center;
+    background-position: center;
     background-size: cover;
 }
 
