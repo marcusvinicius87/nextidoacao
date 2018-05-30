@@ -6,7 +6,6 @@
 //= require cocoon
 //= require turbolinks
 //= require materialize-sprockets
-//= require_tree .
 
 var count = -1;
 function asd() {
