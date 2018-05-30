@@ -33,8 +33,15 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-  config.action_mailer.smtp_settings = { address: "localhost", port: 1025 }
-
+  config.action_mailer.smtp_settings = {
+    :user_name => 'davigl',
+    :password => 'davigl1234',
+    :address => 'smtp.sendgrid.net',
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true,
+    :domain => 'nexti.fapce.edu.br'
+  }
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 

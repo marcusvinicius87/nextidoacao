@@ -1,5 +1,5 @@
 class UserMailer < ApplicationMailer
-	default from: 'notifications@example.com'
+	default from: 'nexti@fapce.edu.br'
 
 	def welcome_email(instituicao)
 		@instituicao = instituicao
