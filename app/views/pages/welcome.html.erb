@@ -21,17 +21,15 @@
         </a>
         <ul id="menu-mobile" class="side-nav">
             <li>
-                <a href="/cadastrar-instituicao">
-                    <i class="material-icons">person</i>Quero me cadastrar</a>
-                </li>
-                <li>
-                    <a href="#/login">
-                        <i class="material-icons">person_outline</i>Já possuo um cadastro</a>
-                    </li>
-                </ul>
-            </div>
-        </header>
-        <script>
-            $(".button-collapse").sideNav();
+                <%= link_to '<i class= "material-icons">person</i>Quero me cadastrar'.html_safe, cadastrar_instituicao_path%> 
+            </li>
+            <li>
+               <%= link_to '<i class= "material-icons">person_outline</i>Já possuo cadastro'.html_safe, new_user_session_path%> 
+           </li>
+       </ul>
+   </div>
+</header>
+<script>
+    $(".button-collapse").sideNav();
 
-        </script>
+</script>
