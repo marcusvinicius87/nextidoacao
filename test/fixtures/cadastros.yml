@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_cliente_enel: MyString
+  digito_verificador_cliente_enel: MyString
+  codigo_ocorrencia: MyString
+  data_ocorrencia: 2018-06-25
+  valor: 1.5
+  parcelas: MyString
+  livre: MyText
+  doador_ativo: false
+  parcelas_controle: 1
+  doador_ativo: false
+
+two:
+  id_cliente_enel: MyString
+  digito_verificador_cliente_enel: MyString
+  codigo_ocorrencia: MyString
+  data_ocorrencia: 2018-06-25
+  valor: 1.5
+  parcelas: MyString
+  livre: MyText
+  doador_ativo: false
+  parcelas_controle: 1
+  doador_ativo: false

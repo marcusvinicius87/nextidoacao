@@ -10,10 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180508182149) do
+ActiveRecord::Schema.define(version: 20180625180305) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cadastros", force: :cascade do |t|
+    t.string "id_cliente_enel"
+    t.string "digito_verificador_cliente_enel"
+    t.string "codigo_ocorrencia"
+    t.date "data_ocorrencia"
+    t.float "valor"
+    t.string "parcelas"
+    t.text "livre"
+    t.boolean "doador_ativo"
+    t.integer "parcelas_controle"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "instituicao_id"
+    t.bigint "user_id"
+    t.index ["instituicao_id"], name: "index_cadastros_on_instituicao_id"
+    t.index ["user_id"], name: "index_cadastros_on_user_id"
+  end
 
   create_table "enderecos", force: :cascade do |t|
     t.string "logradouro"
@@ -90,6 +108,8 @@ ActiveRecord::Schema.define(version: 20180508182149) do
     t.index ["reset_password_token"], name: "index_usuario_nextis_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "cadastros", "instituicaos"
+  add_foreign_key "cadastros", "users"
   add_foreign_key "enderecos", "instituicaos"
   add_foreign_key "telefones", "instituicaos"
   add_foreign_key "users", "instituicaos"

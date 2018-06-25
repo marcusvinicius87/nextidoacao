@@ -5,6 +5,7 @@ class Instituicao < ApplicationRecord
 	has_many :telefones, :dependent => :destroy
 	has_many :enderecos, :dependent => :destroy
 	has_many :users
+	has_many :cadastros
 
 	accepts_nested_attributes_for :telefones,  allow_destroy: true
 	accepts_nested_attributes_for :enderecos, reject_if: :all_blank, allow_destroy: true
