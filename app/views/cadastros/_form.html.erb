@@ -1,0 +1,67 @@
+<%= form_with(model: cadastro, local: true) do |form| %>
+  <% if cadastro.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cadastro.errors.count, "error") %> prohibited this cadastro from being saved:</h2>
+
+      <ul>
+      <% cadastro.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :id_cliente_enel %>
+    <%= form.text_field :id_cliente_enel, id: :cadastro_id_cliente_enel %>
+  </div>
+
+  <div class="field">
+    <%= form.label :digito_verificador_cliente_enel %>
+    <%= form.text_field :digito_verificador_cliente_enel, id: :cadastro_digito_verificador_cliente_enel %>
+  </div>
+
+  <div class="field">
+    <%= form.label :codigo_ocorrencia %>
+    <%= form.text_field :codigo_ocorrencia, id: :cadastro_codigo_ocorrencia %>
+  </div>
+
+  <div class="field">
+    <%= form.label :data_ocorrencia %>
+    <%= form.date_select :data_ocorrencia, id: :cadastro_data_ocorrencia %>
+  </div>
+
+  <div class="field">
+    <%= form.label :valor %>
+    <%= form.text_field :valor, id: :cadastro_valor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :parcelas %>
+    <%= form.text_field :parcelas, id: :cadastro_parcelas %>
+  </div>
+
+  <div class="field">
+    <%= form.label :livre %>
+    <%= form.text_area :livre, id: :cadastro_livre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :doador_ativo %>
+    <%= form.check_box :doador_ativo, id: :cadastro_doador_ativo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :parcelas_controle %>
+    <%= form.number_field :parcelas_controle, id: :cadastro_parcelas_controle %>
+  </div>
+
+  <div class="field">
+    <%= form.label :doador_ativo %>
+    <%= form.check_box :doador_ativo, id: :cadastro_doador_ativo %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

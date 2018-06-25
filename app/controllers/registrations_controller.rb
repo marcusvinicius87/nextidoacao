@@ -11,7 +11,7 @@ class RegistrationsController < Devise::RegistrationsController
 		@user = User.new(user_params)
 		@fabrica = FabricaUser.new()
 
-		@fabrica.cria_usuario(@user, params[:user][:token])
+		@fabrica.cria_usuario_token(@user, params[:user][:token])
 
 		redirect_to root_path
 	end

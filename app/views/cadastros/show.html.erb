@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id cliente enel:</strong>
+  <%= @cadastro.id_cliente_enel %>
+</p>
+
+<p>
+  <strong>Digito verificador cliente enel:</strong>
+  <%= @cadastro.digito_verificador_cliente_enel %>
+</p>
+
+<p>
+  <strong>Codigo ocorrencia:</strong>
+  <%= @cadastro.codigo_ocorrencia %>
+</p>
+
+<p>
+  <strong>Data ocorrencia:</strong>
+  <%= @cadastro.data_ocorrencia %>
+</p>
+
+<p>
+  <strong>Valor:</strong>
+  <%= @cadastro.valor %>
+</p>
+
+<p>
+  <strong>Parcelas:</strong>
+  <%= @cadastro.parcelas %>
+</p>
+
+<p>
+  <strong>Livre:</strong>
+  <%= @cadastro.livre %>
+</p>
+
+<p>
+  <strong>Doador ativo:</strong>
+  <%= @cadastro.doador_ativo %>
+</p>
+
+<p>
+  <strong>Parcelas controle:</strong>
+  <%= @cadastro.parcelas_controle %>
+</p>
+
+<p>
+  <strong>Doador ativo:</strong>
+  <%= @cadastro.doador_ativo %>
+</p>
+
+<%= link_to 'Edit', edit_cadastro_path(@cadastro) %> |
+<%= link_to 'Back', cadastros_path %>

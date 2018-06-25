@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cadastros</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id cliente enel</th>
+      <th>Digito verificador cliente enel</th>
+      <th>Codigo ocorrencia</th>
+      <th>Data ocorrencia</th>
+      <th>Valor</th>
+      <th>Parcelas</th>
+      <th>Livre</th>
+      <th>Doador ativo</th>
+      <th>Parcelas controle</th>
+      <th>Doador ativo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cadastros.each do |cadastro| %>
+      <tr>
+        <td><%= cadastro.id_cliente_enel %></td>
+        <td><%= cadastro.digito_verificador_cliente_enel %></td>
+        <td><%= cadastro.codigo_ocorrencia %></td>
+        <td><%= cadastro.data_ocorrencia %></td>
+        <td><%= cadastro.valor %></td>
+        <td><%= cadastro.parcelas %></td>
+        <td><%= cadastro.livre %></td>
+        <td><%= cadastro.doador_ativo %></td>
+        <td><%= cadastro.parcelas_controle %></td>
+        <td><%= cadastro.doador_ativo %></td>
+        <td><%= link_to 'Show', cadastro %></td>
+        <td><%= link_to 'Edit', edit_cadastro_path(cadastro) %></td>
+        <td><%= link_to 'Destroy', cadastro, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cadastro', new_cadastro_path %>

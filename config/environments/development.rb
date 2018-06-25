@@ -34,14 +34,15 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
 
   config.action_mailer.smtp_settings = {
-    :user_name => 'davigl',
-    :password => 'davigl1234',
-    :address => 'smtp.sendgrid.net',
+    :user_name => 'nextipro2@gmail.com',
+    :password => 'AdminEnel2017',
+    :address => 'smtp.gmail.com',
     :port => 587,
     :authentication => :plain,
     :enable_starttls_auto => true,
-    :domain => 'nexti.fapce.edu.br'
+    :domain => 'gmail.com'
   }
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 

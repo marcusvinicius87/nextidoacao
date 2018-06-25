@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :cadastros
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   devise_scope :user do

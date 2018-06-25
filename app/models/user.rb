@@ -5,6 +5,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   belongs_to :instituicao
+  has_many :cadastros
   
   def activate_for_authentication?
   	ativo?
