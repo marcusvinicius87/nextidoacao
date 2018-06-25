@@ -21,13 +21,11 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="">Início</a></li>
           <li><a href="">Sobre</a></li>
-          <li>
            <% if usuario_nexti_signed_in? or user_signed_in? %>
-   
+            <li>
             <%= link_to 'Sair', destroy_usuario_nexti_session_path, method: :delete %>
+            </li>
              <% end %> 
-  
-          </li>
         </ul>
       </div>
     </nav>
