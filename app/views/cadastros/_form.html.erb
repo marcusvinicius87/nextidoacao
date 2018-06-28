@@ -1,67 +1,110 @@
-<%= form_with(model: cadastro, local: true) do |form| %>
-  <% if cadastro.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(cadastro.errors.count, "error") %> prohibited this cadastro from being saved:</h2>
+<%= form_with(model: cadastro, local: true, class: 'form-horizontal m-t-20') do |form| %>
+<% if cadastro.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(cadastro.errors.count, "error") %> prohibited this cadastro from being saved:</h2>
 
-      <ul>
-      <% cadastro.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :id_cliente_enel %>
-    <%= form.text_field :id_cliente_enel, id: :cadastro_id_cliente_enel %>
-  </div>
-
-  <div class="field">
-    <%= form.label :digito_verificador_cliente_enel %>
-    <%= form.text_field :digito_verificador_cliente_enel, id: :cadastro_digito_verificador_cliente_enel %>
-  </div>
-
-  <div class="field">
-    <%= form.label :codigo_ocorrencia %>
-    <%= form.text_field :codigo_ocorrencia, id: :cadastro_codigo_ocorrencia %>
-  </div>
-
-  <div class="field">
-    <%= form.label :data_ocorrencia %>
-    <%= form.date_select :data_ocorrencia, id: :cadastro_data_ocorrencia %>
-  </div>
-
-  <div class="field">
-    <%= form.label :valor %>
-    <%= form.text_field :valor, id: :cadastro_valor %>
-  </div>
-
-  <div class="field">
-    <%= form.label :parcelas %>
-    <%= form.text_field :parcelas, id: :cadastro_parcelas %>
-  </div>
-
-  <div class="field">
-    <%= form.label :livre %>
-    <%= form.text_area :livre, id: :cadastro_livre %>
-  </div>
-
-  <div class="field">
-    <%= form.label :doador_ativo %>
-    <%= form.check_box :doador_ativo, id: :cadastro_doador_ativo %>
-  </div>
-
-  <div class="field">
-    <%= form.label :parcelas_controle %>
-    <%= form.number_field :parcelas_controle, id: :cadastro_parcelas_controle %>
-  </div>
-
-  <div class="field">
-    <%= form.label :doador_ativo %>
-    <%= form.check_box :doador_ativo, id: :cadastro_doador_ativo %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <ul>
+    <% cadastro.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
 <% end %>
+
+<div class="form-group row">
+  <div class="col-12">
+    <label> ID do Cliente ENEL </label>
+  </div>
+  <div class="col-12">
+    <div class="input-group">
+      <%= form.number_field :id_cliente_enel, id: :cadastro_id_cliente_enel, class: 'form-control', placeholder: 'ID do Cliente ENEL' %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group row">
+  <div class="col-12">
+    <label> Digito Verificador </label>
+  </div>
+  <div class="col-12">
+    <div class="input-group">
+      <%= form.number_field :digito_verificador_cliente_enel, id: :cadastro_digito_verificador_cliente_enel, class: 'form-control', placeholder: 'Digito Verificador' %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group row">
+  <div class="col-12" >
+    <label> Código Ocorrência </label>
+  </div>
+  <div class="col-12">
+    <div class="input-group">
+      <%= form.number_field :codigo_ocorrencia, id: :cadastro_codigo_ocorrencia, class: 'form-control', placeholder: 'Código Ocorrência' %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group row">
+  <div class="col-12">
+    <label> Data </label>
+  </div>
+  <div class="col-12">
+    <div class="input-group">
+      <div class="input-group date" id="datetimepicker1">
+       <%= form.text_field :data_ocorrencia, id: :cadastro_data_ocorrencia, class: 'form-control', placeholder: 'Data de ocorrência', type: "date", :order => [:day, :month, :year]  %>
+     </div>
+   </div>
+ </div>
+</div>
+
+<div class="form-group row">
+  <div class="col-12">
+    <label> Valor</label>
+  </div>
+  <div class="col-12">
+    <div class="input-group">
+      <%= form.number_field :valor, id: :cadastro_valor, class: 'form-control', placeholder: 'Valor', :step => 0.01 %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group row">
+  <div class="col-12">
+    <label> Número de Parcelas </label>
+  </div>
+
+  <div class="col-12">
+    <div class="input-group">
+      <%= form.number_field :parcelas, id: :cadastro_parcelas, class: 'form-control', placeholder: 'Número de Parcelas'%>
+    </div>
+  </div>
+</div>
+
+<div class="form-group row">
+ <div class="col-12">
+  <label> Caso haja, digite o número do protocolo </label>
+</div>
+
+<div class="col-12">
+  <div class="input-group">
+    <%= form.text_area :livre, id: :cadastro_livre, class: 'form-control' %>
+  </div>
+</div>
+</div>
+
+<div class="form-group text-right m-t-20">
+  <div class="col-xs-6">
+    <div class="actions">
+      <%= link_to 'Voltar', cadastros_path, class: 'btn float-left btn-primary waves-light' %>
+      <%= form.submit 'Cadastrar', class: 'btn btn-primary btn-custom waves-light'%> 
+    </div>  
+  </div>
+</div>
+
+<% end %>
+
+<script>
+  $(function() {
+    $('#datetimepicker1').datetimepicker();
+  });
+</script>
