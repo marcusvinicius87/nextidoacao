@@ -1,7 +1,6 @@
 class FabricaUser
-	def cria_usuario_token(user, token)
-
-		puts("here is the token: " + token)
+	
+	def cria_usuario_admin(user, token)
 		@instituicao = Instituicao.find_by token: (token)
 
 		user.ativo = false
@@ -14,7 +13,7 @@ class FabricaUser
 		end
 	end
 
-	def cria_usuario_colaborador()
+	def cria_usuario_colaborador
 
 	end
 

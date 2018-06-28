@@ -5,6 +5,7 @@ class CadastrosController < ApplicationController
 
   # GET /cadastros
   # GET /cadastros.json
+
   def index
     @cadastros = Cadastro.all
   end
@@ -27,7 +28,9 @@ class CadastrosController < ApplicationController
   # POST /cadastros.json
   def create
     @cadastro = Cadastro.new(cadastro_params)
-
+    @cadastro.instituicao_id = current_user.instituicao_id
+    @cadastro.user_id = current_user.id
+    
     respond_to do |format|
       if @cadastro.save
         format.html { redirect_to @cadastro, notice: 'Cadastro was successfully created.' }
@@ -71,6 +74,6 @@ class CadastrosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cadastro_params
-      params.require(:cadastro).permit(:id_cliente_enel, :digito_verificador_cliente_enel, :codigo_ocorrencia, :data_ocorrencia, :valor, :parcelas, :livre, :doador_ativo, :parcelas_controle, :doador_ativo)
+      params.require(:cadastro).permit(:id_cliente_enel, :digito_verificador_cliente_enel, :codigo_ocorrencia, :data_ocorrencia, :valor, :parcelas, :livre, :doador_ativo, :parcelas_controle, :doador_ativo, :instituicao_id, :user_id)
     end
 end
