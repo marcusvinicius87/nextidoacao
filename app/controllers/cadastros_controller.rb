@@ -9,6 +9,7 @@ class CadastrosController < ApplicationController
 
   def index
     @cadastros = current_user.instituicao.cadastros
+    @cadastros = @cadastros.page params[:page]
   end
 
   # GET /cadastros/1

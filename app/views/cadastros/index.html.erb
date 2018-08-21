@@ -137,92 +137,92 @@
                 <div class="row">
                   <div class="col-sm-6">
                     <div class="m-b-30">
-                       <%= link_to 'Adicionar', new_cadastro_path, class: 'btn btn-success waves-effect waves-light' %>
-                    </div>
-                  </div>
-                </div>
+                     <%= link_to 'Adicionar', new_cadastro_path, class: 'btn btn-success waves-effect waves-light' %>
+                   </div>
+                 </div>
+               </div>
 
-                <table class="table table-striped add-edit-table" id="datatable-editable">
-                  <thead>
-                    <tr>
-                      <th> Status </th>
-                      <th>ID Cliente Enel</th>
-                      <th>Código Ocorrência</th>
-                      <th>Data do Cadastro</th>
-                      <th>Valor</th>
-                      <th>Parcelas</th>
-                      <th> Protocolo </th>
-                      <th> Ações </th>
+               <table class="table table-striped add-edit-table" id="datatable-editable">
+                <thead>
+                  <tr>
+                    <th> Status </th>
+                    <th>ID Cliente Enel</th>
+                    <th>Código Ocorrência</th>
+                    <th>Data do Cadastro</th>
+                    <th>Valor</th>
+                    <th>Parcelas</th>
+                    <th> Protocolo </th>
+                    <th> Ações </th>
 
-                    </tr>
-                  </thead>
+                  </tr>
+                </thead>
 
-                  <tbody>
-                    <% @cadastros.each do |cadastro| %>
+                <tbody>
+                  <% @cadastros.each do |cadastro| %>
 
-                    <tr class="gradeX">
-                      <% if cadastro.doador_ativo %>
-                        <td align="center"> <i class="fas fa-user", style="color: green;"></i></td>
-                      <% else %>
-                        <td align="center"> <i class="fas fa-user", style="color: red;"></i></td>
-                      <% end %>
-                      <td> <%= cadastro.id_cliente_enel %> </td>
-                      <td> <%= cadastro.codigo_ocorrencia %> </td>
-                      <td> <%= cadastro.data_ocorrencia %> </td>
-                      <td>R$ <%= cadastro.valor %> </td>
-                      <td> <%= cadastro.parcelas %> </td>
-                      <td> <%= cadastro.livre %> </td>
-                      <td class="actions">
-                        <%= link_to '<i class= "far fa-eye"></i>'.html_safe, cadastro_path(cadastro), { class: 'on-default remove-row', 'data-original-title' => "Visualizar", 'data-toggle' => "tooltip", 'data-placement' => "top", 'title' => "" } %>
-                        | 
-                        <%= link_to '<i class= "fas fa-edit"></i>'.html_safe, edit_cadastro_path(cadastro), { class: 'on-default remove-row', 'data-original-title' => "Editar", 'data-toggle' => "tooltip", 'data-placement' => "top", 'title' => "" } %> 
-                      </td>                
-                    </tr>
+                  <tr class="gradeX">
+                    <% if cadastro.doador_ativo %>
+                    <td align="center"> <i class="fas fa-user", style="color: green;"></i></td>
+                    <% else %>
+                    <td align="center"> <i class="fas fa-user", style="color: red;"></i></td>
                     <% end %>
-                  </tbody>
-                </table>
-              </div>
+                    <td> <%= cadastro.id_cliente_enel %> </td>
+                    <td> <%= cadastro.codigo_ocorrencia %> </td>
+                    <td> <%= cadastro.data_ocorrencia %> </td>
+                    <td>R$ <%= cadastro.valor %> </td>
+                    <td> <%= cadastro.parcelas %> </td>
+                    <td> <%= cadastro.livre %> </td>
+                    <td class="actions">
+                      <%= link_to '<i class= "far fa-eye"></i>'.html_safe, cadastro_path(cadastro), { class: 'on-default remove-row', 'data-original-title' => "Visualizar", 'data-toggle' => "tooltip", 'data-placement' => "top", 'title' => "" } %>
+                      | 
+                      <%= link_to '<i class= "fas fa-edit"></i>'.html_safe, edit_cadastro_path(cadastro), { class: 'on-default remove-row', 'data-original-title' => "Editar", 'data-toggle' => "tooltip", 'data-placement' => "top", 'title' => "" } %> 
+                    </td>                
+                  </tr>
+                  <% end %>
+                </tbody>
+              </table>
             </div>
           </div>
+        </div>
 
 
-          <script>
-            var resizefunc = [];
-          </script>
+        <script>
+          var resizefunc = [];
+        </script>
 
-          <!-- Plugins  -->
-          <script src="/assets/dashboard/jquery.min.js"></script>
-          <script src="/assets/dashboard/popper.min.js"></script><!-- Popper for Bootstrap -->
-          <script src="/assets/dashboard/bootstrap.min.js"></script>
-          <script src="/assets/dashboard/detect.js"></script>
-          <script src="/assets/dashboard/fastclick.js"></script>
-          <script src="/assets/dashboard/jquery.slimscroll.js"></script>
-          <script src="/assets/dashboard/jquery.blockUI.js"></script>
-          <script src="/assets/dashboard/waves.js"></script>
-          <script src="/assets/dashboard/wow.min.js"></script>
-          <script src="/assets/dashboard/jquery.nicescroll.js"></script>
-          <script src="/assets/dashboard/jquery.scrollTo.min.js"></script>
-          <script src="/assets/dashboard/switchery.min.js"></script>
+        <!-- Plugins  -->
+        <script src="/assets/dashboard/jquery.min.js"></script>
+        <script src="/assets/dashboard/popper.min.js"></script><!-- Popper for Bootstrap -->
+        <script src="/assets/dashboard/bootstrap.min.js"></script>
+        <script src="/assets/dashboard/detect.js"></script>
+        <script src="/assets/dashboard/fastclick.js"></script>
+        <script src="/assets/dashboard/jquery.slimscroll.js"></script>
+        <script src="/assets/dashboard/jquery.blockUI.js"></script>
+        <script src="/assets/dashboard/waves.js"></script>
+        <script src="/assets/dashboard/wow.min.js"></script>
+        <script src="/assets/dashboard/jquery.nicescroll.js"></script>
+        <script src="/assets/dashboard/jquery.scrollTo.min.js"></script>
+        <script src="/assets/dashboard/switchery.min.js"></script>
 
-          <!-- Counter Up  -->
-          <script src="/assets/dashboard/jquery.waypoints.min.js"></script>
-          <script src="/assets/dashboard/jquery.counterup.min.js"></script>
+        <!-- Counter Up  -->
+        <script src="/assets/dashboard/jquery.waypoints.min.js"></script>
+        <script src="/assets/dashboard/jquery.counterup.min.js"></script>
 
-          <!-- circliful Chart -->
-          <script src="/assets/dashboard/jquery.circliful.min.js"></script>
-          <script src="/assets/dashboard/jquery.sparkline.min.js"></script>
+        <!-- circliful Chart -->
+        <script src="/assets/dashboard/jquery.circliful.min.js"></script>
+        <script src="/assets/dashboard/jquery.sparkline.min.js"></script>
 
-          <!-- skycons -->
-          <script src="/assets/dashboard/skycons.min.js" type="text/javascript"></script>
+        <!-- skycons -->
+        <script src="/assets/dashboard/skycons.min.js" type="text/javascript"></script>
 
-          <!-- Page js  -->
-          <script src="/assets/dashboard/jquery.dashboard.js"></script>
+        <!-- Page js  -->
+        <script src="/assets/dashboard/jquery.dashboard.js"></script>
 
-          <!-- Custom main Js -->
-          <script src="/assets/dashboard/jquery.core.js"></script>
-          <script src="/assets/dashboard/jquery.app.js"></script>
-          <%= link_to_prev_page @cadastros, 'Página Anterior' %>
-          <%= link_to_next_page @cadastros, 'Página Anterior' %>
-          
-        </body>
-        </html>
+        <!-- Custom main Js -->
+        <script src="/assets/dashboard/jquery.core.js"></script>
+        <script src="/assets/dashboard/jquery.app.js"></script>
+        <%= link_to_prev_page @cadastros, 'Página Anterior', class: 'btn btn-success waves-effect waves-light' %>
+        <%= link_to_next_page @cadastros, 'Próxima Página', class: 'btn btn-success waves-effect waves-light' %>
+        
+      </body>
+      </html>
