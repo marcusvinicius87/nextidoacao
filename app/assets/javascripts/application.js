@@ -40,5 +40,3 @@ function asd3(cont) {
 
 }
 var array = (num) => array.push(num)
-
-

@@ -49,11 +49,11 @@
     <label> Data </label>
   </div>
   <div class="col-12">
-    <div class="input-group">
-      <div class="input-group date" id="datetimepicker1">
-       <%= form.text_field :data_ocorrencia, id: :cadastro_data_ocorrencia, class: 'form-control', placeholder: 'Data de ocorrência', type: "date", :order => [:day, :month, :year]  %>
-     </div>
-   </div>
+    <div class="well">
+      <div class="input-append date">
+        <%= form.text_field :data_ocorrencia, class: 'form-control', type: 'date' %>
+      </div>
+    </div> 
  </div>
 </div>
 
@@ -102,9 +102,3 @@
 </div>
 
 <% end %>
-
-<script>
-  $(function() {
-    $('#datetimepicker1').datetimepicker();
-  });
-</script>

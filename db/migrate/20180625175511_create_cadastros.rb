@@ -10,7 +10,6 @@ class CreateCadastros < ActiveRecord::Migration[5.1]
       t.text :livre
       t.boolean :doador_ativo
       t.integer :parcelas_controle
-      t.boolean :doador_ativo
 
       t.timestamps
     end

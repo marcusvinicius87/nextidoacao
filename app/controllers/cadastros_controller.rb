@@ -1,5 +1,6 @@
 class CadastrosController < ApplicationController
   
+  before_action :authenticate_user!
   before_action :set_cadastro, only: [:show, :edit, :update, :destroy]
   layout false
 
@@ -7,7 +8,7 @@ class CadastrosController < ApplicationController
   # GET /cadastros.json
 
   def index
-    @cadastros = Cadastro.all
+    @cadastros = current_user.instituicao.cadastros
   end
 
   # GET /cadastros/1
@@ -69,11 +70,17 @@ class CadastrosController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cadastro
-      @cadastro = Cadastro.find(params[:id])
+      @cadastro = current_user.instituicao.cadastros
+
+      if @cadastro.ids.include? params[:id].to_i
+         @cadastro = @cadastro.find(params[:id])
+      else
+         redirect_to cadastros_path
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cadastro_params
-      params.require(:cadastro).permit(:id_cliente_enel, :digito_verificador_cliente_enel, :codigo_ocorrencia, :data_ocorrencia, :valor, :parcelas, :livre, :doador_ativo, :parcelas_controle, :doador_ativo, :instituicao_id, :user_id)
+      params.require(:cadastro).permit(:id_cliente_enel, :digito_verificador_cliente_enel, :codigo_ocorrencia, :data_ocorrencia, :valor, :parcelas, :livre, :doador_ativo, :parcelas_controle, :instituicao_id, :user_id)
     end
 end
