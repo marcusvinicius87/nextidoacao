@@ -7,7 +7,7 @@
   <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
   <meta name="author" content="Coderthemes">
 
-  <title>Dashboard</title>
+  <title>Cadastros</title>
 
   <link href="/assets/dashboard/switchery.min.css" rel="stylesheet" />
   <link href="/assets/dashboard/jquery.circliful.css" rel="stylesheet" type="text/css" />
@@ -106,7 +106,7 @@
       <!--- Divider -->
       <div id="sidebar-menu">
         <ul>
-          <li class="menu-title">Main</li>
+          <li class="menu-title"> Menu </li>
 
           <li>
             <a href="index.html" class="waves-effect waves-primary"><i
@@ -137,7 +137,7 @@
                 <div class="row">
                   <div class="col-sm-6">
                     <div class="m-b-30">
-                     <%= link_to 'Adicionar', new_cadastro_path, class: 'btn btn-success waves-effect waves-light' %>
+                     <%= link_to 'Adicionar', new_cadastro_path, class: 'btn btn-primary waves-light' %>
                    </div>
                  </div>
                </div>
@@ -145,14 +145,14 @@
                <table class="table table-striped add-edit-table" id="datatable-editable">
                 <thead>
                   <tr>
-                    <th> Status </th>
+                    <th>Status </th>
                     <th>ID Cliente Enel</th>
                     <th>Código Ocorrência</th>
                     <th>Data do Cadastro</th>
                     <th>Valor</th>
                     <th>Parcelas</th>
-                    <th> Protocolo </th>
-                    <th> Ações </th>
+                    <th>Protocolo </th>
+                    <th>Ações </th>
 
                   </tr>
                 </thead>
@@ -162,13 +162,13 @@
 
                   <tr class="gradeX">
                     <% if cadastro.doador_ativo %>
-                    <td align="center"> <i class="fas fa-user", style="color: green;"></i></td>
+                    <td> <i class="fas fa-user", style="color: green;"></i></td>
                     <% else %>
-                    <td align="center"> <i class="fas fa-user", style="color: red;"></i></td>
+                    <td> <i class="fas fa-user", style="color: red;"></i></td>
                     <% end %>
                     <td> <%= cadastro.id_cliente_enel %> </td>
                     <td> <%= cadastro.codigo_ocorrencia %> </td>
-                    <td> <%= cadastro.data_ocorrencia %> </td>
+                    <td> <%= post_date cadastro.data_ocorrencia %> </td>
                     <td>R$ <%= cadastro.valor %> </td>
                     <td> <%= cadastro.parcelas %> </td>
                     <td> <%= cadastro.livre %> </td>
@@ -221,8 +221,8 @@
         <!-- Custom main Js -->
         <script src="/assets/dashboard/jquery.core.js"></script>
         <script src="/assets/dashboard/jquery.app.js"></script>
-        <%= link_to_prev_page @cadastros, 'Página Anterior', class: 'btn btn-success waves-effect waves-light' %>
-        <%= link_to_next_page @cadastros, 'Próxima Página', class: 'btn btn-success waves-effect waves-light' %>
+        <%= link_to_prev_page @cadastros, 'Página Anterior', class: 'btn float-left btn-primary waves-light' %>
+        <%= link_to_next_page @cadastros, 'Próxima Página', class: 'btn float-left btn-primary waves-light' %>
 
       </body>
       </html>
