@@ -3423,6 +3423,10 @@ label {
   border: 1px solid #526170;
 }
 
+.cor-texto-formulario{
+color: #5effb1 !important;
+}
+
 .form-control-plaintext {
   color: #98a6ad;
 }

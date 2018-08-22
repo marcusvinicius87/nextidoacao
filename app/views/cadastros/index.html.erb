@@ -173,7 +173,8 @@
                     <td> <%= cadastro.parcelas %> </td>
                     <td> <%= cadastro.livre %> </td>
                     <td class="actions">
-                      <%= link_to '<i class= "far fa-eye"></i>'.html_safe, cadastro_path(cadastro), { class: 'on-default remove-row', 'data-original-title' => "Visualizar", 'data-toggle' => "tooltip", 'data-placement' => "top", 'title' => "" } %>
+
+                     <%= link_to '<i class= "fas fa-eye"></i>'.html_safe, cadastro_path(cadastro), { class: 'on-default remove-row', 'data-original-title' => "Visualizar", 'data-toggle' => "tooltip", 'data-placement' => "top", 'title' => "" } %> 
                       | 
                       <%= link_to '<i class= "fas fa-edit"></i>'.html_safe, edit_cadastro_path(cadastro), { class: 'on-default remove-row', 'data-original-title' => "Editar", 'data-toggle' => "tooltip", 'data-placement' => "top", 'title' => "" } %> 
                     </td>                
@@ -184,7 +185,6 @@
             </div>
           </div>
         </div>
-
 
         <script>
           var resizefunc = [];
@@ -223,6 +223,6 @@
         <script src="/assets/dashboard/jquery.app.js"></script>
         <%= link_to_prev_page @cadastros, 'Página Anterior', class: 'btn btn-success waves-effect waves-light' %>
         <%= link_to_next_page @cadastros, 'Próxima Página', class: 'btn btn-success waves-effect waves-light' %>
-        
+
       </body>
       </html>
