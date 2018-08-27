@@ -21,24 +21,24 @@
       <% if devise_mapping.rememberable? -%>
       <div class="field ">
         <%= f.check_box :remember_me,type:'checkbox',class:'filled-in',id:'teste' %>
-        <%= f.label 'Lembrar de mim',class:'label',for:'remember_me',for:'teste' %>
+        <%= f.label 'Lembrar de mim', class: 'label', for: 'remember_me', for: 'teste' %>
       </div>
       <% end -%>
       <br>
       <br>
       <div class="actions right-align">
-        <%= f.submit "Entrar",class: 'btn green lighten-2 white-text' %>
+        <%= f.submit "Entrar", class: 'waves-effect cor-botao btn' %>
       </div>
       <br>
       <br>
       <div>
         <% if current_page?('/login') %>
-          <%= link_to "Quero me cadastrar", cadastrar_instituicao_path, class: "black-text" %> 
-          <%= link_to "Esqueci minha senha", new_user_password_path, class: "black-text right" %>
+          <%= link_to "Quero me cadastrar", cadastrar_instituicao_path, class: "white-text" %> 
+          <%= link_to "Esqueci minha senha", new_user_password_path, class: "white-text right" %>
         <% end %>  
         <% if current_page?('/usuario_nextis/sign_in') %>
-          <%= link_to "Quero me cadastrar", new_usuario_nexti_registration_path, class: "black-text" %> 
-          <%= link_to "Esqueci minha senha", new_usuario_nexti_password_path, class: "black-text right" %>
+          <%= link_to "Quero me cadastrar", new_usuario_nexti_registration_path, class: "white-text" %> 
+          <%= link_to "Esqueci minha senha", new_usuario_nexti_password_path, class: "white-text right" %>
         <% end %>
       </div>
       <% end %>
