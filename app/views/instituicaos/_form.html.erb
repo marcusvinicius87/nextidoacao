@@ -75,8 +75,6 @@
             <%= form.text_field :email, id: :instituicao_email,class: "validate white-text" %>
           </div>
         </div>
-
-        
         <%= form.fields_for :telefones do |telefone| %>
         <%= render 'telefone_fields', f: telefone %>
         <% end %>
