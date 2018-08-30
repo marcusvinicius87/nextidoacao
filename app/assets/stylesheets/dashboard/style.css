@@ -3424,7 +3424,7 @@ label {
 }
 
 .cor-texto-formulario{
-color: #5effb1 !important;
+color: #FFFFFF !important;
 }
 
 .form-control-plaintext {
@@ -5765,8 +5765,9 @@ h3.timeline-title {
 /* ===========
    Accounts
  =============*/
+/*tamanho original da margem: 7,5%.*/
 .wrapper-page {
-  margin: 7.5% auto;
+  margin: 5% auto;
   max-width: 360px;
 }
 
@@ -6141,4 +6142,5 @@ File: Responsive
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) !important;
   }
 }
+/*i need noise i need the buzz of the stub, i need some blood in the cut */
 /*# sourceMappingURL=style_dark.css.map */

@@ -1,12 +1,12 @@
 
 <div class="row">
-  <div class="col l6  s12 m10 push-l3 push-m1 baixo">
-    <div class="container azul quadro fontes">
+  <div class="col l6 s12 m10 push-l3 push-m1 baixo">
+    <div class="container transparente quadro fontes">
       <h3 class="center">[logo]</h3>
       <br>
       <br>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="field">
+      <div class="field ">
         <%= f.label 'Login', class: 'label' %>
         <br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder:"E-mail" %>
@@ -33,12 +33,10 @@
       <br>
       <div>
         <% if current_page?('/login') %>
-          <%= link_to "Quero me cadastrar", cadastrar_instituicao_path, class: "white-text" %> 
-          <%= link_to "Esqueci minha senha", new_user_password_path, class: "white-text right" %>
+          <%= link_to "Quero me cadastrar", cadastrar_instituicao_path, class: "right white-text" %> 
         <% end %>  
         <% if current_page?('/usuario_nextis/sign_in') %>
-          <%= link_to "Quero me cadastrar", new_usuario_nexti_registration_path, class: "white-text" %> 
-          <%= link_to "Esqueci minha senha", new_usuario_nexti_password_path, class: "white-text right" %>
+          <%= link_to "Quero me cadastrar", new_usuario_nexti_registration_path, class: "right white-text" %> 
         <% end %>
       </div>
       <% end %>

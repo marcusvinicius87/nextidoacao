@@ -63,7 +63,7 @@
 
           <div class= "col s6">
             <div class="field">
-              <label class="label white-text flow-text"> Cnpj:</label>
+              <label class="label white-text flow-text"> CNPJ:</label>
               <%= form.text_field :cnpj, id: :instituicao_cnpj,class: "validate white-text" %>
             </div>
           </div>
@@ -75,6 +75,8 @@
             <%= form.text_field :email, id: :instituicao_email,class: "validate white-text" %>
           </div>
         </div>
+
+        
         <%= form.fields_for :telefones do |telefone| %>
         <%= render 'telefone_fields', f: telefone %>
         <% end %>

@@ -22,15 +22,15 @@
           
           <li><%= link_to 'Inicio', root_path %></li>
           <li><a href="">Sobre</a></li>
-           <% if usuario_nexti_signed_in? or user_signed_in? %>
-            <li>
+          <% if usuario_nexti_signed_in? or user_signed_in? %>
+          <li>
             <%= link_to 'Sair', destroy_usuario_nexti_session_path, method: :delete %>
-            </li>
-             <% end %> 
+          </li>
+          <% end %> 
         </ul>
       </div>
     </nav>
-   </section>
+  </section>
 
   <main>
     <%= yield %>
@@ -47,6 +47,7 @@
           <h5 class="white-text">Links úteis</h5>
           <ul>
             <li><a class="grey-text text-lighten-3" href="#!">Faculdade Paraíso</a></li>
+            <br>
             <li><a class="grey-text text-lighten-3" href="#!">NExTI</a></li>
           </ul>
         </div>
@@ -54,19 +55,18 @@
           <h5 class="white-text">Contatos </h5>
           <ul>
             <li ><p class="grey-text text-lighten-4"><i class="material-icons">call</i> (88) 352123299</p></li>
-            <li><p class="grey-text text-lighten-4"><i class="material-icons">email</i>nexti@fapce.edu.br</p></li>
-            <li><p class="grey-text text-lighten-4"><i class="material-icons">location_on</i>R. da Conceição, 1180 - Centro, Juazeiro do Norte - CE, 63010-222, Brasil</p></li>
+            <li><p class="grey-text text-lighten-4"><i class="material-icons">email</i> nexti@fapce.edu.br</p></li>
+            <li><p class="grey-text text-lighten-4"><i class="material-icons">location_on</i> R. da Conceição, 1180 - São Miguel, Juazeiro do Norte - CE,  CEP: 63010-222 </p></li>
           </ul>
         </div>
       </div>
     </div>
     <div class="footer-copyright">
       <div class="container">
-        © 2017 - Todos os direitos reservados
-
+        © 2018 - Todos os direitos reservados.
       </div>
     </div>
   </footer>
 </body>
-
 </html>
+<!--- and if you threat me bad i'll say you're bad --->
