@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   devise_scope :user do
+    get '/cadastrar_colaborador' => 'registrations_colaboradores#new', :as => :new_user_colaborador
     get '/user_registration/:token' => 'registrations#new', :as => :new_user_registration
     post '/signup' => 'registrations#create', :as => :user_registration
     post '/signin' => 'sessions#create', :as => :user_session

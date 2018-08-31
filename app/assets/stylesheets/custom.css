@@ -243,3 +243,7 @@ main {
     color: #778899;
     opacity: 1; /* Firefox */
 }
+
+span.active {
+    background-color: #ea454b;
+}
