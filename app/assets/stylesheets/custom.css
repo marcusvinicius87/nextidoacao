@@ -236,7 +236,7 @@ main {
 }
 
 .cor-botao{
-    background-color: #3bafda;
+    background-color: #3bafda !important;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
