@@ -51,7 +51,7 @@
           <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">
             <!-- item-->
             <div class="dropdown-item noti-title">
-              <h5 class="text-overflow"><small>Welcome ! John</small> </h5>
+              <h5 class="text-overflow"><small>Bem vindo! </small> <%= current_user.login %> </h5>
             </div>
 
             <!-- item-->
@@ -71,7 +71,7 @@
 
             <!-- item-->
             <a href="javascript:void(0);" class="dropdown-item notify-item">
-              <i class="mdi mdi-logout"></i> <span>Logout</span>
+              <i class="mdi mdi-logout"></i> <span>Sair</span>
             </a>
 
           </div>
@@ -118,6 +118,13 @@
             <li>
               <a href="cadastros.html" class="waves-effect waves-primary"><i
                 class="far fa-address-card"></i><span> Cadastros </span></a>
+              </li>
+            </ul>
+
+            <ul>
+            <li>
+              <a href="cadastros.html" class="waves-effect waves-primary"><i
+                class="fas fa-user"></i><span> Colaboradores </span></a>
               </li>
             </ul>
             <div class="clearfix"></div>

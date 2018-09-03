@@ -21,6 +21,7 @@ class SessionsController < Devise::SessionsController
 	def require_activated
 		if user_signed_in?
 			if current_user.activate_for_authentication?
+				redirect_to cadastros_path
 				set_flash_message :notice, :ativo
 			else
 				destroy
