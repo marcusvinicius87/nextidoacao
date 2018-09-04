@@ -1,18 +1,15 @@
-		<div class="container">
-			<div class= "row">
-				<div class= "input-field col s4">
-					<i class=" material-icons prefix">phone</i>
-					<%= f.text_field :numero, class: "telefone_mask", placeholder: "Número" %>	
-				</div>
-				<div class="input-field col s4">
-					<i class="material-icons prefix">phone</i>
-					<%= f.number_field :codigo_area, placeholder: "DDD" %>
-				</div>
-				<div class= "input-field col s4">
-					<%= link_to_remove_association "Remover Telefone", f, class: 'waves-effect waves-light btn cor-botao' %>
+		<div class="nested-fields">
+			<div class="container">
+				<div class= "row">
+					<div class= "input-field col s4">
+						<%= f.number_field :codigo_area, placeholder: "DDD" %>
+					</div>
+					<div class="input-field col s4">
+						<%= f.text_field :numero, class: "telefone_mask", placeholder: "Número" %>	
+					</div>
+					<div class= "input-field col s4">
+						<%= link_to_remove_association "Remover Telefone", f, class: 'waves-effect waves-light btn cor-botao' %>
+					</div>
 				</div>
 			</div>
 		</div>
-
-	</div>
-	<br>

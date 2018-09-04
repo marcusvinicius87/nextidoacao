@@ -20,7 +20,7 @@
         <%= link_to image_tag('logo-nexti-redimensionado.png', class: 'brand-logo logo'), welcome_path %>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><%= link_to 'Inicio', root_path %></li>
-          <li><a href="">Sobre</a></li>
+          <li><%= link_to 'Sobre', about_path %></li>
           <% if user_signed_in? %>
             <li>
               <%= link_to 'Dashboard', cadastros_path %>

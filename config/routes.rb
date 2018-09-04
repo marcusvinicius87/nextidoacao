@@ -1,3 +1,4 @@
+
 Rails.application.routes.draw do
   
   resources :cadastros
@@ -23,6 +24,7 @@ Rails.application.routes.draw do
   match 'not-actived' => 'pages#show', via: [:get], :as => :user_not_actived, page: "not-actived"
   match 'email-validation' => 'pages#show', via: [:get], :as => :email_validation, page: "email-validation"
   match 'welcome' => 'pages#show', via: [:get], :as => :welcome, page: "welcome"
+  match 'about' => 'pages#show', via: [:get], :as => :about, page: "about"
   match 'cadastrar-instituicao' => 'instituicaos#new', via: [:get], :as => :cadastrar_instituicao
 
   get "/:page" => "pages#show"
