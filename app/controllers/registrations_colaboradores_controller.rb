@@ -1,19 +1,21 @@
 class RegistrationsColaboradoresController < Devise::RegistrationsController
 
-	before_action :is_admin, only: [:new, :create]
 	prepend_before_action :require_no_authentication, only: :cancel
+	before_action :is_admin, only: [:new, :create]
 
 	def new
-		super
+		@user = User.new
 	end
 
 	def create
-		super
+		@fabrica = FabricaUser.new()
+		@user = User.new(user_params)
+		@fabrica.cria_usuario_colaborador(@user)
 	end
 
 	def is_admin
 		if current_user != nil
-			if (current_user.tipo_usuario != "administrador")
+			if !(current_user.admin?)
 				redirect_to root_path
 			end
 		else
