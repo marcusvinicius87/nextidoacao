@@ -170,16 +170,16 @@
 
                     <tr class="gradeX">
                       <% if cadastro.doador_ativo %>
-                      <td> <i class="fas fa-user", style="color: green;"></i></td>
+                      <td> <i class="fas fa-user", style="color: #94cc6a;"></i></td>
                       <% else %>
-                      <td> <i class="fas fa-user", style="color: red;"></i></td>
+                      <td> <i class="fas fa-user", style="color: #e03d28;"></i></td>
                       <% end %>
                       <td> <%= cadastro.id_cliente_enel %> </td>
                       <td> <%= cadastro.codigo_ocorrencia %> </td>
                       <td> <%= post_date cadastro.data_ocorrencia %> </td>
                       <td>R$ <%= cadastro.valor %> </td>
                       <td> <%= cadastro.parcelas %> </td>
-
+                      <td style="color: #2ab6ed;"> <strong><%= cadastro.autor %></strong> </td>
                       <td> <%= cadastro.livre %> </td>
                       <td class="actions">
 
