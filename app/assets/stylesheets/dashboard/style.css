@@ -5835,6 +5835,11 @@ h3.timeline-title {
   }
 }
 
+.cor-botao-deletar{
+    background-color: #ed2828 !important;
+    color: white;
+}
+
 /* =============
    Tree view page
 ============= */

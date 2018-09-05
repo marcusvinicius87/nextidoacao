@@ -12,8 +12,13 @@ class SessionsController < Devise::SessionsController
 
 	def destroy
 		signed_in = signed_in?(resource_name)
-		sign_out(resource_name)
-		redirect_to user_not_actived_path
+		if !(current_user.ativo?)
+			sign_out(resource_name)
+			redirect_to user_not_actived_path
+		else
+			sign_out(resource_name)
+			redirect_to root_path
+		end
 	end
 
 	private
