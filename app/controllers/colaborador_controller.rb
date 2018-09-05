@@ -6,6 +6,10 @@ class ColaboradorController < ApplicationController
 		@user = User.new
 	end
 
+	def index
+		@colaboradores = current_user.instituicao.users
+	end
+
 	def create
 		@fabrica = FabricaUser.new()
 		@user = User.new(user_params)
