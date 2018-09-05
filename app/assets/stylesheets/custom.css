@@ -176,6 +176,8 @@ main {
     font-size: 18px !important;
     font-weight: normal !important;
     margin-bottom: 0px !important;
+    margin-left: 250px;
+    margin-right: 250px;
 }
 
 .quadro{
@@ -236,7 +238,7 @@ main {
 }
 
 .cor-botao{
-    background-color: #3bafda;
+    background-color: #3bafda !important;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
