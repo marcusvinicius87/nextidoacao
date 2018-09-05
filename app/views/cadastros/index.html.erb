@@ -122,78 +122,80 @@
             </ul>
 
             <ul>
-            <li>
-              <a href="cadastros.html" class="waves-effect waves-primary"><i
-                class="fas fa-user"></i><span> Colaboradores </span></a>
-              </li>
-            </ul>
+              <li>
+                <a href="cadastros.html" class="waves-effect waves-primary"><i
+                  class="fas fa-user"></i><span> Colaboradores </span></a>
+                </li>
+              </ul>
+              <div class="clearfix"></div>
+            </div>
             <div class="clearfix"></div>
           </div>
-          <div class="clearfix"></div>
         </div>
       </div>
-    </div>
 
-    <div class="content-page">
-      <!-- Start content -->
-      <div class="content">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="card-box">
-                <div class="row">
-                  <div class="col-sm-6">
-                    <div class="m-b-30">
-                     <%= link_to 'Adicionar', new_cadastro_path, class: 'btn btn-primary waves-light' %>
+      <div class="content-page">
+        <!-- Start content -->
+        <div class="content">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="card-box">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="m-b-30">
+                       <%= link_to 'Adicionar', new_cadastro_path, class: 'btn btn-primary waves-light' %>
+                     </div>
                    </div>
                  </div>
-               </div>
 
-               <table class="table table-striped add-edit-table" id="datatable-editable">
-                <thead>
-                  <tr>
-                    <th>Status </th>
-                    <th>ID Cliente Enel</th>
-                    <th>Código Ocorrência</th>
-                    <th>Data do Cadastro</th>
-                    <th>Valor</th>
-                    <th>Parcelas</th>
-                    <th>Protocolo </th>
-                    <th>Ações </th>
+                 <table class="table table-striped add-edit-table" id="datatable-editable">
+                  <thead>
+                    <tr>
+                      <th>Status </th>
+                      <th>ID Cliente Enel</th>
+                      <th>Código Ocorrência</th>
+                      <th>Data do Cadastro</th>
+                      <th>Valor</th>
+                      <th>Parcelas</th>
+                      <th> Autor </th>
+                      <th>Protocolo </th>
+                      <th>Ações </th>
 
-                  </tr>
-                </thead>
+                    </tr>
+                  </thead>
 
-                <tbody>
-                  <% @cadastros.each do |cadastro| %>
+                  <tbody>
+                    <% @cadastros.each do |cadastro| %>
 
-                  <tr class="gradeX">
-                    <% if cadastro.doador_ativo %>
-                    <td> <i class="fas fa-user", style="color: green;"></i></td>
-                    <% else %>
-                    <td> <i class="fas fa-user", style="color: red;"></i></td>
-                    <% end %>
-                    <td> <%= cadastro.id_cliente_enel %> </td>
-                    <td> <%= cadastro.codigo_ocorrencia %> </td>
-                    <td> <%= post_date cadastro.data_ocorrencia %> </td>
-                    <td>R$ <%= cadastro.valor %> </td>
-                    <td> <%= cadastro.parcelas %> </td>
-                    <td> <%= cadastro.livre %> </td>
-                    <td class="actions">
+                    <tr class="gradeX">
+                      <% if cadastro.doador_ativo %>
+                      <td> <i class="fas fa-user", style="color: green;"></i></td>
+                      <% else %>
+                      <td> <i class="fas fa-user", style="color: red;"></i></td>
+                      <% end %>
+                      <td> <%= cadastro.id_cliente_enel %> </td>
+                      <td> <%= cadastro.codigo_ocorrencia %> </td>
+                      <td> <%= post_date cadastro.data_ocorrencia %> </td>
+                      <td>R$ <%= cadastro.valor %> </td>
+                      <td> <%= cadastro.parcelas %> </td>
 
-                     <%= link_to '<i class= "fas fa-eye"></i>'.html_safe, cadastro_path(cadastro), { class: 'on-default remove-row', 'data-original-title' => "Visualizar", 'data-toggle' => "tooltip", 'data-placement' => "top", 'title' => "" } %> 
-                      | 
-                      <%= link_to '<i class= "fas fa-edit"></i>'.html_safe, edit_cadastro_path(cadastro), { class: 'on-default remove-row', 'data-original-title' => "Editar", 'data-toggle' => "tooltip", 'data-placement' => "top", 'title' => "" } %> 
-                    </td>                
-                  </tr>
-                  <% end %>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
+                      <td> <%= cadastro.livre %> </td>
+                      <td class="actions">
 
-        <script>
+                       <%= link_to '<i class= "fas fa-eye"></i>'.html_safe, cadastro_path(cadastro), { class: 'on-default remove-row', 'data-original-title' => "Visualizar", 'data-toggle' => "tooltip", 'data-placement' => "top", 'title' => "" } %> 
+                       | 
+                       <%= link_to '<i class= "fas fa-edit"></i>'.html_safe, edit_cadastro_path(cadastro), { class: 'on-default remove-row', 'data-original-title' => "Editar", 'data-toggle' => "tooltip", 'data-placement' => "top", 'title' => "" } %>  
+                     </td>                
+                   </tr>
+                   <% end %>
+                 </tbody>
+               </table>
+             </div>
+           </div>
+         </div>
+
+         <script>
           var resizefunc = [];
         </script>
 
