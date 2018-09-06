@@ -5835,6 +5835,11 @@ h3.timeline-title {
   }
 }
 
+.cor-botao-deletar{
+    background-color: #ed2828 !important;
+    color: white;
+}
+
 /* =============
    Tree view page
 ============= */
@@ -6010,7 +6015,7 @@ File: Responsive
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
   body {
     overflow-x: hidden;
   }

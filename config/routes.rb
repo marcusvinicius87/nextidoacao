@@ -2,10 +2,12 @@ Rails.application.routes.draw do
   
   resources :cadastros
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  resources :colaborador, only: [:new, :create]
+  resources :colaborador, only: [:new, :create, :index]
   post '/colaborador/new' => 'colaborador#create', :as => :create_colaborador
   
   devise_scope :user do
+    delete '/users/sign_out' => 'sessions#destroy', :as => :destroy_user_session
+    get '/users/sign_out' => 'sessions#destroy', :as => :destroy_user_session_get
     get '/cadastrar_colaborador' => 'registrations_colaboradores#new', :as => :new_user_colaborador
     get '/user_registration/:token' => 'registrations#new', :as => :new_user_registration
     post '/signup' => 'registrations#create', :as => :user_registration

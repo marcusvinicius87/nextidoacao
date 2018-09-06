@@ -26,11 +26,17 @@
               <%= link_to 'Dashboard', cadastros_path %>
             </li>
           <% end %> 
-          <% if usuario_nexti_signed_in? or user_signed_in? %>
+          <% if usuario_nexti_signed_in? %>
           <li>
             <%= link_to 'Sair', destroy_usuario_nexti_session_path, method: :delete %>
           </li>
           <% end %>
+          <% if user_signed_in? %>
+          <li>
+            <%= link_to 'Sair', destroy_user_session_path, method: :delete %>
+          </li>
+          <% end %>
+          
         </ul>
       </div>
     </nav>

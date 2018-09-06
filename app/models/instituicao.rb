@@ -27,6 +27,12 @@ class Instituicao < ApplicationRecord
 		begin
 		  self.token = SecureRandom.hex[0,10].upcase
 		end while self.class.exists?(token: token)
+	end
+
+
+	def self.get_top3_colaboradores(colaboradores)
+		colaboradores = colaboradores.sort_by {|p| [p.cadastros.size]}
+		return colaboradores.last(3)
 	end 
 
 end

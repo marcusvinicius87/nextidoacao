@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20180905190714) do
     t.datetime "updated_at", null: false
     t.bigint "instituicao_id"
     t.bigint "user_id"
+    t.string "autor"
     t.index ["instituicao_id"], name: "index_cadastros_on_instituicao_id"
     t.index ["user_id"], name: "index_cadastros_on_user_id"
   end
@@ -86,7 +87,6 @@ ActiveRecord::Schema.define(version: 20180905190714) do
     t.bigint "instituicao_id"
     t.boolean "ativo"
     t.boolean "admin"
-    t.string "autor"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["instituicao_id"], name: "index_users_on_instituicao_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
