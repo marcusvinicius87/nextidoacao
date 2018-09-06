@@ -1,50 +1,67 @@
-<%= form_for @user, url: new_colaborador_path do |f| %>
-<div class="row">
-	<div class="col l6  s12 m10 push-l3 push-m1 baixo">
-		<div class="container azul quadro-cadastro fontes">
-			<h3 class = "center">Realizar cadastro</h3>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
+	<meta name="author" content="Coderthemes">
 
-			<div class="field">
-				<%= f.label  'Login', class: 'label'%>
-				<br />
-				<%= f.text_field :login, autofocus: true, autocomplete: "Login", placeholder: "Login" %>
-			</div>
+	<title>Cadastros</title>
 
-			<div class="field">
-				<%= f.label 'E-mail', class: 'label' %><br />
-            <%= f.email_field :email, autocomplete: "email",  placeholder: "E-mail" %>
-			</div>
-			
+	<link href="/assets/dashboard/switchery.min.css" rel="stylesheet" />
 
-			<div class="field">
-				<%= f.label 'Senha', class: 'label' %>
-				<% if @minimum_password_length %>
-				<em>(Mínimo de <%= @minimum_password_length %> caracteres)</em>
-				<% end %>
-				<br />
-				<%= f.password_field :password, autocomplete: "off", placeholder: "Senha" %>
-			</div>
+	<link href="/assets/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="/assets/dashboard/style.css" rel="stylesheet" type="text/css">
+	<script src="/assets/dashboard/modernizr.min.js"></script>
 
-			<div class="field">
-				<%= f.label 'Confirme sua senha', class: "label" %><br />
-				<%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Digite a senha novamente" %>
-			</div>
+</head>
 
-			<div class="actions">
-
-				<div class="actions right-align">
-
-					<%= f.submit "Concluir cadastro", class: "btn green lighten-2 white-text" %>
-				</div>
-				<br>
-				<br>
-				<br>
-				<br>
-				<div class= "center entrar"> Já possui cadastro?
-					<a class="black-text" href="sign_in/#">Faça seu login</a>
-				</div>
-			</div>
+<body>
+	<div class="wrapper-page">
+		<div class="text-center">
+			<a href="index.html" class="logo-lg"><i class="mdi mdi-radar"></i> <span>NOVO COLABORADOR</span> </a>
 		</div>
+
+		<%= render 'form', user: @user %>
 	</div>
 
-	<% end %>
+	<script>
+		var resizefunc = [];
+	</script>
+
+	<!-- Plugins  -->
+	<script src="/assets/dashboard/jquery.min.js"></script>
+	<script src="/assets/dashboard/popper.min.js"></script><!-- Popper for Bootstrap -->
+	<script src="/assets/dashboard/detect.js"></script>
+	<script src="/assets/dashboard/fastclick.js"></script>
+	<script src="/assets/dashboard/jquery.slimscroll.js"></script>
+	<script src="/assets/dashboard/jquery.blockUI.js"></script>
+	<script src="/assets/dashboard/waves.js"></script>
+	<script src="/assets/dashboard/wow.min.js"></script>
+	<script src="/assets/dashboard/jquery.nicescroll.js"></script>
+	<script src="/assets/dashboard/jquery.scrollTo.min.js"></script>
+	<script src="/assets/dashboard/switchery.min.js"></script>
+
+	<!-- Counter Up  -->
+	<script src="/assets/dashboard/jquery.waypoints.min.js"></script>
+	<script src="/assets/dashboard/jquery.counterup.min.js"></script>
+
+	<!-- circliful Chart -->
+	<script src="/assets/dashboard/jquery.circliful.min.js"></script>
+	<script src="/assets/dashboard/jquery.sparkline.min.js"></script>
+
+	<!-- skycons -->
+	<script src="/assets/dashboard/skycons.min.js" type="text/javascript"></script>
+
+	<!-- Page js  -->
+	<script src="/assets/dashboard/jquery.dashboard.js"></script>
+
+	<script src="/assets/dashboard/bootstrap.min.js"></script>
+
+	<!-- Custom main Js -->
+	<script src="/assets/dashboard/jquery.core.js"></script>
+	<script src="/assets/dashboard/jquery.app.js"></script>
+
+</body>
+</html>
+

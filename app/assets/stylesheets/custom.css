@@ -241,9 +241,6 @@ main {
     background-color: #3bafda !important;
 }
 
-.cor-botao-deletar{
-    background-color: #ed2828 !important;
-}
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: #778899;
