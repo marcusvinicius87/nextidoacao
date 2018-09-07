@@ -213,21 +213,50 @@
 
             <div class="col-lg-4">
               <h3 class="header-title m-t-0" align="center"> TOP 3 COLABORADORES </h3>
-            <% @colaboradores_top3.each do |colaborador| %>
-           
+              <% for i in 0..2 %>
+              <% case i %>
+              <% when 0 %>
               <div class="card-box widget-user">
                 <div>
-                  <%= image_tag "padrao.png", class: "img-responsive rounded-circle" %>
+                  <%= image_tag "gold.png", class: "img-responsive rounded-circle" %>
                   <div class="wid-u-info">
 
-                    <h5 class="mt-0 m-b-5 font-16"><%= colaborador.login %></h5>
-                    <p class="text-muted m-b-5 font-13"><%= colaborador.email %></p>
-                    <small class="text-warning"><b><%= colaborador.cadastros.size %></b></small>
+                    <h5 class="mt-0 m-b-5 font-16"><%= @colaboradores[i].login %></h5>
+                    <p class="text-muted m-b-5 font-13"><%= @colaboradores[i].email %></p>
+                    <small class="text-warning"><b><%= @colaboradores[i].cadastros.size %></b></small>
                   </div>
                 </div>
               </div>
-            
-            <% end %>
+              <% when 1 %>
+              <div class="card-box widget-user">
+                <div>
+                  <%= image_tag "plate.png", class: "img-responsive rounded-circle" %>
+                  <div class="wid-u-info">
+
+                    <h5 class="mt-0 m-b-5 font-16"><%= @colaboradores[i].login %></h5>
+                    <p class="text-muted m-b-5 font-13"><%= @colaboradores[i].email %></p>
+                    <small class="text-warning"><b><%= @colaboradores[i].cadastros.size %></b></small>
+                  </div>
+                </div>
+              </div>
+              <% when 2 %>
+              <div class="card-box widget-user">
+                <div>
+                  <%= image_tag "bronze.png", class: "img-responsive rounded-circle" %>
+                  <div class="wid-u-info">
+
+                    <h5 class="mt-0 m-b-5 font-16"><%= @colaboradores[i].login %></h5>
+                    <p class="text-muted m-b-5 font-13"><%= @colaboradores[i].email %></p>
+                    <small class="text-warning"><b><%= @colaboradores[i].cadastros.size %></b></small>
+                  </div>
+                </div>
+              </div>
+              <% end %>
+              <% end %>
+              <% @colaboradores_top3.each do |colaborador| %>
+              
+
+              <% end %>
             </div>
             
           </div>
