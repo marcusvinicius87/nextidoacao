@@ -4,7 +4,6 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
   <meta name="author" content="Coderthemes">
 
   <title>Colaboradores</title>
@@ -23,109 +22,12 @@
 
 <body class="fixed-left">
 
-  <!-- Begin page -->
-  <div id="wrapper">
-
-    <!-- Top Bar Start -->
-    <div class="topbar">
-
-      <!-- LOGO -->
-      <div class="topbar-left">
-        <div class="text-center">
-          <a href="index.html" class="logo"><i class="fab fa-adn"></i> <span>[Instituição]</span></a>
-        </div>
-      </div>
-
-      <!-- Button mobile view to collapse sidebar menu -->
-      <nav class="navbar-custom">
-
-        <ul class="list-inline float-right mb-0">
-
-
-          <li class="list-inline-item dropdown notification-list">
-            <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
-            aria-haspopup="false" aria-expanded="false">
-            <%= image_tag "padrao.png", class: "rounded-circle" %>
-          </a>
-          <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">
-            <!-- item-->
-            <div class="dropdown-item noti-title">
-              <h5 class="text-overflow"><small>Bem vindo! </small> <%= current_user.login %> </h5>
-            </div>
-
-            <!-- item-->
-            <a href="javascript:void(0);" class="dropdown-item notify-item">
-              <i class="mdi mdi-account"></i> <span>Perfil</span>
-            </a>
-
-            <!-- item-->
-            <a href="javascript:void(0);" class="dropdown-item notify-item">
-              <i class="mdi mdi-settings"></i> <span>Configurações</span>
-            </a>
-
-            <!-- item-->
-            <%= link_to ' <i class="mdi mdi-settings"></i><span>Sair</span>'.html_safe, destroy_user_session_path, method: :delete, class: 'dropdown-item notify-item' %>
-
-          </div>
-        </li>
-
-      </ul>
-
-      <ul class="list-inline menu-left mb-0">
-        <li class="float-left">
-          <button class="button-menu-mobile open-left waves-light waves-effect">
-            <i class="mdi mdi-menu"></i>
-          </button>
-        </li>
-        <li class="hide-phone app-search">
-          <form role="search" class="">
-            <input type="text" placeholder="Pesquisar..." class="form-control">
-            <a href="#"><i class="fa fa-search"></i></a>
-          </form>
-        </li>
-      </ul>
-
-    </nav>
-
-  </div>
-  <!-- Top Bar End -->
-
+  <%= render '/layouts/nav_bar' %>
 
   <!-- ========== Left Sidebar Start ========== -->
 
-  <div class="left side-menu">
-    <div class="sidebar-inner slimscrollleft">
-      <!--- Divider -->
-      <div id="sidebar-menu">
-        <ul>
-          <li class="menu-title"> Menu </li>
-
-          <li>
-            <%= link_to '<i
-            class="fas fa-user"></i><span> Dashboard </span>'.html_safe, colaborador_index_path, class: 'waves-effect waves-primary' %>
-          </li>
-        </ul>
-
-        <ul>
-          <li>
-            <a href="cadastros.html" class="waves-effect waves-primary"><i
-              class="far fa-address-card"></i><span> Cadastros </span></a>
-            </li>
-          </ul>
-
-          <ul>
-            <li>
-             <%= link_to '<i
-             class="fas fa-user"></i><span> Colaboradores </span>'.html_safe, colaborador_index_path, class: 'waves-effect waves-primary' %>
-           </li>
-         </ul>
-         <div class="clearfix"></div>
-       </div>
-       <div class="clearfix"></div>
-     </div>
-   </div>
- </div>
-
+  <%= render '/layouts/side_bar' %>
+ 
  <div class="content-page">
   <!-- Start content -->
   <div class="content">
@@ -144,7 +46,7 @@
            <div class="row">
             <div class="col-lg-8">
               <div class="card-box">
-                <h4 class="header-title m-t-0">Últimos cadastros</h4>
+                <h4 class="header-title m-t-0">Últimos colaboradores</h4>
                 <p class="text-muted m-b-25 font-13">
 
                 </p>
@@ -157,6 +59,7 @@
                         <th>Email</th>
                         <th>Data do cadastro</th>
                         <th>Total de cadastros</th>
+                        <th>Total arrecadado</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -164,8 +67,9 @@
                       <tr>
                         <td><%= colaborador.login %></td>
                         <td><%= colaborador.email %></td>
-                        <td></td>
+                        <td><%= post_date colaborador.created_at %></td>
                         <td><%= colaborador.cadastros.size %></td>
+                        <td>R$ <%= colaborador.cadastros.sum("valor") %></td>
                       </tr>
                       <% end %>
                     </tbody>
@@ -176,18 +80,17 @@
             <!-- end col -8 -->
             <div class="col-lg-4">
               <h3 class="header-title m-t-0" align="center"> TOP 3 COLABORADORES </h3>
-              <% if @colaboradores_top3 != nil and @colaboradores.size >= 3 %>
-              <% for i in 0..2 %>
+              <% if @colaboradores_top3 != nil %>
+              <% for i in 0..@colaboradores_top3.size-1 %>
               <% case i %>
               <% when 0 %>
               <div class="card-box widget-user">
                 <div>
                   <%= image_tag "gold.png", class: "img-responsive rounded-circle" %>
                   <div class="wid-u-info">
-
-                    <h5 class="mt-0 m-b-5 font-16"><%= @colaboradores_top3[i].login %></h5>
-                    <p class="text-muted m-b-5 font-13"><%= @colaboradores_top3[i].email %></p>
-                    <small class="text-warning"><b><%= @colaboradores_top3[i].cadastros.size %></b></small>
+                    <h5 class="mt-0 m-b-5 font-16"><%= @colaboradores_top3[0].login %></h5>
+                    <p class="text-muted m-b-5 font-13"><%= @colaboradores_top3[0].email %></p>
+                    <small>Cadastros: </small><small class="text-warning"><b><%= @colaboradores_top3[0].cadastros.size %></b></small>
                   </div>
                 </div>
               </div>
@@ -196,9 +99,9 @@
                 <div>
                   <%= image_tag "plate.png", class: "img-responsive rounded-circle" %>
                   <div class="wid-u-info">
-                    <h5 class="mt-0 m-b-5 font-16"><%= @colaboradores_top3[i].login %></h5>
-                    <p class="text-muted m-b-5 font-13"><%= @colaboradores_top3[i].email %></p>
-                    <small class="text-warning"><b><%= @colaboradores_top3[i].cadastros.size %></b></small>
+                    <h5 class="mt-0 m-b-5 font-16" ><%= @colaboradores_top3[1].login %></h5>
+                    <p class="text-muted m-b-5 font-13"><%= @colaboradores_top3[1].email %></p>
+                    <small>Cadastros: </small> <small class="text-warning"><b><%= @colaboradores_top3[1].cadastros.size %></b></small>
                   </div>
                 </div>
               </div>
@@ -210,7 +113,7 @@
 
                     <h5 class="mt-0 m-b-5 font-16"><%= @colaboradores_top3[i].login %></h5>
                     <p class="text-muted m-b-5 font-13"><%= @colaboradores_top3[i].email %></p>
-                    <small class="text-warning"><b><%= @colaboradores_top3[i].cadastros.size %></b></small>
+                    <small>Cadastros: </small> <small class="text-warning"><b><%= @colaboradores_top3[i].cadastros.size %></b></small>
                   </div>
                 </div>
               </div>

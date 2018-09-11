@@ -9,7 +9,7 @@ class ColaboradorController < ApplicationController
 
 	def index
 		@colaboradores = current_user.instituicao.users
-		@colaboradores_top3 = Instituicao.get_top3_colaboradores(@colaboradores).reverse
+		@colaboradores_top3 = Cadastro.search_top3_colaboradores(current_user.instituicao_id)
 	end
 
 	def create
