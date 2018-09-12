@@ -1,66 +1,60 @@
 
-  <!-- Begin page -->
-  <div id="wrapper">
+<!-- Begin page -->
+<div id="wrapper">
 
-    <!-- Top Bar Start -->
-    <div class="topbar">
+  <!-- Top Bar Start -->
+  <div class="topbar">
 
-      <!-- LOGO -->
-      <div class="topbar-left">
-        <div class="text-center">
-          <a href="index.html" class="logo"><i class="fab fa-adn"></i> <span>[Instituição]</span></a>
-        </div>
+    <!-- LOGO -->
+    <div class="topbar-left">
+      <div class="text-center">
+        <a href="index.html" class="logo"><i class="fab fa-adn"></i> <span>[Instituição]</span></a>
       </div>
+    </div>
 
-      <!-- Button mobile view to collapse sidebar menu -->
-      <nav class="navbar-custom">
+    <!-- Button mobile view to collapse sidebar menu -->
+    <nav class="navbar-custom">
 
-        <ul class="list-inline float-right mb-0">
+      <ul class="list-inline float-right mb-0">
 
 
-          <li class="list-inline-item dropdown notification-list">
-            <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
-            aria-haspopup="false" aria-expanded="false">
-            <%= image_tag "padrao.png", class: "rounded-circle" %>
-          </a>
-          <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">
-            <!-- item-->
-            <div class="dropdown-item noti-title">
-              <h5 class="text-overflow"><small>Bem vindo! </small> <%= current_user.login %> </h5>
-            </div>
-
-            <!-- item-->
-            <a href="javascript:void(0);" class="dropdown-item notify-item">
-              <i class="mdi mdi-account"></i> <span>Perfil</span>
-            </a>
-
-            <!-- item-->
-            <a href="javascript:void(0);" class="dropdown-item notify-item">
-              <i class="mdi mdi-settings"></i> <span>Configurações</span>
-            </a>
-
-            <!-- item-->
-            <%= link_to ' <i class="mdi mdi-settings"></i><span>Sair</span>'.html_safe, destroy_user_session_path, method: :delete, class: 'dropdown-item notify-item' %>
-
+        <li class="list-inline-item dropdown notification-list">
+          <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
+          aria-haspopup="false" aria-expanded="false">
+          <%= image_tag "padrao.png", class: "rounded-circle" %>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">
+          <!-- item-->
+          <div class="dropdown-item noti-title">
+            <h5 class="text-overflow"><small>Bem vindo! </small> <%= current_user.login %> </h5>
           </div>
-        </li>
 
-      </ul>
+          <!-- item-->
+          <a href="javascript:void(0);" class="dropdown-item notify-item">
+            <i class="mdi mdi-account"></i> <span>Perfil</span>
+          </a>
 
-      <ul class="list-inline menu-left mb-0">
-        <li class="float-left">
-          <button class="button-menu-mobile open-left waves-light waves-effect">
-            <i class="mdi mdi-menu"></i>
-          </button>
-        </li>
-        <li class="hide-phone app-search">
-          <form role="search" class="">
-            <input type="text" placeholder="Pesquisar..." class="form-control">
-            <a href="#"><i class="fa fa-search"></i></a>
-          </form>
-        </li>
-      </ul>
-    </nav>
-  </div>
+          <!-- item-->
+          <a href="javascript:void(0);" class="dropdown-item notify-item">
+            <i class="mdi mdi-settings"></i> <span>Configurações</span>
+          </a>
+
+          <!-- item-->
+          <%= link_to ' <i class="mdi mdi-settings"></i><span>Sair</span>'.html_safe, destroy_user_session_path, method: :delete, class: 'dropdown-item notify-item' %>
+
+        </div>
+      </li>
+
+    </ul>
+
+    <ul class="list-inline menu-left mb-0">
+      <li class="float-left">
+        <button class="button-menu-mobile open-left waves-light waves-effect">
+          <i class="mdi mdi-menu"></i>
+        </button>
+      </li>
+    </ul>
+  </nav>
+</div>
 
   <!-- Top Bar End -->

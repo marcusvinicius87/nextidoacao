@@ -1,7 +1,7 @@
 class Cadastro < ApplicationRecord
 	belongs_to :user
 	belongs_to :instituicao
-	paginates_per 15
+	paginates_per 10
 
 	validates_presence_of :id_cliente_enel, :digito_verificador_cliente_enel, :codigo_ocorrencia, :valor, :parcelas
 	validates :id_cliente_enel, length: { maximum: 10, too_long: "é maior que o aceitável de 10 digitos. Verifique e tente novamente." }
@@ -19,6 +19,14 @@ class Cadastro < ApplicationRecord
 		end
 
 		return colaboradores
+	end
+
+	def self.search(query)
+		if query.present?
+			where(['id_cliente_enel::text LIKE :query OR autor::text LIKE :query', query: "%#{query}"])
+		else
+			all
+		end
 	end
 
 end
