@@ -70,3 +70,5 @@ gem 'rails_admin_rollincode', '~> 1.0'
 gem 'unicorn'
 
 gem 'kaminari'
+
+gem 'figaro'
