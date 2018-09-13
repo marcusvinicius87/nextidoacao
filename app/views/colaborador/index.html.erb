@@ -57,7 +57,6 @@
                       <tr>
                         <th>Login</th>
                         <th>Email</th>
-                        <th>Data do cadastro</th>
                         <th>Total de cadastros</th>
                         <th>Total arrecadado</th>
                       </tr>
@@ -67,7 +66,6 @@
                       <tr>
                         <td><%= colaborador.login %></td>
                         <td><%= colaborador.email %></td>
-                        <td><%= post_date colaborador.created_at %></td>
                         <td><%= colaborador.cadastros.size %></td>
                         <td>R$ <%= colaborador.cadastros.sum("valor") %></td>
                       </tr>
