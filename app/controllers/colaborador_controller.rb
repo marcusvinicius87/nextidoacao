@@ -3,6 +3,7 @@ class ColaboradorController < ApplicationController
 	before_action :authenticate_user!
 	before_action :is_admin, only: [:new, :create]
 	layout :false
+	
 	def new
 		@user = User.new
 	end
