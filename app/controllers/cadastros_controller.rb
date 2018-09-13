@@ -8,7 +8,8 @@ class CadastrosController < ApplicationController
   # GET /cadastros.json
 
   def index
-    @cadastros = current_user.instituicao.cadastros
+    @search_query = params[:q]
+    @cadastros = current_user.instituicao.cadastros.search(@search_query)
     @cadastros = @cadastros.page params[:page]
   end
 
