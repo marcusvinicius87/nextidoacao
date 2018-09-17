@@ -32,6 +32,7 @@
           <%= form.text_field :nome_relatorio_instituicao, id: :instituicao_nome_relatorio_instituicao,class: "validate white-text", placeholder: "Nome do relatório da instituição"%>
         </div>
       </div>
+
       <div class="row">
         <div class="input-field col s6">
 
@@ -53,10 +54,14 @@
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s12">
+        <div class="input-field col s6">
 
           <%= form.text_field :email, id: :instituicao_email,class: "validate white-text", placeholder: "E-mail" %>
         </div>
+
+        <div class= "input-field col s6">
+           <%= form.text_field :nome_arquivo, id: :instituicao_nome_arquivo, class: "validate", placeholder: "Nome do Arquivo" %>
+         </div>
       </div>
     </div>
 

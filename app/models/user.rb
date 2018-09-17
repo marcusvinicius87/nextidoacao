@@ -6,7 +6,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   belongs_to :instituicao
   has_many :cadastros
-  
+  has_many :relatorios
+    
   def activate_for_authentication?
   	ativo?
   end

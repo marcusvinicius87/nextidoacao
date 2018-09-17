@@ -3,13 +3,14 @@ class ColaboradorController < ApplicationController
 	before_action :authenticate_user!
 	before_action :is_admin, only: [:new, :create]
 	layout :false
+	
 	def new
 		@user = User.new
 	end
 
 	def index
 		@colaboradores = current_user.instituicao.users
-		@colaboradores_top3 = Cadastro.search_top3_colaboradores(current_user.instituicao_id)
+		@colaboradores_top3 = Instituicao.get_top3_colaboradores(@colaboradores).reverse
 	end
 
 	def create

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180905190714) do
+ActiveRecord::Schema.define(version: 20180914200236) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,19 @@ ActiveRecord::Schema.define(version: 20180905190714) do
     t.datetime "updated_at", null: false
     t.string "email"
     t.string "token"
+    t.string "nome_arquivo"
+  end
+
+  create_table "relatorios", force: :cascade do |t|
+    t.date "data_inicio"
+    t.date "data_final"
+    t.string "nome_arquivo"
+    t.bigint "user_id"
+    t.bigint "instituicao_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["instituicao_id"], name: "index_relatorios_on_instituicao_id"
+    t.index ["user_id"], name: "index_relatorios_on_user_id"
   end
 
   create_table "telefones", force: :cascade do |t|
@@ -113,6 +126,8 @@ ActiveRecord::Schema.define(version: 20180905190714) do
   add_foreign_key "cadastros", "instituicaos"
   add_foreign_key "cadastros", "users"
   add_foreign_key "enderecos", "instituicaos"
+  add_foreign_key "relatorios", "instituicaos"
+  add_foreign_key "relatorios", "users"
   add_foreign_key "telefones", "instituicaos"
   add_foreign_key "users", "instituicaos"
 end
