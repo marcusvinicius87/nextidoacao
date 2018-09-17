@@ -2,7 +2,7 @@
   <div class="container azul quadro-cadastro">
 
     <h1>
-      <p class="flow-text center">Cadastro de instituição
+      <p class="flow-text center">   Cadastro de instituição  <i class=" material-icons prefix">building</i>
       </p>
     </h1>
 
@@ -60,10 +60,12 @@
       </div>
     </div>
 
-    <h1>
-      <p class="flow-text center"> Telefone
+    
+    <h3>
+      <p class="flow-text center"> Telefone <i class=" material-icons prefix">phone</i>
       </p>
-    </h1>
+    </h3>
+
 
     <%= form.fields_for :telefones do |telefone| %>
 
@@ -74,10 +76,10 @@
       <%= link_to_add_association 'Adicionar Telefone', form, :telefones,  class: 'btn btn-primary cor-botao' %>
     </div>
 
-    <h1>
-      <p class="flow-text center"> <i class=" material-icons prefix">location_on</i> Endereço 
+    <h3>
+      <p class="flow-text center"> Endereço <i class=" material-icons prefix">location_on</i>
       </p>
-    </h1>
+    </h3>
     
     <%= form.fields_for :enderecos do |endereco| %>
     <%= render 'endereco_fields', f: endereco %>
@@ -88,14 +90,14 @@
     </div>
 
     <br>     
+    <br>
+    <br>
 
-    <div class="actions">
-      <%= form.submit 'Enviar',class: 'btn cor-botao' %>
+    <div class="actions right-align">
+      <%= form.submit 'enviar',class: 'btn cor-botao' %>
     </div> 
 
-
     <% end %> 
-
 
   </div>
 </div>
