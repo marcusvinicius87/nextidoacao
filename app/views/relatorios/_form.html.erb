@@ -1,0 +1,27 @@
+<%= form_with(model: relatorio, local: true) do |form| %>
+  <% if relatorio.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(relatorio.errors.count, "error") %> prohibited this relatorio from being saved:</h2>
+
+      <ul>
+      <% relatorio.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :data_inicio %>
+    <%= form.date_field :data_inicio, class: 'form-control', value: Time.now.strftime('%Y-%m-%d') %>
+  </div>
+
+  <div class="field">
+    <%= form.label :data_final %>
+    <%= form.date_field :data_final, class: 'form-control', value: Time.now.strftime('%Y-%m-%d') %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

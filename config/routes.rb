@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :relatorios
   resources :cadastros
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :colaborador, only: [:new, :create, :index]
@@ -29,7 +30,8 @@ Rails.application.routes.draw do
   match 'welcome' => 'pages#show', via: [:get], :as => :welcome, page: "welcome"
   match 'about' => 'pages#show', via: [:get], :as => :about, page: "about"
   match 'cadastrar-instituicao' => 'instituicaos#new', via: [:get], :as => :cadastrar_instituicao
-
+  match 'download' => 'relatorios#download', via: [:get, :post]
+ 
   get "/:page" => "pages#show"
 
   root "pages#show", page: "welcome"

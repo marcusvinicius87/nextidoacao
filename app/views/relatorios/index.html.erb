@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Relatorios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Data inicio</th>
+      <th>Data final</th>
+      <th>Nome arquivo</th>
+      <th>User</th>
+      <th>Instituicao</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @relatorios.each do |relatorio| %>
+      <tr>
+        <td><%= relatorio.data_inicio %></td>
+        <td><%= relatorio.data_final %></td>
+        <td><%= relatorio.nome_arquivo %></td>
+        <td><%= relatorio.user_id %></td>
+        <td><%= relatorio.instituicao_id %></td>
+        <td > <%= button_to 'DOWNLOAD', {action: :download, :id => relatorio.id}, {class: 'btn btn-outline-success btn-sm'} %>
+              </td>
+        <td><%= link_to 'Show', relatorio %></td>
+        <td><%= link_to 'Edit', edit_relatorio_path(relatorio) %></td>
+        <td><%= link_to 'Destroy', relatorio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Relatorio', new_relatorio_path %>

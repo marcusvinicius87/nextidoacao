@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Data inicio:</strong>
+  <%= @relatorio.data_inicio %>
+</p>
+
+<p>
+  <strong>Data final:</strong>
+  <%= @relatorio.data_final %>
+</p>
+
+<p>
+  <strong>Nome arquivo:</strong>
+  <%= @relatorio.nome_arquivo %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @relatorio.user_id %>
+</p>
+
+<p>
+  <strong>Instituicao:</strong>
+  <%= @relatorio.instituicao_id %>
+</p>
+
+<%= link_to 'Edit', edit_relatorio_path(@relatorio) %> |
+<%= link_to 'Back', relatorios_path %>
