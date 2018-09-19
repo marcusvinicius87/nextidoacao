@@ -2,34 +2,40 @@
   <div class="container">
     <div class= "row">
       <div class= "input-field col s6">
+        <i class="material-icons prefix">location_on</i>
         <%= f.text_field :logradouro, id: :endereco_logradouro,class: 'validate white-text', placeholder: 'Logradouro' %>
       </div>
 
       <div class="input-field col s6">
+        <i class="material-icons prefix">filter_1</i>
         <%= f.text_field :tipo_logradouro, id: :endereco_tipo_logradouro,class: 'validate white-text', placeholder: 'Tipo logradouro' %>
       </div>
 
       <div class= "input-field col s6">
+        <i class="material-icons prefix">filter_1</i>
         <%= f.text_field :numero, id: :endereco_numero, class: 'validate white-text', placeholder: 'Número' %>
       </div>
 
       <div class="input-field col s6">
+        <i class="material-icons prefix">filter_1</i>
         <%= f.text_field :bairro, id: :endereco_bairro, class: 'validate white-text', placeholder: 'Bairro' %>
       </div>
 
       <div class= "input-field col s6">
+        <i class="material-icons prefix">filter_1</i>
         <%= f.text_field :cidade, id: :endereco_cidade, class: 'white-text validate', placeholder: 'Cidade' %>
       </div>
 
       <div class="input-field col s6">
+        <i class="material-icons prefix">filter_1</i>
         <%= f.text_field :estado, id: :endereco_estado, class: 'white-text', placeholder: "Estado" %>
       </div>
 
-      <div class= "right col s4">
-       <%= link_to_remove_association "Remover Endereço", f, class: 'btn btn-primary cor-botao' %>
-     </div>
-   </div>
- </div>
+      <div class= "input-field col s12 right-align">
+        <%= link_to_remove_association '<i class="material-icons">remove</i>'.html_safe, f, class: 'btn-floating waves-effect waves-light red' %>
+      </div>
+    </div>
+  </div>
 
- 
+
 </div>

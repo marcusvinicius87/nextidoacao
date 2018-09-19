@@ -1,8 +1,8 @@
 <section class="section">
-  <div class="container azul quadro-cadastro">
+  <div class="container card card-color" style="margin: 0 auto;">
 
     <h1>
-      <p class="flow-text center">   Cadastro de instituição  <i class=" material-icons prefix">building</i>
+      <p class="flow-text center"> Cadastro da Instituição
       </p>
     </h1>
 
@@ -24,87 +24,110 @@
 
       <div class= "container">
         <div class= "row">
-          <div class= "input-field col s6">
-           <%= form.text_field :nome_instituicao, id: :instituicao_nome_instituicao, class: "validate", placeholder: "Nome da instituição" %>
-         </div>
-         <div class="input-field col s6">
+         <div class="input-field col s5"> 
+          <i class="material-icons prefix">location_city</i>
+          <%= form.text_field :nome_instituicao, id: :instituicao_nome_instituicao, class: "validate", placeholder: "Nome da instituição" %>
+        </div>
+        <div class= "col s1">
+          <i class="tooltipped material-icons prefix tamanho-icone" data-position="top" data-tooltip=" <strong> Não </strong> há tamanho máximo. <p> <strong style='color: red;'> Nome da Sua Instituição </strong> 
+            " data-html="true"> help </i>
+          </div>
+          <div class="input-field col s5">
+            <i class="material-icons prefix">assignment</i>
+            <%= form.text_field :nome_relatorio_instituicao, id: :instituicao_nome_relatorio_instituicao,class: "validate white-text", placeholder: "Nome do relatório da instituição"%>
+          </div>
+          <div class= "col s1">
+            <i class="tooltipped material-icons prefix tamanho-icone" data-position="top" data-tooltip=" Tamanho máximo: <strong> 20 </strong> caracteres <p> CEX.<strong style='color: red;'>NOMEEMPRESAPARCEIRA</strong>.20180102.SOL <p>
+            " data-html="true"> help </i>
+          </div>
+        </div>
 
-          <%= form.text_field :nome_relatorio_instituicao, id: :instituicao_nome_relatorio_instituicao,class: "validate white-text", placeholder: "Nome do relatório da instituição"%>
+        <div class="row">
+          <div class="input-field col s5">
+            <i class="material-icons prefix">filter_1</i>
+            <%= form.text_field :codigo_instituicao, id: :instituicao_codigo_instituicao,class: "validate white-text", placeholder: "Código da instituição" %>
+          </div>
+          <div class= "col s1">
+            <i class="tooltipped material-icons prefix tamanho-icone" data-position="top" data-tooltip=" Tamanho máximo: <strong> 2 </strong> caracteres. <p> Código da empresa parceira <strong style='color: red;'> ENEL </strong> <p> Exemplo: <strong style='color: red;'> 0001 </strong> " data-html= "true"> help </i>
+          </div>
+          <div class="input-field col s5">
+            <i class="material-icons prefix">filter_2</i>
+            <%= form.text_field :codigo_produto, id: :instituicao_codigo_produto,class: "validate white-text", placeholder: "Código do produto" %>
+          </div>
+          <div class= "col s1">
+            <i class="tooltipped material-icons prefix tamanho-icone" data-position="top" data-tooltip=" Tamanho máximo: <strong> 4 </strong> caracteres.<p>Código do produto oferecido pela ENEL <p> Exemplo: <strong style='color: red;'> 0002 </strong> " data-html= "true" > help </i>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s5">
+            <i class="material-icons prefix">note</i>
+            <%= form.text_field :nome_arquivo, id: :instituicao_nome_arquivo, class: "validate", placeholder: "Nome do Arquivo" %>
+          </div>
+          <div class= "col s1">
+            <i class="tooltipped material-icons prefix tamanho-icone" data-position="top" data-tooltip=" Tamanho máximo: <strong> 20 </strong> caracteres. <p> Exemplo: <strong style='color: red;'> NOMEDOARQUIVO </strong> " data-html= "true" > help </i>
+          </div>
+          <div class="input-field col s6">
+            <i class="material-icons prefix">domain</i>
+            <%= form.text_field :cnpj, id: :instituicao_cnpj,class: "validate white-text", placeholder: "CNPJ" %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons prefix">email</i>
+            <%= form.text_field :email, id: :instituicao_email,class: "validate white-text", placeholder: "E-mail" %>
+          </div>
+
         </div>
       </div>
 
-      <div class="row">
-        <div class="input-field col s6">
 
-          <%= form.text_field :codigo_instituicao, id: :instituicao_codigo_instituicao,class: "validate white-text", placeholder: "Código da instituição" %>
-        </div>
-        <div class="input-field col s6">
+      <h3>
+        <p class="flow-text center"> Telefone
+        </p>
+      </h3>
 
-          <%= form.text_field :codigo_produto, id: :instituicao_codigo_produto,class: "validate white-text", placeholder: "Código do produto" %>
-        </div>
+
+      <%= form.fields_for :telefones do |telefone| %>
+
+      <%= render 'telefone_fields', f: telefone %>
+      <% end %>
+
+      <div class="col s12 center-align">
+        <%= link_to_add_association 'Novo Telefone', form, :telefones,  class: 'btn btn-primary cor-botao' %>
       </div>
-      <div class="row">
-        <div class="input-field col s6">
 
-          <%= form.text_field :logo, id: :instituicao_logo,class: "validate white-text", placeholder: "Logo" %>
-        </div>
-        <div class="input-field col s6">
+      <h3>
+        <p class="flow-text center"> Endereço
+        </p>
+      </h3>
 
-          <%= form.text_field :cnpj, id: :instituicao_cnpj,class: "validate white-text", placeholder: "CNPJ" %>
-        </div>
+      <%= form.fields_for :enderecos do |endereco| %>
+      <%= render 'endereco_fields', f: endereco %>
+      <% end %>
+
+      <div class="col s12 center-align ">
+        <%= link_to_add_association 'Novo Endereço', form, :enderecos, class: 'btn btn-primary cor-botao' %>
       </div>
-      <div class="row">
-        <div class="input-field col s6">
 
-          <%= form.text_field :email, id: :instituicao_email,class: "validate white-text", placeholder: "E-mail" %>
-        </div>
+      <br>     
+      <br>
+      <br>
 
-        <div class= "input-field col s6">
-           <%= form.text_field :nome_arquivo, id: :instituicao_nome_arquivo, class: "validate", placeholder: "Nome do Arquivo" %>
-         </div>
-      </div>
+      <div class="actions right-align baixo-botao">
+        <%= form.submit 'enviar',class: 'btn cor-botao' %>
+      </div> 
+
+      <% end %> 
+
     </div>
-
-    
-    <h3>
-      <p class="flow-text center"> Telefone <i class=" material-icons prefix">phone</i>
-      </p>
-    </h3>
-
-
-    <%= form.fields_for :telefones do |telefone| %>
-
-    <%= render 'telefone_fields', f: telefone %>
-    <% end %>
-
-    <div class="col s12 center-align">
-      <%= link_to_add_association 'Adicionar Telefone', form, :telefones,  class: 'btn btn-primary cor-botao' %>
-    </div>
-
-    <h3>
-      <p class="flow-text center"> Endereço <i class=" material-icons prefix">location_on</i>
-      </p>
-    </h3>
-    
-    <%= form.fields_for :enderecos do |endereco| %>
-    <%= render 'endereco_fields', f: endereco %>
-    <% end %>
-
-    <div class="col s12 center-align ">
-      <%= link_to_add_association 'Adicionar Endereço', form, :enderecos, class: 'btn btn-primary cor-botao' %>
-    </div>
-
-    <br>     
-    <br>
-    <br>
-
-    <div class="actions right-align">
-      <%= form.submit 'enviar',class: 'btn cor-botao' %>
-    </div> 
-
-    <% end %> 
-
   </div>
-</div>
 
 </section>
+
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    $('.tooltipped').tooltip();
+  });
+  
+</script>

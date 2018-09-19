@@ -1,14 +1,16 @@
 		<div class="nested-fields">
 			<div class="container">
 				<div class= "row">
-					<div class= "input-field col s4">
+					<div class= "input-field col s6">
+						<i class="material-icons prefix">filter_3</i>
 						<%= f.number_field :codigo_area, placeholder: "DDD" %>
 					</div>
-					<div class="input-field col s4">
+					<div class="input-field col s6">
+						<i class="material-icons prefix">phone</i>
 						<%= f.text_field :numero, class: "telefone_mask", placeholder: "Número" %>	
 					</div>
-					<div class= "input-field col s4">
-						<%= link_to_remove_association "Remover Telefone", f, class: 'waves-effect waves-light btn cor-botao' %>
+					<div class= "input-field col s12 right-align">
+						<%= link_to_remove_association '<i class="material-icons">remove</i>'.html_safe, f, class: ' btn-floating waves-effect waves-light red' %>
 					</div>
 				</div>
 			</div>
