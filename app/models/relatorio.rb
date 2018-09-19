@@ -14,10 +14,7 @@ class Relatorio < ApplicationRecord
 		@instituicao = instituicao
 		@cadastros = getCadastros(instituicao)
 
-		generateDate = created_at.strftime("%Y%m%d")
-		self.nome_arquivo = @instituicao.nome_arquivo + ".#{generateDate}.SOL"
-		
-		registroA = "A2#{fnd(2,@instituicao.codigo_produto)}#{@instituicao.nome_instituicao}#{generateDate}#{fnd(5,self.id)}" # 
+		registroA = "A2#{fnd(2,@instituicao.codigo_produto)}#{@instituicao.nome_instituicao}#{generateDate}#{fnd(6,self.id)}" # 
 		registroD = ""
 		registro_total = 2
 		valor_total = 0
@@ -27,7 +24,7 @@ class Relatorio < ApplicationRecord
 			registroD += "\nD#{fnd(10, c.id_cliente_enel)}#{c.digito_verificador_cliente_enel}"+
 								"#{fnd(2,c.codigo_ocorrencia)}#{c.data_ocorrencia.strftime('%m/%d/%Y')}"+
 								"#{fnd(9,valor)}#{fnd(2, c.parcelas)}#{fnd(8,"01")}"+
-								"#{fnd(4, "01")}#{@instituicao.codigo_instituicao}"
+								"#{fnd(4, codigo_produto)}#{@instituicao.codigo_instituicao}"
 			registro_total +=1
 			valor_total += valor
 		end
