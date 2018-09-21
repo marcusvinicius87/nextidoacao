@@ -31,9 +31,13 @@ Rails.application.routes.draw do
   match 'about' => 'pages#show', via: [:get], :as => :about, page: "about"
   match 'cadastrar-instituicao' => 'instituicaos#new', via: [:get], :as => :cadastrar_instituicao
   match 'download' => 'relatorios#download', via: [:get, :post]
- 
+  
+  get "/dashboard" => "dashboard#index"
+  
   get "/:page" => "pages#show"
 
   root "pages#show", page: "welcome"
+
+
 
 end
