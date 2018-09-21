@@ -15,10 +15,8 @@ class Instituicao < ApplicationRecord
 	validates_length_of :nome_relatorio_instituicao, :maximum => 20, :minimum => 20
 	validates_length_of :codigo_produto, :maximum => 2
 	validates_length_of :nome_instituicao, :maximum => 20, :minimum => 20
-	validates_length_of :livre, :maximum => 42
 	validates_length_of :codigo_instituicao, :maximum => 2
 
-	
 	def self.find_token_instituicao(token)
     	if (Instituicao.find_by token: token) != nil
     		return true

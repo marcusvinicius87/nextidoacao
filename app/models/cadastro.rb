@@ -8,7 +8,8 @@ class Cadastro < ApplicationRecord
 	validates :digito_verificador_cliente_enel, length: { maximum: 2, too_long: "é maior que o aceitável de 2 digitos. Verifique e tente novamente." }
 	validates :codigo_ocorrencia, length: { maximum: 2, too_long: "é maior que o aceitável de 2 digitos. Verifique e tente novamente." }
 	validates :parcelas, length: { maximum: 2, too_long: "é maior que o aceitável de 2 digitos. Verifique e tente novamente." }
-
+	validates_length_of :livre, :maximum => 42
+	
 	def self.search_top3_colaboradores (key)
 		colaboradores = []
 		cadastros = Cadastro.select("user_id,count(*)").where("instituicao_id = ?","#{key}").group("user_id")
