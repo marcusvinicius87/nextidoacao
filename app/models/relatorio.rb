@@ -1,5 +1,5 @@
 class Relatorio < ApplicationRecord
-	
+	paginates_per 10
 	belongs_to :instituicao
 	belongs_to :user
 

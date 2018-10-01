@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="author" content="Nextidoacao">
 
+  <%= favicon_link_tag 'favicon.png' %>
+
   <title>Relatórios</title>
 
   <link href="/assets/dashboard/switchery.min.css" rel="stylesheet" />
@@ -43,8 +45,6 @@
                </div>
              </div>
 
-             <%= render '/layouts/search' %>
-
              <% if @relatorios.size == 0 %>
              <strong style= "color: #2ab6ed";> Não há cadastros para exibir. </strong>
              <% else %>
@@ -73,55 +73,57 @@
 
                   <%= link_to '<i class= "fas fa-download"></i>'.html_safe, {action: :download, :id => relatorio.id}, { class: 'on-default remove-row', 'data-original-title' => "Download", 'data-toggle' => "tooltip", 'data-placement' => "top", 'title' => "" } %> 
 
-               </td>
+                </td>
 
-             </tr>
+              </tr>
+
+              <% end %>
+            </tbody>
+          </table>
 
           <% end %>
-           </tbody>
-         </table>
 
-         <% end %>
+        </div>
+      </div>
+    </div>
 
-       </div>
-     </div>
-   </div>
+    <script>
+      var resizefunc = [];
+    </script>
 
-   <script>
-    var resizefunc = [];
-  </script>
+    <!-- Plugins  -->
+    <script src="/assets/dashboard/jquery.min.js"></script>
+    <script src="/assets/dashboard/popper.min.js"></script><!-- Popper for Bootstrap -->
+    <script src="/assets/dashboard/bootstrap.min.js"></script>
+    <script src="/assets/dashboard/detect.js"></script>
+    <script src="/assets/dashboard/fastclick.js"></script>
+    <script src="/assets/dashboard/jquery.slimscroll.js"></script>
+    <script src="/assets/dashboard/jquery.blockUI.js"></script>
+    <script src="/assets/dashboard/waves.js"></script>
+    <script src="/assets/dashboard/wow.min.js"></script>
+    <script src="/assets/dashboard/jquery.nicescroll.js"></script>
+    <script src="/assets/dashboard/jquery.scrollTo.min.js"></script>
+    <script src="/assets/dashboard/switchery.min.js"></script>
 
-  <!-- Plugins  -->
-  <script src="/assets/dashboard/jquery.min.js"></script>
-  <script src="/assets/dashboard/popper.min.js"></script><!-- Popper for Bootstrap -->
-  <script src="/assets/dashboard/bootstrap.min.js"></script>
-  <script src="/assets/dashboard/detect.js"></script>
-  <script src="/assets/dashboard/fastclick.js"></script>
-  <script src="/assets/dashboard/jquery.slimscroll.js"></script>
-  <script src="/assets/dashboard/jquery.blockUI.js"></script>
-  <script src="/assets/dashboard/waves.js"></script>
-  <script src="/assets/dashboard/wow.min.js"></script>
-  <script src="/assets/dashboard/jquery.nicescroll.js"></script>
-  <script src="/assets/dashboard/jquery.scrollTo.min.js"></script>
-  <script src="/assets/dashboard/switchery.min.js"></script>
+    <!-- Counter Up  -->
+    <script src="/assets/dashboard/jquery.waypoints.min.js"></script>
+    <script src="/assets/dashboard/jquery.counterup.min.js"></script>
 
-  <!-- Counter Up  -->
-  <script src="/assets/dashboard/jquery.waypoints.min.js"></script>
-  <script src="/assets/dashboard/jquery.counterup.min.js"></script>
+    <!-- circliful Chart -->
+    <script src="/assets/dashboard/jquery.circliful.min.js"></script>
+    <script src="/assets/dashboard/jquery.sparkline.min.js"></script>
 
-  <!-- circliful Chart -->
-  <script src="/assets/dashboard/jquery.circliful.min.js"></script>
-  <script src="/assets/dashboard/jquery.sparkline.min.js"></script>
+    <!-- skycons -->
+    <script src="/assets/dashboard/skycons.min.js" type="text/javascript"></script>
 
-  <!-- skycons -->
-  <script src="/assets/dashboard/skycons.min.js" type="text/javascript"></script>
+    <!-- Page js  -->
+    <script src="/assets/dashboard/jquery.dashboard.js"></script>
 
-  <!-- Page js  -->
-  <script src="/assets/dashboard/jquery.dashboard.js"></script>
+    <!-- Custom main Js -->
+    <script src="/assets/dashboard/jquery.core.js"></script>
+    <script src="/assets/dashboard/jquery.app.js"></script>
 
-  <!-- Custom main Js -->
-  <script src="/assets/dashboard/jquery.core.js"></script>
-  <script src="/assets/dashboard/jquery.app.js"></script>
-
-</body>
-</html>
+    <%= link_to_prev_page @relatorios, 'Página Anterior', class: 'btn float-left btn-primary waves-light' %>
+    <%= link_to_next_page @relatorios, 'Próxima Página', class: 'btn float-left btn-primary waves-light' %>
+  </body>
+  </html>
