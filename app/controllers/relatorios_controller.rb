@@ -7,7 +7,7 @@ class RelatoriosController < ApplicationController
   # GET /relatorios
   # GET /relatorios.json
   def index
-    @relatorios = current_user.instituicao.relatorios
+    @relatorios = current_user.instituicao.relatorios.page params[:page]
   end
 
   # GET /relatorios/1
@@ -37,8 +37,8 @@ class RelatoriosController < ApplicationController
         @relatorio.nome_arquivo = "CEX." + current_user.instituicao.nome_arquivo + "." + post_date_relatorio(@relatorio.created_at) + ".SOL"
         @relatorio.save!
 
-        format.html { redirect_to @relatorio, notice: 'Relatorio was successfully created.' }
-        format.json { render :show, status: :created, location: @relatorio }
+        format.html { redirect_to relatorios_path, notice: 'Relatorio was successfully created.' }
+
       else
         format.html { render :new }
         format.json { render json: @relatorio.errors, status: :unprocessable_entity }
