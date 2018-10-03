@@ -1,30 +1,36 @@
 $( document ).ready(function() {
 
-    var foo = $.get("/api/cadastros", function(data){
-        var meses = [data.janeiro, data.fevereiro, data.marco, data.abril, data.maio, data.junho, data.julho, data.agosto, data.setembro, data.outubro, data.novembro, data.dezembro]
+    var meses;
+    var dias;
 
-        var DrawSparkline = function() {
-            $('#sparkline1').sparkline([0, 23, 43, 35, 44, 45, 56, 37, 40], {
-                type: 'line',
-                width:'100%',
-                height: '200',
-                chartRangeMax: 50,
-                lineColor: '#3bafda',
-                fillColor: 'rgba(59,175,218,0.3)',
-                highlightLineColor: 'rgba(0,0,0,.1)',
-                highlightSpotColor: 'rgba(0,0,0,.2)'
-            });
+    $.get("/api/cadastros_mes", function (data){
+        meses = [data.janeiro, data.fevereiro, data.marco, data.abril, data.maio, data.junho, data.julho, data.agosto, data.setembro, data.outubro, data.novembro, data.dezembro];
+    });
 
-            $('#sparkline1').sparkline([25, 23, 26, 24, 25, 32, 30, 24, 19], {
-                type: 'line',
-                width:'100%',
+    $.get("/api/cadastros_semana", function (dia){
+        dias = [dia.domingo, dia.segunda, dia.terca, dia.quarta, dia.quinta, dia.sexta, dia.sabado];
+    });
+
+
+    var DrawSparkline = function() {
+            $('#sparkline1').sparkline(dias, {
+                type: 'bar',
+                tooltipFormat: '{{offset:offset}}: {{value}}',
+                tooltipValueLookups: {
+                    'offset': {
+                        0: '<strong style="color: #3bafda;"> Domingo </strong>',
+                        1: '<strong style="color: #3bafda;"> Segunda </strong>',
+                        2: '<strong style="color: #3bafda;"> Terca </strong>',
+                        3: '<strong style="color: #3bafda;"> Quarta </strong>',
+                        4: '<strong style="color: #3bafda;"> Quinta </strong>',
+                        5: '<strong style="color: #3bafda;"> Sexta </strong>',
+                        6: '<strong style="color: #3bafda;"> Sabado </strong>'
+                    }
+                },
                 height: '200',
-                chartRangeMax: 40,
-                lineColor: '#00b19d',
-                fillColor: 'rgba(0, 177, 157, 0.3)',
-                composite: true,
-                highlightLineColor: 'rgba(0,0,0,.1)',
-                highlightSpotColor: 'rgba(0,0,0,.2)'
+                barWidth: '10',
+                barSpacing: '5',
+                barColor: '#ffffff'
             });
 
             $('#sparkline2').sparkline(meses, {
@@ -33,21 +39,21 @@ $( document ).ready(function() {
                 barWidth: '10',
                 barSpacing: '5',
                 barColor: '#3bafda',
-                tooltipFormat: '{{offset:offset}} {{value}}',
+                tooltipFormat: '{{offset:offset}}: {{value}}',
                 tooltipValueLookups: {
                     'offset': {
-                        0: '<strong>Janeiro:</strong> ',
-                        1: '<strong>Fevereiro:</strong> ',
-                        2: '<strong>Março:</strong> ',
-                        3: '<strong>Abril:</strong> ',
-                        4: '<strong>Maio:</strong> ',
-                        5: '<strong>Junho:</strong> ',
-                        6: '<strong>Julho:</strong> ',
-                        7: '<strong>Agosto:</strong> ',
-                        8: '<strong>Setembro:</strong> ',
-                        9: '<strong>Outubro:</strong> ',
-                        10: '<strong>Novembro:</strong> ',
-                        11: '<strong>Dezembro:</strong> '
+                        0: '<strong style="color: #3bafda;">Janeiro</strong> ',
+                        1: '<strong style="color: #3bafda;">Fevereiro</strong> ',
+                        2: '<strong style="color: #3bafda;">Março</strong> ',
+                        3: '<strong style="color: #3bafda;">Abril</strong> ',
+                        4: '<strong style="color: #3bafda;">Maio</strong> ',
+                        5: '<strong style="color: #3bafda;">Junho</strong> ',
+                        6: '<strong style="color: #3bafda;">Julho</strong> ',
+                        7: '<strong style="color: #3bafda;">Agosto</strong> ',
+                        8: '<strong style="color: #3bafda;">Setembro</strong> ',
+                        9: '<strong style="color: #3bafda;">Outubro</strong> ',
+                        10: '<strong style="color: #3bafda;">Novembro</strong> ',
+                        11: '<strong style="color: #3bafda;">Dezembro</strong> '
                     }
                 }
                 });
@@ -71,5 +77,4 @@ $( document ).ready(function() {
                 DrawSparkline();
             }, 300);
         });
-    });
 });

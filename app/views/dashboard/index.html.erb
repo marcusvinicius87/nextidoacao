@@ -65,9 +65,10 @@
 
                     <div class="col-sm-6 col-lg-4">
                         <div class="widget-simple-chart text-right card-box">
-                            <div class="circliful-chart" data-dimension="90" data-text="75%" data-width="5" data-fontsize="14" data-percent="75" data-fgcolor="#3bafda" data-bgcolor="#505A66"></div>
-                            <h3 class="text-primary counter m-t-10">5685</h3>
-                            <p class="text-muted text-nowrap m-b-10">Cadastros por dia</p>
+                            <div class="circliful-chart" data-dimension="90" data-text="<%= @percentual %> %" data-width="5" data-fontsize="14" data-percent="<%= @percentual %>" data-fgcolor="#3bafda" data-bgcolor="#505A66"></div>
+                            <h3 class="text-primary counter m-t-10"><%= @cadastros_dia %></h3>
+                            <p class="text-muted text-nowrap m-b-10">Cadastros de hoje</p>
+                             <p class="text-muted text-nowrap m-b-10"> Meta: <strong> 50 </strong> </p>
                         </div>
                     </div>
 
@@ -84,7 +85,7 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="card-box">
-                            <h4 class="header-title m-t-0 m-b-30">TOTAL DE DOAÇÕES</h4>
+                            <h4 class="header-title m-t-0 m-b-30">DOADORES DA SEMANA</h4>
 
                             <div class="widget-chart text-center">
                                 <div id="sparkline1"></div>
@@ -109,7 +110,7 @@
 
                     <div class="col-lg-4">
                         <div class="card-box">
-                            <h4 class="header-title m-t-0 m-b-30">Doações anuais</h4>
+                            <h4 class="header-title m-t-0 m-b-30">DOADORES POR MESES</h4>
 
                             <div class="widget-chart text-center">
                                 <div id="sparkline2"></div>
