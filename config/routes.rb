@@ -33,6 +33,8 @@ Rails.application.routes.draw do
   match 'download' => 'relatorios#download', via: [:get, :post]
   
   get "/dashboard" => "dashboard#index"
+  get "/api/cadastros_mes" => "dashboard#get_cadastros_mes"
+  get "/api/cadastros_semana" => "dashboard#get_cadastros_semana"
   
   get "/:page" => "pages#show"
 

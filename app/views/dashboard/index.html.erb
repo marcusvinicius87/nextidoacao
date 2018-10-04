@@ -58,24 +58,29 @@
                     <div class="col-sm-6 col-lg-4">
                         <div class="widget-simple-chart text-right card-box">
                             <div class="circliful-chart" data-dimension="90" data-text="100%" data-width="5" data-fontsize="14" data-percent="100" data-fgcolor="#5fbeaa" data-bgcolor="#505A66"></div>
-                            <h3 class="text-success counter m-t-10">2562</h3>
+                            <h3 class="text-success counter m-t-10"><%= @instituicao.cadastros.size %></h3>
                             <p class="text-muted text-nowrap m-b-10">Total de cadastros</p>
+                            <p> Instituição: <strong> <%=  @instituicao.nome_instituicao %> </strong> </p>
                         </div>
                     </div>
 
                     <div class="col-sm-6 col-lg-4">
                         <div class="widget-simple-chart text-right card-box">
-                            <div class="circliful-chart" data-dimension="90" data-text="75%" data-width="5" data-fontsize="14" data-percent="75" data-fgcolor="#3bafda" data-bgcolor="#505A66"></div>
-                            <h3 class="text-primary counter m-t-10">5685</h3>
-                            <p class="text-muted text-nowrap m-b-10">Cadastros por dia</p>
+                            <div class="circliful-chart" data-dimension="90" data-text="<%= @percentual %> %" data-width="5" data-fontsize="14" data-percent="<%= @percentual %>" data-fgcolor="#3bafda" data-bgcolor="#505A66"></div>
+                            <h3 class="text-primary counter m-t-10"><%= @cadastros_dia %></h3>
+                            <p class="text-muted text-nowrap m-b-10">Cadastros de hoje </p>
+                            <p> Meta: <strong style="color: #3bafda; "> 50 </strong> Cadastros </p>
+
                         </div>
                     </div>
 
                     <div class="col-sm-6 col-lg-4">
                         <div class="widget-simple-chart text-right card-box">
-                            <div class="circliful-chart" data-dimension="90" data-text="49%" data-width="5" data-fontsize="14" data-percent="49" data-fgcolor="#98a6ad" data-bgcolor="#505A66"></div>
-                            <h3 class="text-inverse counter m-t-10">62</h3>
-                            <p class="text-muted text-nowrap m-b-10"> Cadastros durante o mês</p>
+                            <div class="circliful-chart" data-dimension="90" data-text="<%= @percentual_liquido %> %" data-width="5" data-fontsize="14" data-percent="<%= @percentual_liquido %>" data-fgcolor="#98a6ad" data-bgcolor="#505A66"></div>
+                            <h3 class="m-t-10">
+                            <%= @arrecadado %> R$</h3>
+                            <p class="text-muted text-nowrap m-b-10"> Arrecadado no mês </p>
+                            <p> Meta: <strong style="color: #5fbeaa; "> 1000 R$ </strong> </p>
                         </div>
                     </div>
                 </div>
@@ -84,22 +89,18 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="card-box">
-                            <h4 class="header-title m-t-0 m-b-30">TOTAL DE DOAÇÕES</h4>
+                            <h4 class="header-title m-t-0 m-b-30">DOADORES DIAS DA SEMANA</h4>
 
                             <div class="widget-chart text-center">
                                 <div id="sparkline1"></div>
                                 <ul class="list-inline m-t-15 mb-0">
                                     <li>
-                                        <h5 class="text-muted m-t-20">Target</h5>
-                                        <h4 class="m-b-0">$40</h4>
+                                    <h5 class="text-muted m-t-20"> Mais Cadastros </h5>
+                                        <h4 class="m-b-0" style="color: #5fbeaa;"> Domingo </h4>
                                     </li>
                                     <li>
-                                        <h5 class="text-muted m-t-20">Last week</h5>
-                                        <h4 class="m-b-0">$20</h4>
-                                    </li>
-                                    <li>
-                                        <h5 class="text-muted m-t-20">Last Month</h5>
-                                        <h4 class="m-b-0">$30</h4>
+                                        <h5 class="text-muted m-t-20"> Menos Cadastros</h5>
+                                        <h4 class="m-b-0" style="color: #e03d28;"> Sexta </h4>
                                     </li>
                                 </ul>
                             </div>
@@ -109,7 +110,7 @@
 
                     <div class="col-lg-4">
                         <div class="card-box">
-                            <h4 class="header-title m-t-0 m-b-30">Doações anuais</h4>
+                            <h4 class="header-title m-t-0 m-b-30">DOADORES POR MESES</h4>
 
                             <div class="widget-chart text-center">
                                 <div id="sparkline2"></div>
@@ -164,204 +165,169 @@
                     <div class="col-lg-12">
                         <div class="card-box">
                             <h4 class="header-title m-t-0">Últimos cadastros</h4>
-                            <p class="text-muted m-b-25 font-13">
-                                Your awesome text goes here.
-                            </p>
-
                             <div class="table-responsive">
                                 <table class="table mb-0">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
-                                            <th>Nome</th>
-                                            <th>Data</th>
-                                            <th>Due Date</th>
-                                            <th>Status</th>
-                                            <th>Assign</th>
-                                            <th>Assign</th>
-                                            <th>Assign</th>
-                                            <th>Assign</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Minton Admin v1</td>
-                                            <td>01/01/2017</td>
-                                            <td>26/04/2017</td>
-                                            <td><span class="badge badge-info">Released</span></td>
-                                            <td>Coderthemes</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Minton Frontend v1</td>
-                                            <td>01/01/2017</td>
-                                            <td>26/04/2017</td>
-                                            <td><span class="badge badge-success">Released</span></td>
-                                            <td>Minton admin</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Minton Admin v1.1</td>
-                                            <td>01/05/2017</td>
-                                            <td>10/05/2017</td>
-                                            <td><span class="badge badge-pink">Pending</span></td>
-                                            <td>Coderthemes</td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td>Minton Frontend v1.1</td>
-                                            <td>01/01/2017</td>
-                                            <td>31/05/2017</td>
-                                            <td><span class="badge badge-purple">Work in Progress</span>
-                                            </td>
-                                            <td>Minton admin</td>
-                                        </tr>
-                                        <tr>
-                                            <td>5</td>
-                                            <td>Minton Admin v1.3</td>
-                                            <td>01/01/2017</td>
-                                            <td>31/05/2017</td>
-                                            <td><span class="badge badge-warning">Coming soon</span></td>
-                                            <td>Coderthemes</td>
-                                        </tr>
+                                          <th>Status </th>
+                                          <th>ID Cliente Enel</th>
+                                          <th>Data do Cadastro</th>
+                                          <th>Valor</th>
+                                          <th>Parcelas</th>
+                                          <th> Autor </th>
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                    <% @ultimos_cadastros.each do |cadastro| %>
+                                    <tr>
+                                       <% if cadastro.doador_ativo %>
+                                       <td> <i class="fas fa-user", style="color: #94cc6a;"></i></td>
+                                       <% else %>
+                                       <td> <i class="fas fa-user", style="color: #e03d28;"></i></td>
+                                       <% end %>
+                                       <td> <%= cadastro.id_cliente_enel %> </td>
+                                       <td> <%= post_date cadastro.data_ocorrencia %> </td>
+                                       <td>R$ <%= cadastro.valor %> </td>
+                                       <td> <%= cadastro.parcelas %> </td>
+                                       <td style="color: #2ab6ed;"> <strong><%= cadastro.autor %></strong> </td>
+                                   </tr>
+                                   <% end %>
+                               </tbody>
+                           </table>
+                       </div>
+                   </div>
+               </div>
+               <!-- end row -->
 
-                                    </tbody>
-                                </table>
-                            </div>
+           </div>
+           <!-- end container -->
+       </div>
+       <!-- end content -->
+
+       <footer class="footer">
+        2018 © NexTI <span class="hide-phone">- Núcleo de Extensão em Tecnologia da Informação</span>
+    </footer>
+
+</div>
+<!-- ============================================================== -->
+<!-- End Right content here -->
+<!-- ============================================================== -->
+
+
+<!-- Right Sidebar -->
+<div class="side-bar right-bar">
+    <div class="">
+        <ul class="nav nav-tabs tabs-bordered nav-justified">
+            <li class="nav-item">
+                <a href="#home-2" class="nav-link active" data-toggle="tab" aria-expanded="false">
+                    Activity
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#messages-2" class="nav-link" data-toggle="tab" aria-expanded="true">
+                    Settings
+                </a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="home-2">
+                <div class="timeline-2">
+                    <div class="time-item">
+                        <div class="item-info">
+                            <small class="text-muted">5 minutes ago</small>
+                            <p><strong><a href="#" class="text-info">John Doe</a></strong> Uploaded a photo <strong>"DSC000586.jpg"</strong></p>
                         </div>
                     </div>
-                <!-- end row -->
 
-            </div>
-            <!-- end container -->
-        </div>
-        <!-- end content -->
-
-        <footer class="footer">
-            2018 © Minton <span class="hide-phone">- até mais</span>
-        </footer>
-
-    </div>
-    <!-- ============================================================== -->
-    <!-- End Right content here -->
-    <!-- ============================================================== -->
-
-
-    <!-- Right Sidebar -->
-    <div class="side-bar right-bar">
-        <div class="">
-            <ul class="nav nav-tabs tabs-bordered nav-justified">
-                <li class="nav-item">
-                    <a href="#home-2" class="nav-link active" data-toggle="tab" aria-expanded="false">
-                        Activity
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#messages-2" class="nav-link" data-toggle="tab" aria-expanded="true">
-                        Settings
-                    </a>
-                </li>
-            </ul>
-            <div class="tab-content">
-                <div class="tab-pane fade show active" id="home-2">
-                    <div class="timeline-2">
-                        <div class="time-item">
-                            <div class="item-info">
-                                <small class="text-muted">5 minutes ago</small>
-                                <p><strong><a href="#" class="text-info">John Doe</a></strong> Uploaded a photo <strong>"DSC000586.jpg"</strong></p>
-                            </div>
+                    <div class="time-item">
+                        <div class="item-info">
+                            <small class="text-muted">30 minutes ago</small>
+                            <p><a href="#" class="text-info">Lorem</a> commented your post.</p>
+                            <p><em>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam laoreet tellus ut tincidunt euismod. "</em></p>
                         </div>
+                    </div>
 
-                        <div class="time-item">
-                            <div class="item-info">
-                                <small class="text-muted">30 minutes ago</small>
-                                <p><a href="#" class="text-info">Lorem</a> commented your post.</p>
-                                <p><em>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam laoreet tellus ut tincidunt euismod. "</em></p>
-                            </div>
+                    <div class="time-item">
+                        <div class="item-info">
+                            <small class="text-muted">59 minutes ago</small>
+                            <p><a href="#" class="text-info">Jessi</a> attended a meeting with<a href="#" class="text-success">John Doe</a>.</p>
+                            <p><em>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam laoreet tellus ut tincidunt euismod. "</em></p>
                         </div>
+                    </div>
 
-                        <div class="time-item">
-                            <div class="item-info">
-                                <small class="text-muted">59 minutes ago</small>
-                                <p><a href="#" class="text-info">Jessi</a> attended a meeting with<a href="#" class="text-success">John Doe</a>.</p>
-                                <p><em>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam laoreet tellus ut tincidunt euismod. "</em></p>
-                            </div>
+                    <div class="time-item">
+                        <div class="item-info">
+                            <small class="text-muted">1 hour ago</small>
+                            <p><strong><a href="#" class="text-info">John Doe</a></strong>Uploaded 2 new photos</p>
                         </div>
+                    </div>
 
-                        <div class="time-item">
-                            <div class="item-info">
-                                <small class="text-muted">1 hour ago</small>
-                                <p><strong><a href="#" class="text-info">John Doe</a></strong>Uploaded 2 new photos</p>
-                            </div>
+                    <div class="time-item">
+                        <div class="item-info">
+                            <small class="text-muted">3 hours ago</small>
+                            <p><a href="#" class="text-info">Lorem</a> commented your post.</p>
+                            <p><em>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam laoreet tellus ut tincidunt euismod. "</em></p>
                         </div>
+                    </div>
 
-                        <div class="time-item">
-                            <div class="item-info">
-                                <small class="text-muted">3 hours ago</small>
-                                <p><a href="#" class="text-info">Lorem</a> commented your post.</p>
-                                <p><em>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam laoreet tellus ut tincidunt euismod. "</em></p>
-                            </div>
-                        </div>
-
-                        <div class="time-item">
-                            <div class="item-info">
-                                <small class="text-muted">5 hours ago</small>
-                                <p><a href="#" class="text-info">Jessi</a> attended a meeting with<a href="#" class="text-success">John Doe</a>.</p>
-                                <p><em>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam laoreet tellus ut tincidunt euismod. "</em></p>
-                            </div>
+                    <div class="time-item">
+                        <div class="item-info">
+                            <small class="text-muted">5 hours ago</small>
+                            <p><a href="#" class="text-info">Jessi</a> attended a meeting with<a href="#" class="text-success">John Doe</a>.</p>
+                            <p><em>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam laoreet tellus ut tincidunt euismod. "</em></p>
                         </div>
                     </div>
                 </div>
+            </div>
 
 
-                <div class="tab-pane" id="messages-2">
+            <div class="tab-pane" id="messages-2">
 
-                    <div class="row m-t-20">
-                        <div class="col-8">
-                            <h5 class="m-0 font-15">Notifications</h5>
-                            <p class="text-muted m-b-0"><small>Do you need them?</small></p>
-                        </div>
-                        <div class="col-4 text-right">
-                            <input type="checkbox" checked data-plugin="switchery" data-color="#3bafda" data-size="small"/>
-                        </div>
+                <div class="row m-t-20">
+                    <div class="col-8">
+                        <h5 class="m-0 font-15">Notifications</h5>
+                        <p class="text-muted m-b-0"><small>Do you need them?</small></p>
                     </div>
-
-                    <div class="row m-t-20">
-                        <div class="col-8">
-                            <h5 class="m-0 font-15">API Access</h5>
-                            <p class="m-b-0 text-muted"><small>Enable/Disable access</small></p>
-                        </div>
-                        <div class="col-4 text-right">
-                            <input type="checkbox" checked data-plugin="switchery" data-color="#3bafda" data-size="small"/>
-                        </div>
+                    <div class="col-4 text-right">
+                        <input type="checkbox" checked data-plugin="switchery" data-color="#3bafda" data-size="small"/>
                     </div>
-
-                    <div class="row m-t-20">
-                        <div class="col-8">
-                            <h5 class="m-0 font-15">Auto Updates</h5>
-                            <p class="m-b-0 text-muted"><small>Keep up to date</small></p>
-                        </div>
-                        <div class="col-4 text-right">
-                            <input type="checkbox" checked data-plugin="switchery" data-color="#3bafda" data-size="small"/>
-                        </div>
-                    </div>
-
-                    <div class="row m-t-20">
-                        <div class="col-8">
-                            <h5 class="m-0 font-15">Online Status</h5>
-                            <p class="m-b-0 text-muted"><small>Show your status to all</small></p>
-                        </div>
-                        <div class="col-4 text-right">
-                            <input type="checkbox" checked data-plugin="switchery" data-color="#3bafda" data-size="small"/>
-                        </div>
-                    </div>
-
                 </div>
+
+                <div class="row m-t-20">
+                    <div class="col-8">
+                        <h5 class="m-0 font-15">API Access</h5>
+                        <p class="m-b-0 text-muted"><small>Enable/Disable access</small></p>
+                    </div>
+                    <div class="col-4 text-right">
+                        <input type="checkbox" checked data-plugin="switchery" data-color="#3bafda" data-size="small"/>
+                    </div>
+                </div>
+
+                <div class="row m-t-20">
+                    <div class="col-8">
+                        <h5 class="m-0 font-15">Auto Updates</h5>
+                        <p class="m-b-0 text-muted"><small>Keep up to date</small></p>
+                    </div>
+                    <div class="col-4 text-right">
+                        <input type="checkbox" checked data-plugin="switchery" data-color="#3bafda" data-size="small"/>
+                    </div>
+                </div>
+
+                <div class="row m-t-20">
+                    <div class="col-8">
+                        <h5 class="m-0 font-15">Online Status</h5>
+                        <p class="m-b-0 text-muted"><small>Show your status to all</small></p>
+                    </div>
+                    <div class="col-4 text-right">
+                        <input type="checkbox" checked data-plugin="switchery" data-color="#3bafda" data-size="small"/>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
-    <!-- /Right-bar -->
+</div>
+<!-- /Right-bar -->
 
 </div>
 <!-- END wrapper -->
