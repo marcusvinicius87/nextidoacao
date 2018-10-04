@@ -5,7 +5,12 @@ class DashboardController < ApplicationController
 	def index
 		@instituicao = current_user.instituicao
 		@cadastros_dia = current_user.instituicao.cadastros.where('extract(day from created_at) = ?', Date.today.day).size
+		@cadastros_mes = current_user.instituicao.cadastros.where('extract(month from data_ocorrencia) = ? AND extract(year from data_ocorrencia) = ? AND doador_ativo = ?', Date.today.month, Date.today.year, true)
+		
+		@ultimos_cadastros = current_user.instituicao.cadastros.last(5)
+		@arrecadado = get_arrecadado(@cadastros_mes)
 		@percentual = (@cadastros_dia * 100) / 50
+		@percentual_liquido = (@arrecadado * 100) / 1000
 	end
 
 	def get_cadastros_mes
@@ -26,4 +31,11 @@ class DashboardController < ApplicationController
 		render json: {domingo: dias[0], segunda: dias[1], terca: dias[2], quarta: dias[3], quinta: dias[4], 
 					sexta: dias[5], sabado: dias[6]}, status: :ok
 	end
+
+	def get_arrecadado (values)
+		arrecadado = 0
+		values.each { |cadastro| arrecadado += cadastro.valor }
+		return arrecadado
+	end
+
 end
