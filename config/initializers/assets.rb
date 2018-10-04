@@ -14,4 +14,4 @@ Rails.application.config.assets.precompile += %w( custom.css )
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 
-config.assets.precompile = ['*.js', '*.css']
+Rails.application.config.assets.precompile = ['*.js', '*.css']
