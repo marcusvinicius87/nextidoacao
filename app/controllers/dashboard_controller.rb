@@ -5,7 +5,7 @@ class DashboardController < ApplicationController
 	def index
 		@instituicao = current_user.instituicao
 		@cadastros_dia = current_user.instituicao.cadastros.where('extract(day from created_at) = ?', Date.today.day).size
-		@cadastros_mes = current_user.instituicao.cadastros.where('extract(month from data_ocorrencia) = ? AND extract(year from data_ocorrencia) = ? AND doador_ativo = ?', Date.today.month, Date.today.year, true)
+		@cadastros_mes = current_user.instituicao.cadastros.select('valor').where('extract(month from data_ocorrencia) = ? AND extract(year from data_ocorrencia) = ? AND doador_ativo = ?', Date.today.month, Date.today.year, true)
 		
 		@ultimos_cadastros = current_user.instituicao.cadastros.last(5)
 		@arrecadado = get_arrecadado(@cadastros_mes)
@@ -38,5 +38,4 @@ class DashboardController < ApplicationController
 		values.each { |cadastro| arrecadado += cadastro.valor }
 		return arrecadado
 	end
-
 end
