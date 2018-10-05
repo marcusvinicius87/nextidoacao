@@ -15,8 +15,9 @@ class DashboardController < ApplicationController
 
 	def get_cadastros_mes
 		meses = []
-		
-		(1..12).each { |mes| meses << current_user.instituicao.cadastros.where('extract(month from data_ocorrencia) = ? AND extract(year from data_ocorrencia) = ?', mes, Date.today.year).size }
+		data = current_user.instituicao.cadastros
+
+		(1..12).each { |mes| meses << data.select("data_ocorrencia").where('extract(month from data_ocorrencia) = ? AND extract(year from data_ocorrencia) = ?', mes, Date.today.year).size }
 		
 		render json: {janeiro: meses[0], fevereiro: meses[1], marco: meses[2], abril: meses[3], maio: meses[4], 
 					junho: meses[5], julho: meses[6], agosto: meses[7], setembro: meses[8], outubro: meses[9], novembro: meses[10], dezembro: meses[11]}, status: :ok
@@ -24,7 +25,7 @@ class DashboardController < ApplicationController
 
 	def get_cadastros_semana
 		dias = []
-		data = current_user.instituicao.cadastros.where('data_ocorrencia between ? and ?', Date.today.beginning_of_week, Date.today.end_of_week)
+		data = current_user.instituicao.cadastros.select("data_ocorrencia").where('data_ocorrencia between ? and ?', Date.today.beginning_of_week, Date.today.end_of_week)
 
 		(0..6).each { |dia| dias << data.where('extract(dow from data_ocorrencia) = ?', dia).size}
 
