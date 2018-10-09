@@ -1,7 +1,7 @@
 <%= form_with(model: cadastro, local: true, class: 'form-horizontal m-t-20') do |form| %>
 <% if cadastro.errors.any? %>
 <div id="error_explanation">
-  <h2><%= pluralize(cadastro.errors.count, "error") %> prohibited this cadastro from being saved:</h2>
+  <h3><%= pluralize(cadastro.errors.count, "erros") %> impediram que este cadastro fosse concluído. Verifique os campos e tente novamente: </h3>
 
   <ul>
     <% cadastro.errors.full_messages.each do |message| %>

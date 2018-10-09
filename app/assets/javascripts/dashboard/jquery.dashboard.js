@@ -17,13 +17,13 @@ $( document ).ready(function() {
                 tooltipFormat: '{{offset:offset}}: {{value}}',
                 tooltipValueLookups: {
                     'offset': {
-                        0: '<strong style="color: #3bafda;"> Domingo </strong>',
-                        1: '<strong style="color: #3bafda;"> Segunda </strong>',
-                        2: '<strong style="color: #3bafda;"> Terca </strong>',
-                        3: '<strong style="color: #3bafda;"> Quarta </strong>',
-                        4: '<strong style="color: #3bafda;"> Quinta </strong>',
-                        5: '<strong style="color: #3bafda;"> Sexta </strong>',
-                        6: '<strong style="color: #3bafda;"> Sabado </strong>'
+                        0: 'Domingo',
+                        1: 'Segunda',
+                        2: 'Terca',
+                        3: 'Quarta',
+                        4: 'Quinta',
+                        5: 'Sexta',
+                        6: 'Sabado'
                     }
                 },
                 height: '200',
@@ -41,18 +41,18 @@ $( document ).ready(function() {
                 tooltipFormat: '{{offset:offset}}: {{value}}',
                 tooltipValueLookups: {
                     'offset': {
-                        0: '<strong style="color: #3bafda;">Janeiro</strong> ',
-                        1: '<strong style="color: #3bafda;">Fevereiro</strong> ',
-                        2: '<strong style="color: #3bafda;">Março</strong> ',
-                        3: '<strong style="color: #3bafda;">Abril</strong> ',
-                        4: '<strong style="color: #3bafda;">Maio</strong> ',
-                        5: '<strong style="color: #3bafda;">Junho</strong> ',
-                        6: '<strong style="color: #3bafda;">Julho</strong> ',
-                        7: '<strong style="color: #3bafda;">Agosto</strong> ',
-                        8: '<strong style="color: #3bafda;">Setembro</strong> ',
-                        9: '<strong style="color: #3bafda;">Outubro</strong> ',
-                        10: '<strong style="color: #3bafda;">Novembro</strong> ',
-                        11: '<strong style="color: #3bafda;">Dezembro</strong> '
+                        0: 'Janeiro ',
+                        1: 'Fevereiro',
+                        2: 'Março',
+                        3: 'Abril ',
+                        4: 'Maio ',
+                        5: 'Junho ',
+                        6: 'Julho ',
+                        7: 'Agosto ',
+                        8: 'Setembro ',
+                        9: 'Outubro ',
+                        10: 'Novembro ',
+                        11: 'Dezembro '
                     }
                 }
                 });
@@ -75,6 +75,6 @@ $( document ).ready(function() {
             clearTimeout(resizeChart);
             resizeChart = setTimeout(function() {
                 DrawSparkline();
-            }, 300);
+            }, 200);
         });
 });
