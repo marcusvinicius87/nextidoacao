@@ -2,7 +2,7 @@ $( document ).ready(function() {
 
     var meses;
     var dias;
-
+    
     $.get("/api/cadastros_mes", function (data){
         meses = [data.janeiro, data.fevereiro, data.marco, data.abril, data.maio, data.junho, data.julho, data.agosto, data.setembro, data.outubro, data.novembro, data.dezembro];
     });
@@ -11,8 +11,7 @@ $( document ).ready(function() {
         dias = [dia.domingo, dia.segunda, dia.terca, dia.quarta, dia.quinta, dia.sexta, dia.sabado];
     });
 
-
-    var DrawSparkline = function() {
+    var DrawSparkline = function() {     
             $('#sparkline1').sparkline(dias, {
                 type: 'bar',
                 tooltipFormat: '{{offset:offset}}: {{value}}',
@@ -65,6 +64,7 @@ $( document ).ready(function() {
                 height: '200',
                 sliceColors: ['#dcdcdc', '#3bafda', '#333333', '#00b19d']
             });
+
         };
 
 
