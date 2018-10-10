@@ -5,10 +5,6 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'bootsnap', require: false
-gem 'jquery-rails'
-gem 'materialize-sass'
-gem 'material_icons'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record
@@ -56,20 +52,30 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'devise'
+# Other
 
-gem 'pg', '~> 0.18'
+gem 'bootsnap', require: false
+gem 'figaro'
 
+# Front
+
+gem 'jquery-rails'
+gem 'materialize-sass'
+gem 'material_icons'
 gem "cocoon"
-
-# ruby '2.3.7'
-
 gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', github: 'sferik/rails_admin'
 gem 'rails_admin_rollincode', '~> 1.0'
-
-gem 'unicorn'
-
 gem 'kaminari'
 
-gem 'figaro'
+# Auth
+
+gem 'devise'
+
+# Database
+
+gem 'pg', '~> 0.18'
+
+# ruby '2.3.7'
+
+gem 'unicorn'

@@ -22,6 +22,7 @@ class DashboardController < ApplicationController
 	
 		@mes_mais_cadastros = @dashboard.maior_hash_key(@meses_values)[0]
 		@mes_menos_cadastros = @dashboard.menor_hash_key(@meses_values)[0]
+		
 	end
 
 	def get_cadastros_mes
