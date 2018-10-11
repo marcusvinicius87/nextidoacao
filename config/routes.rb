@@ -35,11 +35,8 @@ Rails.application.routes.draw do
   get "/dashboard" => "dashboard#index"
   get "/api/cadastros_mes" => "dashboard#get_cadastros_mes"
   get "/api/cadastros_semana" => "dashboard#get_cadastros_semana"
-  
+  get "/colaborador/settings" => "colaborador#settings"
   get "/:page" => "pages#show"
 
   root "pages#show", page: "welcome"
-
-
-
 end
