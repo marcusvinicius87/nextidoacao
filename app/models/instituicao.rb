@@ -34,9 +34,9 @@ class Instituicao < ApplicationRecord
 	end
 
 
-	def self.get_top3_colaboradores(colaboradores)
-		colaboradores = colaboradores.sort_by {|p| [p.cadastros.size]}
-		return colaboradores.last(3)
-	end 
+	# def self.get_top3_colaboradores(colaboradores)
+	# 	colaboradores = colaboradores.sort_by {|p| [p.cadastros.size]}
+	# 	return colaboradores.last(3)
+	# end 
 
 end

@@ -2,13 +2,22 @@ $( document ).ready(function() {
 
     var meses;
     var dias;
-    
+    var colaboradores = [];
+    var colaboradores_values = [];
+
     $.get("/api/cadastros_mes", function (data){
         meses = [data.janeiro, data.fevereiro, data.marco, data.abril, data.maio, data.junho, data.julho, data.agosto, data.setembro, data.outubro, data.novembro, data.dezembro];
     });
 
     $.get("/api/cadastros_semana", function (dia){
         dias = [dia.domingo, dia.segunda, dia.terca, dia.quarta, dia.quinta, dia.sexta, dia.sabado];
+    });
+
+    $.get("/api/cadastros_colaboradores", function (colaborador){
+        colaborador.forEach(function(value, key) {
+            colaboradores_values.push(value.count);
+            colaboradores.push(value.autor);
+        });
     });
 
     var DrawSparkline = function() {
@@ -57,11 +66,21 @@ $( document ).ready(function() {
             }
         });
 
-        $('#sparkline3').sparkline([20, 40, 30, 10], {
+        $('#sparkline3').sparkline(colaboradores_values, {
             type: 'pie',
             width: '200',
             height: '200',
-            sliceColors: ['#dcdcdc', '#3bafda', '#333333', '#00b19d']
+            sliceColors: ['#dcdcdc', '#3bafda', '#333333', '#eda855', '##dbf24b'],
+            tooltipFormat: '{{offset:offset}}: {{value}}',
+            tooltipValueLookups: {
+                'offset': {
+                    0: colaboradores[0],
+                    1: colaboradores[1],
+                    2: colaboradores[2],
+                    3: colaboradores[3],
+                    4: colaboradores[4]
+                }
+            }
         });
     };
 

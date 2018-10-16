@@ -33,6 +33,10 @@ class DashboardController < ApplicationController
 		render json: get_semana_values, status: :ok
 	end
 
+	def get_cadastros_colaboradores
+		render json: Cadastro.search_top3_dashboard(current_user.instituicao.id)
+	end
+
 	private
 		def get_mes_values
 			data = current_user.instituicao.cadastros

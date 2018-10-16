@@ -19,7 +19,11 @@ class Cadastro < ApplicationRecord
 			colaboradores << (User.find (cadastro.user_id))
 		end
 
-		return colaboradores
+		colaboradores
+	end
+
+	def self.search_top3_dashboard (key)
+		cadastros = Cadastro.select("count(*),autor").where("instituicao_id = ?","#{key}").group("autor").order('2 desc').first(5).reverse
 	end
 
 	def self.search(query)
