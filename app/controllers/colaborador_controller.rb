@@ -24,6 +24,13 @@ class ColaboradorController < ApplicationController
 		@user = current_user
 	end
 
+	def edit
+		@user = current_user
+		if @user.update(user_params)
+			redirect_to cadastros_path
+		end
+	end
+
 	def is_admin
 		if user_signed_in?
 			if !(current_user.admin?)
