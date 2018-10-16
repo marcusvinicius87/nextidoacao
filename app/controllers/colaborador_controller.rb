@@ -20,6 +20,10 @@ class ColaboradorController < ApplicationController
 		redirect_to cadastros_path
 	end
 
+	def settings
+		@user = current_user
+	end
+
 	def is_admin
 		if user_signed_in?
 			if !(current_user.admin?)
