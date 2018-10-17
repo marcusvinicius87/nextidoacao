@@ -70,7 +70,7 @@ $( document ).ready(function() {
             type: 'pie',
             width: '200',
             height: '200',
-            sliceColors: ['#3bafda', '#5fbeaa', '#ffffff', '#3bafda', '#dbf24b'],
+            sliceColors: ['#CFBDED', '#A4C3C2', '#FAC9B8', '#DB8A74', '#2BC016'],
             tooltipFormat: '{{offset:offset}}: {{value}}',
             tooltipValueLookups: {
                 'offset': {
