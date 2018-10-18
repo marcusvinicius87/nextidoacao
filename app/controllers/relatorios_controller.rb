@@ -34,7 +34,7 @@ class RelatoriosController < ApplicationController
     respond_to do |format|
       if @relatorio.save
 
-        @relatorio.nome_arquivo = "CEX." + current_user.instituicao.nome_arquivo + "." + post_date_relatorio(@relatorio.created_at) + ".SOL"
+        @relatorio.nome_arquivo = "CEX." + current_user.instituicao.nome_relatorio_instituicao + "." + post_date_relatorio(@relatorio.created_at) + ".SOL"
         @relatorio.save!
 
         format.html { redirect_to relatorios_path, notice: 'Relatorio was successfully created.' }
@@ -71,9 +71,13 @@ class RelatoriosController < ApplicationController
   end
 
   def download
-    @relatorio = Relatorio.find(params[:id])
-    content = @relatorio.generate_content_file(current_user.instituicao)
-    send_data(content, :filename => @relatorio.nome_arquivo)
+    if current_user.instituicao.relatorios.where("id = ?", params[:id]).exists?
+      @relatorio = current_user.instituicao.relatorios.find(params[:id])
+      content = @relatorio.generate_content_file(current_user.instituicao)
+      send_data(content, :filename => @relatorio.nome_arquivo)
+    else
+      redirect_to relatorios_path
+    end
   end
 
   private

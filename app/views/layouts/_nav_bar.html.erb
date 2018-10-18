@@ -35,9 +35,8 @@
           </a>
 
           <!-- item-->
-          <a href="javascript:void(0);" class="dropdown-item notify-item">
-            <i class="mdi mdi-settings"></i> <span>Configurações</span>
-          </a>
+          <%= link_to ' <i class="mdi mdi-settings"></i><span>Configurações</span>'.html_safe, edit_colaborador_path, method: :get, class: 'dropdown-item notify-item' %>
+
 
           <!-- item-->
           <%= link_to ' <i class="mdi mdi-settings"></i><span>Sair</span>'.html_safe, destroy_user_session_path, method: :delete, class: 'dropdown-item notify-item' %>

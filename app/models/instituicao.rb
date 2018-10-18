@@ -12,9 +12,8 @@ class Instituicao < ApplicationRecord
 	accepts_nested_attributes_for :enderecos, reject_if: :all_blank, allow_destroy: true
 
 	validates_presence_of :nome_instituicao, :nome_relatorio_instituicao, :codigo_instituicao, :nome_arquivo
-	validates_length_of :nome_relatorio_instituicao, :maximum => 20, :minimum => 20
+	validates_length_of :nome_relatorio_instituicao, :maximum => 20
 	validates_length_of :codigo_produto, :maximum => 2
-	validates_length_of :nome_instituicao, :maximum => 20, :minimum => 1
 	validates_length_of :codigo_instituicao, :maximum => 2
 
 	def self.find_token_instituicao(token)
