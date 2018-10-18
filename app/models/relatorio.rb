@@ -12,20 +12,20 @@ class Relatorio < ApplicationRecord
 	def generate_content_file(instituicao)
 		@date = Time.now
 		@instituicao = instituicao
-		@cadastros = getCadastros(instituicao)
+		@cadastros = getCadastros(@instituicao)
 
 		generateDate = created_at.strftime("%Y%m%d")
-		registroA = "A2#{fnd(2,@instituicao.codigo_produto)}#{@instituicao.nome_instituicao}#{generateDate}#{fnd(6,self.id)}" # 
+		registroA = "A2#{fnd(2,@instituicao.codigo_produto)}#{@instituicao.nome_arquivo}#{generateDate}#{fnd(6,self.id)}" # 
 		registroD = ""
 		registro_total = 2
 		valor_total = 0
-
+		# D0000000012121210/17/20180000012001200000001000101
 		@cadastros.each do |c|
 			valor = c.valor.to_i.round(2) * 100
 			registroD += "\nD#{fnd(10, c.id_cliente_enel)}#{c.digito_verificador_cliente_enel}"+
 								"#{fnd(2,c.codigo_ocorrencia)}#{c.data_ocorrencia.strftime('%m/%d/%Y')}"+
 								"#{fnd(9,valor)}#{fnd(2, c.parcelas)}#{fnd(8,"01")}"+
-								"#{fnd(4, @instituicao.codigo_produto)}#{@instituicao.codigo_instituicao}"
+								"#{fnd(4, @instituicao.codigo_produto)}#{@instituicao.codigo_instituidcao}"
 			registro_total +=1
 			valor_total += valor
 		end
