@@ -4,9 +4,10 @@ Rails.application.routes.draw do
   resources :cadastros
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :colaborador, only: [:new, :create, :index]
+  get "/perfil" => 'colaborador#show', :as => :colaborador_perfil
   post '/colaborador/new' => 'colaborador#create', :as => :create_colaborador
-  get "/colaborador/settings" => "colaborador#settings"
-  put "/colaborador/settings" => 'colaborador#edit', :as => :edit_colaborador
+  get "/configuracoes" => "colaborador#settings"
+  put "/configuracoes" => 'colaborador#edit', :as => :edit_colaborador
   
   devise_scope :user do
     delete '/users/sign_out' => 'sessions#destroy', :as => :destroy_user_session

@@ -20,6 +20,10 @@ class ColaboradorController < ApplicationController
 		redirect_to cadastros_path
 	end
 
+	def show
+		@user = current_user
+	end
+
 	def settings
 		@user = current_user
 	end
