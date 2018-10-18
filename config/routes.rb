@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :colaborador, only: [:new, :create, :index]
   post '/colaborador/new' => 'colaborador#create', :as => :create_colaborador
+  get "/colaborador/settings" => "colaborador#settings"
+  put "/colaborador/settings" => 'colaborador#edit', :as => :edit_colaborador
   
   devise_scope :user do
     delete '/users/sign_out' => 'sessions#destroy', :as => :destroy_user_session
@@ -36,8 +38,6 @@ Rails.application.routes.draw do
   get "/api/cadastros_mes" => "dashboard#get_cadastros_mes"
   get "/api/cadastros_semana" => "dashboard#get_cadastros_semana"
   get "/api/cadastros_colaboradores" => "dashboard#get_cadastros_colaboradores"
-  get "/colaborador/settings" => "colaborador#settings"
-  put "/colaborador/settings" => 'colaborador#edit', :as => :edit_colaborador
   get "/:page" => "pages#show"
 
   root "pages#show", page: "welcome"

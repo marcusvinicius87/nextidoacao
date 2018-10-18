@@ -11,6 +11,7 @@ class Instituicao < ApplicationRecord
 	accepts_nested_attributes_for :telefones,  allow_destroy: true
 	accepts_nested_attributes_for :enderecos, reject_if: :all_blank, allow_destroy: true
 
+	validates :email, uniqueness: true
 	validates_presence_of :nome_instituicao, :nome_relatorio_instituicao, :codigo_instituicao, :nome_arquivo
 	validates_length_of :nome_relatorio_instituicao, :maximum => 20, :minimum => 20
 	validates_length_of :codigo_produto, :maximum => 2
