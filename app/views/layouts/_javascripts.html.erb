@@ -27,8 +27,9 @@
 	  <script src="/assets/dashboard/skycons.min.js" type="text/javascript"></script>
 
 	  <!-- Page js  -->
+	  <% if current_page?(dashboard_path) %>
 	  <script src="/assets/dashboard/jquery.dashboard.js"></script>
-
+	  <% end %>
 	  <script src="/assets/dashboard/bootstrap.min.js"></script>
 
 	  <!-- Custom main Js -->
