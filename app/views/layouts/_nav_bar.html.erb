@@ -31,8 +31,14 @@
           <%= link_to ' <i class="mdi mdi-settings"></i><span>Perfil</span>'.html_safe, colaborador_perfil_path, method: :get, class: 'dropdown-item notify-item' %>
 
           <!-- item-->
-          <%= link_to ' <i class="mdi mdi-settings"></i><span>Configurações</span>'.html_safe, edit_colaborador_path, method: :get, class: 'dropdown-item notify-item' %>
+          <%= link_to ' <i class="mdi mdi-settings"></i><span>Editar Perfil</span>'.html_safe, edit_colaborador_path, method: :get, class: 'dropdown-item notify-item' %>
 
+
+          <% if current_user.admin? %>
+           <!-- item-->
+          <%= link_to ' <i class="mdi mdi-settings"></i><span>Editar Instituicao</span>'.html_safe, edit_instituicao_path, method: :get, class: 'dropdown-item notify-item' %>
+          
+          <% end %>
 
           <!-- item-->
           <%= link_to ' <i class="mdi mdi-settings"></i><span>Sair</span>'.html_safe, destroy_user_session_path, method: :delete, class: 'dropdown-item notify-item' %>
