@@ -1,6 +1,6 @@
 class InstituicaosController < ApplicationController
   
-  before_action :set_instituicao, only: [:show, :edit, :update, :destroy]
+  before_action :set_instituicao, only: [:edit, :update]
   helper_method :incrementar
 
   # GET /instituicaos/new
@@ -25,10 +25,21 @@ class InstituicaosController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    respond_to do |format|
+      if @instituicao.update(instituicao_params)
+        format.html { redirect_to cadastros_path, notice: 'Instituicao atualizada com sucesso.' }
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_instituicao
-      @instituicao = Instituicao.find(params[:id])
+      @instituicao = current_user.instituicao
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

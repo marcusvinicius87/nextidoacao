@@ -5,7 +5,7 @@ class Cadastro < ApplicationRecord
 
 	validates_presence_of :id_cliente_enel, :digito_verificador_cliente_enel, :codigo_ocorrencia, :valor, :parcelas
 	validates :id_cliente_enel, length: { maximum: 10, too_long: "é maior que o aceitável de 10 digitos." }
-	validates :digito_verificador_cliente_enel, length: { maximum: 2, too_long: "é maior que o aceitável de 2 digitos." }
+	validates :digito_verificador_cliente_enel, length: { maximum: 1, too_long: "é maior que o aceitável de 1 digitos." }
 	validates :codigo_ocorrencia, length: { maximum: 2, too_long: "é maior que o aceitável de 2 digitos." }
 	validates :parcelas, length: { maximum: 2, too_long: "é maior que o aceitável de 2 digitos." }
 	validates_length_of :livre, :maximum => 42

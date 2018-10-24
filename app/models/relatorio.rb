@@ -12,20 +12,21 @@ class Relatorio < ApplicationRecord
 	def generate_content_file(instituicao)
 		@date = Time.now
 		@instituicao = instituicao
-		@cadastros = getCadastros(@instituicao)
+		cadastros = getCadastros(@instituicao)
 
 		generateDate = created_at.strftime("%Y%m%d")
 		registroA = "A2#{fnd(2,@instituicao.codigo_produto)}#{@instituicao.nome_arquivo}#{generateDate}#{fnd(6,self.id)}" # 
 		registroD = ""
 		registro_total = 2
 		valor_total = 0
+
 		# D0000000012121210/17/20180000012001200000001000101
-		@cadastros.each do |c|
+		cadastros.each do |c|
 			valor = c.valor.to_i.round(2) * 100
 			registroD += "\nD#{fnd(10, c.id_cliente_enel)}#{c.digito_verificador_cliente_enel}"+
 								"#{fnd(2,c.codigo_ocorrencia)}#{c.data_ocorrencia.strftime('%m/%d/%Y')}"+
 								"#{fnd(9,valor)}#{fnd(2, c.parcelas)}#{fnd(8,"01")}"+
-								"#{fnd(4, @instituicao.codigo_produto)}#{@instituicao.codigo_instituidcao}"
+								"#{fnd(4, @instituicao.codigo_produto)}#{@instituicao.codigo_instituicao}"
 			registro_total +=1
 			valor_total += valor
 		end
@@ -46,13 +47,13 @@ class Relatorio < ApplicationRecord
 		@cadastros.each do |cadastro|
 			if isAdesao cadastro
 				if isDia28 @date
-					if cadastro.doador_ativo == true
+					if cadastro.doador_ativo == true and cadastro.parcelas > 0
 						cadastro_debito = Cadastro.new
 						cadastro_debito.attributes = cadastro.attributes
 						cadastro_debito.codigo_ocorrencia = '60'
-						cadastro_debito.parcelas = 01
+						cadastro_debito.parcelas = 1
 						cadastros_relatorios << cadastro_debito
-						cadastro.parcelas_controle -= 1
+						cadastro.parcelas -= 1
 						cadastro.save!
 					end
 				else
@@ -60,7 +61,7 @@ class Relatorio < ApplicationRecord
 					cadastro_debito.attributes = cadastro.attributes
 					cadastro_debito.valor = '0'
 					cadastros_relatorios << cadastro_debito
-					cadastro.doador_ativo = 1
+					cadastro.doador_ativo = true
 					cadastro.save!
 				end
 			else
@@ -68,8 +69,7 @@ class Relatorio < ApplicationRecord
 			end
 		end
 
-		cadastros_relatorios
-
+		cadastros_relatorios	
 	end
 
 	def isAdesao(cadastro)

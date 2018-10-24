@@ -56,6 +56,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'bootsnap', require: false
 gem 'figaro'
+gem 'unicorn'
 
 # Front
 
@@ -77,5 +78,3 @@ gem 'devise'
 gem 'pg', '~> 0.18'
 
 # ruby '2.3.7'
-
-gem 'unicorn'
