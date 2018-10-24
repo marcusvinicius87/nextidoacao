@@ -1,7 +1,6 @@
 class InstituicaosController < ApplicationController
   
   before_action :set_instituicao, only: [:show, :edit, :update, :destroy]
-  helper_method :incrementar
 
   # GET /instituicaos/new
   def new
