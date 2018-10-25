@@ -2,6 +2,7 @@ class ColaboradorController < ApplicationController
 
 	before_action :authenticate_user!
 	before_action :is_admin, only: [:new, :create]
+	before_action :set_colaborador, only: [:show, :update, :edit]
 	layout :false
 	
 	def new
@@ -21,17 +22,16 @@ class ColaboradorController < ApplicationController
 	end
 
 	def show
-		@user = current_user
-	end
-
-	def settings
-		@user = current_user
 	end
 
 	def edit
-		@user = current_user
+	end
+
+	def update
 		if @user.update(user_params)
-			redirect_to cadastros_path
+			redirect_to cadastros_path, notice: 'Colaborador atualizado com sucesso.'
+		else
+			render :edit
 		end
 	end
 
@@ -47,6 +47,10 @@ class ColaboradorController < ApplicationController
 
 	private
 	
+	def set_colaborador
+		@user = current_user
+	end
+
 	def user_params
 		params.require(:user).permit(:login, :email, :password, :password_confirmation, :instituicao_id)
 	end

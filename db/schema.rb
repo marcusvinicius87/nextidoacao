@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20180914200236) do
     t.string "email"
     t.string "token"
     t.string "nome_arquivo"
+    t.index ["email"], name: "index_instituicaos_on_email", unique: true
   end
 
   create_table "relatorios", force: :cascade do |t|

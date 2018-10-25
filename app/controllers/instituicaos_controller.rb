@@ -29,10 +29,10 @@ class InstituicaosController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @instituicao.update(instituicao_params)
-        format.html { redirect_to cadastros_path, notice: 'Instituicao atualizada com sucesso.' }
-      end
+    if @instituicao.update(instituicao_params)
+        redirect_to cadastros_path, notice: 'Instituicao atualizada com sucesso.'
+    else
+        render :edit
     end
   end
 
