@@ -28,14 +28,10 @@ class InstituicaosController < ApplicationController
   end
 
   def update
-    @instituicao.attributes = instituicao_params
-    respond_to do |format| 
-      if @instituicao.save(validate: false)
-          format.html { redirect_to cadastros_path, notice: 'Instituicao atualizada com sucesso.' }
-      else
-          format.html { render :edit }
-          format.json { render json: @instituicao.errors, status: :unprocessable_entity }
-      end
+    if @instituicao.update(instituicao_params)
+        redirect_to cadastros_path, notice: 'Instituicao atualizada com sucesso.'
+    else
+        render :edit
     end
   end
 

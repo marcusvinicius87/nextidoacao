@@ -6,7 +6,7 @@
       </p>
     </h1>
 
-    <%= form_with(model: instituicao, local: true, method: :put) do |form| %>
+    <%= form_with(model: instituicao, local: true) do |form| %>
     <% if instituicao.errors.any? %>
     <div id="error_explanation">
       <div class= "row">
@@ -88,7 +88,7 @@
     <div class="row">
       <div class="input-field col s11">
         <i class="material-icons prefix">email</i>
-        <%= form.text_field :email, id: :instituicao_email,class: "validate white-text", placeholder: "E-mail" %>
+        <%= form.text_field :email, id: :instituicao_email,class: "validate white-text", placeholder: "E-mail", :disabled => true %>
       </div>
     </div>
   </div>
@@ -112,7 +112,7 @@
   </h3>
 
   <%= form.fields_for :enderecos do |endereco| %>
-    <%= render 'endereco_fields', f: endereco %>
+  <%= render 'endereco_fields', f: endereco %>
   <% end %>
 
   <div class="col s12 center-align ">
@@ -124,7 +124,7 @@
   <br>
 
   <div class="actions right-align baixo-botao">
-    <%= form.submit 'atualizar', class: 'btn cor-botao' %>
+    <%= form.submit 'enviar',class: 'btn cor-botao' %>
   </div> 
 
   <% end %> 

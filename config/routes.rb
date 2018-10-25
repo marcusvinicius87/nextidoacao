@@ -6,10 +6,10 @@ Rails.application.routes.draw do
   resources :colaborador, only: [:new, :create, :index]
   get "/perfil" => 'colaborador#show', :as => :colaborador_perfil
   post '/colaborador/new' => 'colaborador#create', :as => :create_colaborador
-  get "/configuracoes-colaborador" => "colaborador#settings"
-  patch "/configuracoes-colaborador" => 'colaborador#edit'
-  put "/configuracoes-colaborador" => 'colaborador#edit', :as => :edit_colaborador
-  
+  get "/configuracoes-colaborador" => "colaborador#edit"
+  patch "/configuracoes-colaborador" => 'colaborador#update'
+  put "/configuracoes-colaborador" => 'colaborador#update', :as => :edit_colaborador
+
   devise_scope :user do
     delete '/users/sign_out' => 'sessions#destroy', :as => :destroy_user_session
     get '/users/sign_out' => 'sessions#destroy', :as => :destroy_user_session_get
@@ -27,8 +27,8 @@ Rails.application.routes.draw do
   
   resources :instituicaos, only: [:new, :create]
   get "/configuracoes-instituicao" => "instituicaos#edit", :as => :instituicao
-  put "/configuracoes-instituicao" => "instituicaos#update", :as => :edit_instituicao
   patch "/configuracoes-instituicao" => "instituicaos#update"
+  put "/configuracoes-instituicao" => "instituicaos#update", :as => :edit_instituicao  
   
   devise_for :usuario_nextis
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
