@@ -1,16 +1,11 @@
 class InstituicaosController < ApplicationController
   
-<<<<<<< HEAD
-  before_action :set_instituicao, only: [:show, :edit, :update, :destroy]
-=======
   before_action :set_instituicao, only: [:edit, :update]
   helper_method :incrementar
->>>>>>> 7fc2592568bef730a02f4acb86b13722f6db82cb
 
   # GET /instituicaos/new
   def new
     @instituicao = Instituicao.new
-    # COMENTÁRIO: O build inicializa a página com 1 nested já renderizado
   end
 
   # POST /instituicaos
@@ -33,9 +28,13 @@ class InstituicaosController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @instituicao.update(instituicao_params)
-        format.html { redirect_to cadastros_path, notice: 'Instituicao atualizada com sucesso.' }
+    @instituicao.attributes = instituicao_params
+    respond_to do |format| 
+      if @instituicao.save(validate: false)
+          format.html { redirect_to cadastros_path, notice: 'Instituicao atualizada com sucesso.' }
+      else
+          format.html { render :edit }
+          format.json { render json: @instituicao.errors, status: :unprocessable_entity }
       end
     end
   end

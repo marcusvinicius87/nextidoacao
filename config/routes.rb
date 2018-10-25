@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "/perfil" => 'colaborador#show', :as => :colaborador_perfil
   post '/colaborador/new' => 'colaborador#create', :as => :create_colaborador
   get "/configuracoes-colaborador" => "colaborador#settings"
+  patch "/configuracoes-colaborador" => 'colaborador#edit'
   put "/configuracoes-colaborador" => 'colaborador#edit', :as => :edit_colaborador
   
   devise_scope :user do
@@ -27,7 +28,8 @@ Rails.application.routes.draw do
   resources :instituicaos, only: [:new, :create]
   get "/configuracoes-instituicao" => "instituicaos#edit", :as => :instituicao
   put "/configuracoes-instituicao" => "instituicaos#update", :as => :edit_instituicao
-
+  patch "/configuracoes-instituicao" => "instituicaos#update"
+  
   devise_for :usuario_nextis
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   match 'not-actived' => 'pages#show', via: [:get], :as => :user_not_actived, page: "not-actived"
