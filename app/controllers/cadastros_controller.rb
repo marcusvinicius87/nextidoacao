@@ -15,8 +15,7 @@ class CadastrosController < ApplicationController
 
   # GET /cadastros/1
   # GET /cadastros/1.json
-  def show
-  end
+  def show; end
 
   # GET /cadastros/new
   def new
@@ -24,8 +23,7 @@ class CadastrosController < ApplicationController
   end
 
   # GET /cadastros/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /cadastros
   # POST /cadastros.json
