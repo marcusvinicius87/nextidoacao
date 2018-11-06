@@ -47,7 +47,7 @@ class Relatorio < ApplicationRecord
 		@cadastros.each do |cadastro|
 			if isAdesao cadastro
 				if isDia28 @date
-					if cadastro.doador_ativo == true and cadastro.parcelas > 0
+					if cadastro.doador_ativo and cadastro.parcelas > 0
 						cadastro_debito = Cadastro.new
 						cadastro_debito.attributes = cadastro.attributes
 						cadastro_debito.codigo_ocorrencia = '60'
@@ -78,5 +78,9 @@ class Relatorio < ApplicationRecord
 
 	def isDia28(date)
 		date.strftime('%e').to_i == 28
+	end
+
+	def isSaturday(date)
+
 	end
 end
