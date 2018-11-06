@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get "/configuracoes-colaborador" => "colaborador#edit"
   patch "/configuracoes-colaborador" => 'colaborador#update'
   put "/configuracoes-colaborador" => 'colaborador#update', :as => :edit_colaborador
-  
+
   devise_scope :user do
     delete '/users/sign_out' => 'sessions#destroy', :as => :destroy_user_session
     get '/users/sign_out' => 'sessions#destroy', :as => :destroy_user_session_get
