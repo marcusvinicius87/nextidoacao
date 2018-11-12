@@ -60,10 +60,11 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "nextidoacao_#{Rails.env}"
   config.action_mailer.perform_caching = false
+  config.action_mailer.raise_delivery_errors = false
 
   config.action_mailer.smtp_settings = {
     :user_name => 'nextipro2@gmail.com',
-    :password => 'AdminEnel2017',
+    :password => 'auxdrojrupwvslub',
     :address => 'smtp.gmail.com',
     :port => 587,
     :authentication => :plain,

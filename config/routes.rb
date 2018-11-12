@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   }, skip: [:sessions]
   
   resources :instituicaos, only: [:new, :create]
+  
   get "/configuracoes-instituicao" => "instituicaos#edit", :as => :instituicao
   patch "/configuracoes-instituicao" => "instituicaos#update"
   put "/configuracoes-instituicao" => "instituicaos#update", :as => :edit_instituicao  
