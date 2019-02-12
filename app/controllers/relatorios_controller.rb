@@ -34,7 +34,7 @@ class RelatoriosController < ApplicationController
     respond_to do |format|
       if @relatorio.save
 
-        @relatorio.nome_arquivo = "CEX." + current_user.instituicao.nome_relatorio_instituicao + "." + post_date_relatorio(@relatorio.created_at) + ".SOL"
+        @relatorio.nome_arquivo = "CEX." + current_user.instituicao.nome_relatorio_instituicao + "." + @relatorio.post_date_relatorio(@relatorio.created_at) + ".SOL"
         @relatorio.save!
 
         format.html { redirect_to relatorios_path, notice: 'Relatorio was successfully created.' }
@@ -81,13 +81,6 @@ class RelatoriosController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-
-
-    def post_date_relatorio(data)
-      data.strftime("%Y%m%d")
-    end
-
     def set_relatorio
       @relatorio = Relatorio.find(params[:id])
     end
