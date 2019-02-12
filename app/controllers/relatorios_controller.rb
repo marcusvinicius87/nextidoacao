@@ -4,28 +4,20 @@ class RelatoriosController < ApplicationController
   before_action :authenticate_user!
   before_action :set_relatorio, only: [:show, :edit, :update, :destroy, :download]
 
-  # GET /relatorios
-  # GET /relatorios.json
   def index
     @relatorios = current_user.instituicao.relatorios.page params[:page]
   end
 
-  # GET /relatorios/1
-  # GET /relatorios/1.json
   def show
   end
 
-  # GET /relatorios/new
   def new
     @relatorio = Relatorio.new
   end
 
-  # GET /relatorios/1/edit
   def edit
   end
 
-  # POST /relatorios
-  # POST /relatorios.json
   def create
     @relatorio = Relatorio.new(relatorio_params)
     @relatorio.user_id = current_user.id
@@ -46,8 +38,6 @@ class RelatoriosController < ApplicationController
     end
   end
 
-  # PATCH/PUT /relatorios/1
-  # PATCH/PUT /relatorios/1.json
   def update
     respond_to do |format|
       if @relatorio.update(relatorio_params)
@@ -60,8 +50,6 @@ class RelatoriosController < ApplicationController
     end
   end
 
-  # DELETE /relatorios/1
-  # DELETE /relatorios/1.json
   def destroy
     @relatorio.destroy
     respond_to do |format|
@@ -84,8 +72,7 @@ class RelatoriosController < ApplicationController
     def set_relatorio
       @relatorio = Relatorio.find(params[:id])
     end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
+    
     def relatorio_params
       params.require(:relatorio).permit(:data_inicio, :data_final, :nome_arquivo, :user_id, :instituicao_id)
     end
