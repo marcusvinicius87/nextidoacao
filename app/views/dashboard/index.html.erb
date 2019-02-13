@@ -14,8 +14,9 @@
     <%= stylesheet_link_tag 'dashboard_styles/switchery.min',  'data-turbolink-track': 'reload' %>
     <%= stylesheet_link_tag 'dashboard_styles/jquery.circliful', 'data-turbolink-track': 'reload' %>
     <%= stylesheet_link_tag 'bootstrap.min',  'data-turbolink-track': 'reload' %>
-    <%= stylesheet_link_tag '/assets/dashboard/style.css' %>
+    <%= stylesheet_link_tag 'dashboard_styles/style',  'data-turbolink-track': 'reload' %>
     <%= javascript_include_tag 'dashboard_js/modernizr.min',  'data-turbolink-track': 'reload' %>
+
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 </head>
@@ -156,28 +157,28 @@
                                       <tbody>
                                         <% @ultimos_cadastros.each do |cadastro| %>
                                         <tr>
-                                         <% if cadastro.doador_ativo %>
-                                         <td> <i class="fas fa-user", style="color: #94cc6a;"></i></td>
-                                         <% else %>
-                                         <td> <i class="fas fa-user", style="color: #e03d28;"></i></td>
-                                         <% end %>
-                                         <td> <%= cadastro.id_cliente_enel %> </td>
-                                         <td> <%= post_date cadastro.data_ocorrencia %> </td>
-                                         <td>R$ <%= cadastro.valor %> </td>
-                                         <td> <%= cadastro.parcelas %> </td>
-                                         <td style="color: #2ab6ed;"> <strong><%= cadastro.autor %></strong> </td>
-                                     </tr>
-                                     <% end %>
-                                 </tbody>
-                             </table>
-                         </div>
-                     </div>
-                 </div>
-             </div>
+                                           <% if cadastro.doador_ativo %>
+                                           <td> <i class="fas fa-user", style="color: #94cc6a;"></i></td>
+                                           <% else %>
+                                           <td> <i class="fas fa-user", style="color: #e03d28;"></i></td>
+                                           <% end %>
+                                           <td> <%= cadastro.id_cliente_enel %> </td>
+                                           <td> <%= post_date cadastro.data_ocorrencia %> </td>
+                                           <td>R$ <%= cadastro.valor %> </td>
+                                           <td> <%= cadastro.parcelas %> </td>
+                                           <td style="color: #2ab6ed;"> <strong><%= cadastro.autor %></strong> </td>
+                                       </tr>
+                                       <% end %>
+                                   </tbody>
+                               </table>
+                           </div>
+                       </div>
+                   </div>
+               </div>
 
-         </div>
+           </div>
 
-         <footer class="footer">
+           <footer class="footer">
             2018 © NexTI <span class="hide-phone">- Núcleo de Extensão em Tecnologia da Informação</span>
         </footer>
 
