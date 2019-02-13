@@ -48,7 +48,7 @@
             <%= render '/layouts/search' %>
 
             <% if @cadastros.size == 0 %>
-            <strong style= "color: #2ab6ed";> Não há cadastros para exibir. </strong>
+              <strong style= "color: #2ab6ed";> Não há cadastros para exibir. </strong>
             <% else %>
 
             <table class="table table-striped add-edit-table" id="datatable-editable">
@@ -94,6 +94,7 @@
          </div>
        </div>
      </div>
+
     <%= render '/layouts/javascripts' %>
     
     <%= link_to_prev_page @cadastros, 'Página Anterior', class: 'btn float-left btn-primary waves-light' %>
