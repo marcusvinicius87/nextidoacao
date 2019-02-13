@@ -10,22 +10,19 @@
     <% if instituicao.errors.any? %>
     <div id="error_explanation">
       <div class= "row">
-        <h5 class="col s12 red-text text-darken-4 center-align">
+        <h5 class="col s12 blue-text text-darken-1 center-align">
           <%= pluralize(instituicao.errors.count, "erros") %> impediram o cadastro da instituição:
         </h5>
-      </div>
 
-      <div class="row">
-        <div class="col s6 push-s3">
           <ul class="center-align">
-            <% instituicao.errors.full_messages.each do |message| %>
-            <li>
-             <strong> <%= message %> </strong>
-           </li>
-           <% end %>
-         </ul>
-       </div>
-     </div>
+        <% instituicao.errors.full_messages.each do |message| %>
+        <li>
+         <strong> <%= message %> </strong>
+       </li>
+       <% end %>
+     </ul>
+
+      </div>
    </div>
    <% end %>
 
