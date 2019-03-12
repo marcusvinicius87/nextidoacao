@@ -188,7 +188,7 @@
 
 <%= render '/layouts/javascripts' %>
 <!-- Page js  -->
-<script src="/assets/dashboard/jquery.dashboard.js"></script>
+<%= javascript_include_tag 'dashboard_js/jquery.dashboard.js',  'data-turbolink-track': 'reload' %>
 
 
 <script type="text/javascript">

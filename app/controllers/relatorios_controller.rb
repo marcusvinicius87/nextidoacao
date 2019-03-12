@@ -8,15 +8,13 @@ class RelatoriosController < ApplicationController
     @relatorios = current_user.instituicao.relatorios.page params[:page]
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @relatorio = Relatorio.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @relatorio = Relatorio.new(relatorio_params)
