@@ -10,12 +10,20 @@
 
   <%= favicon_link_tag 'favicon.png'%>
 
+<<<<<<< HEAD
   <link href="/assets/dashboard/switchery.min.css" rel="stylesheet" />
   <link href="/assets/dashboard/jquery.circliful.css" rel="stylesheet" type="text/css" />
   <link href="/assets/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="/assets/dashboard/style.css" rel="stylesheet" type="text/css">
+=======
+  <%= stylesheet_link_tag 'dashboard_styles/jquery.circliful', 'data-turbolink-track': 'reload' %>
+  <%= stylesheet_link_tag 'dashboard_styles/switchery.min',  'data-turbolink-track': 'reload' %>
+  <%= stylesheet_link_tag 'bootstrap.min',  'data-turbolink-track': 'reload' %>
+  <%= stylesheet_link_tag 'dashboard_styles/style',  'data-turbolink-track': 'reload' %>
+  <%= javascript_include_tag 'dashboard_js/modernizr.min',  'data-turbolink-track': 'reload' %>
 
-  <script src="/assets/dashboard/modernizr.min.js"></script>
+>>>>>>> 3b976886c8962adc7bbca995e1e5c1d4b3dd3432
+
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 </head>
@@ -97,7 +105,7 @@
     <%= render '/layouts/javascripts' %>
     
     <%= link_to_prev_page @cadastros, 'Página Anterior', class: 'btn float-left btn-primary waves-light' %>
-    <%= link_to_next_page @cadastros, 'Próxima Página', class: 'btn float-left btn-primary waves-light' %>
+    <%= link_to_next_page @cadastros, 'Próxima Página', class: 'btn float-right btn-primary waves-light' %>
 
   </body>
   </html>
