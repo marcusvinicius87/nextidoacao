@@ -1,5 +1,4 @@
 class Instituicao < ApplicationRecord
-
 	before_create :add_token
 
 	has_many :telefones, :dependent => :destroy

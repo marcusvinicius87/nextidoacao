@@ -33,5 +33,4 @@ class Cadastro < ApplicationRecord
 			all
 		end
 	end
-
 end
