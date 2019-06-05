@@ -1,0 +1,28 @@
+<nav class="color-nav">
+  <div class="nav-wrapper container">
+    <%= link_to image_tag('logo-nexti-redimensionado.png', class: 'brand-logo logo'), welcome_path %>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><%= link_to 'Início', root_path %></li>
+      <li><%= link_to 'Sobre', about_path %></li>
+      
+      <% if user_signed_in? %>
+      <li>
+        <%= link_to 'Dashboard', cadastros_path %>
+      </li>
+      <% end %> 
+      <% if usuario_nexti_signed_in? %>
+      <li>
+        <%= link_to 'Painel Administrativo', rails_admin_path %>
+      </li>
+      <li>
+        <%= link_to 'Sair', destroy_usuario_nexti_session_path, method: :delete %>
+      </li>
+      <% end %>
+      <% if user_signed_in? %>
+      <li>
+        <%= link_to 'Sair', destroy_user_session_path, method: :delete %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
